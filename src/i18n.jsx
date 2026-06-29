@@ -57,38 +57,31 @@ const ja = {
     { key: 'industry', title: `業界の境界`, body: `透明でクリーンな取引で、日本の不動産業の「不透明」な旧来イメージを打ち破る。` },
   ],
   group: {
-    intro: `CROSSBORDERS はゼロから始まった新しい会社ではありません。私たちの基盤は、グループ内ですでに実証された二つのブランドにあります。`,
+    intro: `CROSSBORDERS はゼロから始まった会社ではありません。FIKA グループで培った宿泊運営と空間企画の実績が、私たちの基盤です。`,
     fika: {
       name: 'FIKA',
       role: `グループ親会社`,
-      body: `日本の宿泊運営・空間企画・不動産価値向上に深く取り組む。「不動産」だけでなく「人が空間で得る体験」まで理解しています。`,
-      scope: [`ホステル「UNPLAN」の経営・運営`, `空間企画とブランド制作`, `ホテル運営受託`, `宿泊業の運営コンサルティング`, `地方創生事業`],
+      body: `日本で宿泊運営・空間企画・不動産価値向上に深く取り組むグループ。「不動産」だけでなく「人が空間で得る体験」まで理解しています。`,
+      scope: [`宿泊施設の経営・運営`, `空間企画とブランド制作`, `ホテル運営受託`, `宿泊業の運営コンサルティング`, `地方創生事業`],
     },
-    unplan: {
-      name: 'UNPLAN',
-      role: `私たちが育てた国際的ブランド`,
-      body: `"unplanned"（計画外）に由来。旅で最も美しいのは予定表の「計画」ではなく「計画外の出会い」だと信じています。`,
-      stores: [
-        { name: 'UNPLAN Kagurazaka', year: '2016', note: `神楽坂。和洋融合、カフェ&バーを併設したブランドの原点。` },
-        { name: 'UNPLAN Shinjuku', year: '2019', note: `新宿。「Urban Play」コンセプト、都内最大級のホステル。` },
-        { name: 'UNPLAN Fukuoka', year: `近年`, note: `福岡。ブランドの地方展開。` },
-      ],
-      abilities: [
-        `空間デザイン力 — 「少し上質なホステル」と称される`,
-        `ブランド構築力 — 一店舗から複数店舗の統一ブランドへ`,
-        `国際的な運営 — 英・中・日の多言語対応で世界中の旅人をもてなす`,
-        `コミュニティ醸成 — 宿泊客同士の「計画外の出会い」を体験に`,
+    capabilities: {
+      title: `グループで培った力`,
+      items: [
+        `空間デザイン力 — 「少し上質」と評される空間づくり`,
+        `ブランド構築力 — 一拠点から複数拠点の統一ブランドへ`,
+        `国際的な運営 — 英・中・日の多言語対応で世界中のゲストをもてなす`,
+        `コミュニティ醸成 — 人と人の「計画外の出会い」を体験に変える`,
       ],
     },
     positioning: {
-      line: `FIKA が「運営」 × UNPLAN が「ブランド」 × CROSSBORDERS が「資産価値の統合と向上」。`,
+      line: `FIKA グループの運営・空間企画力 × CROSSBORDERS の資産価値の統合と向上。`,
       body: `私たちは FIKA グループから生まれた、不動産の資産価値向上に特化した会社です。`,
     },
   },
   valueChain: [
     { n: '01', en: 'DISCOVER', cn: `発掘`, title: `潜在力のある物件を発掘`, body: `提携業者ネットワークで非公開物件情報を入手し、「宿泊運営 × 投資」の二つの視点から、隠れた価値のある物件を見つけ出します。` },
     { n: '02', en: 'ACQUIRE', cn: `取得`, title: `購入の意思決定を支援`, body: `民泊・シェアハウスなど運営シーンを含めた「実質利回り」を分析。表面的な賃貸利回りに留まりません。多言語で海外投資家に対応。` },
-    { n: '03', en: 'ELEVATE', cn: `価値向上`, title: `資産価値を高める`, body: `FIKA / UNPLAN で培ったデザインとブランド力で、普通の物件を価値ある体験空間へ。改装企画・内装デザイン・ブランド設計。` },
+    { n: '03', en: 'ELEVATE', cn: `価値向上`, title: `資産価値を高める`, body: `FIKA グループで培ったデザインとブランド力で、普通の物件を価値ある体験空間へ。改装企画・内装デザイン・ブランド設計。` },
     { n: '04', en: 'OPERATE', cn: `運営`, title: `安定した運営で収益化`, body: `自社で運営受託し、Airbnb / Booking.com などOTAで集客。多言語カスタマー対応、収益を継続的にモニタリング。` },
     { n: '05', en: 'EXIT', cn: `出口`, title: `戦略的な出口、または再投資`, body: `運営データと価値向上後の実績により、市場水準を上回る売却価格を実現。あるいは次の資産配分へ。` },
   ],
@@ -107,8 +100,8 @@ const ja = {
   },
   strengths: [
     { n: '01', title: `多言語対応力`, en: 'Multilingual Service', body: `日・英・中の三言語対応。単に「話せる」だけでなく、「三つの文化の視点でお客様を理解できる」ことが強みです。` },
-    { n: '02', title: `宿泊運営の実戦経験`, en: 'Hospitality Expertise', body: `FIKA / UNPLAN の運営経験により、「体験空間としての建物」の価値が見えます。「面積 × 単価」だけでは測れない視点です。` },
-    { n: '03', title: `ブランドと空間の構築力`, en: 'Brand & Space Design', body: `UNPLAN が証明したように、普通の建物を物語とファンを持ち、プレミアムを生むブランド空間へと変えられます。` },
+    { n: '02', title: `宿泊運営の実戦経験`, en: 'Hospitality Expertise', body: `FIKA グループの運営経験により、「体験空間としての建物」の価値が見えます。「面積 × 単価」だけでは測れない視点です。` },
+    { n: '03', title: `ブランドと空間の構築力`, en: 'Brand & Space Design', body: `グループの実績が示すように、普通の建物を物語とファンを持ち、プレミアムを生むブランド空間へと変えられます。` },
     { n: '04', title: `国際的な顧客ネットワーク`, en: 'Global Customer Network', body: `世界中の旅人・学生・投資家にサービスを提供してきました。私たちは生まれながらに国際的なチームです。` },
   ],
   partnership: {
@@ -119,7 +112,7 @@ const ja = {
     types: [
       { title: `物件提携`, en: 'Property Partnership', target: `不動産会社・地主`, service: `物件をお持ちのパートナーへ：海外投資家ネットワーク、出口戦略、運営提案、価値向上プランを提供。あなたの物件を世界中のお客様へ。`, value: `「単なる買い手」ではなく「物件の価値を最大限に引き出せる本当のお客様」を見つけます。` },
       { title: `顧客送客`, en: 'Customer Referral', target: `語学学校・大学・士業・金融機関`, service: `御社のお客様へ：多言語の不動産サービス、外国人の入居支援、海外投資家対応。相互送客の長期的ネットワークを構築。`, value: `お客様の不動産の「悩み」を、「御社が紹介してくれた頼れるパートナー」に変えます。` },
-      { title: `運営提携`, en: 'Operation Partnership', target: `宿泊事業者・投資家・地方自治体`, service: `FIKA / UNPLAN で培った運営受託、OTA集客、空間企画、地方創生の協働を提供。`, value: `お持ちの空間を、私たちの運営ブランドで「物語とファンを持つ」資産に変えます。` },
+      { title: `運営提携`, en: 'Operation Partnership', target: `宿泊事業者・投資家・地方自治体`, service: `FIKA グループで培った運営受託、OTA集客、空間企画、地方創生の協働を提供。`, value: `お持ちの空間を、私たちの運営ブランドで「物語とファンを持つ」資産に変えます。` },
     ],
   },
   contactTopics: [`物件提携`, `顧客送客`, `運営提携`, `投資のご相談`, `その他`],
@@ -129,7 +122,7 @@ const ja = {
     valueTeaserTitle: `資産ライフサイクル全体の価値マネジメント`, valueTeaserSubtitle: `Discover から Exit まで、お客様の歩む一歩一歩に寄り添う——それが事業における「Cross the Borders」の本当の意味です。`, valueTeaserLink: `バリューチェーン全体を見る →`,
     homeCtaTitle: `一緒に境界を越えましょう`, homeCtaSubtitle: `地主の方も、投資家の方も、提携をお考えのパートナーの方も——あなたのニーズをお聞かせください。`, homeCtaButton: `ご相談を予約`,
     aboutEyebrow1: `01 · ブランド哲学`, aboutTitle1: `CROSSBORDERS の意味`, aboutIntro1: `"Cross the Borders" ——境界を越える。私たちの社名は単なる名称ではなく、一つの思想です。日本の不動産業界は、いまも五つの見えない「境界」に隔てられていると私たちは考えています。`,
-    aboutEyebrow2: `02 · 私たちの礎`, aboutTitle2: `FIKA と UNPLAN から`, unplanStoresTitle: `UNPLAN の店舗`, positioningEyebrow: `グループにおける CROSSBORDERS の位置づけ`,
+    aboutEyebrow2: `02 · 私たちの礎`, aboutTitle2: `FIKA グループから`, unplanStoresTitle: `UNPLAN の店舗`, positioningEyebrow: `グループにおける CROSSBORDERS の位置づけ`,
     valueEyebrow: `03 · 私たちの価値創造`, valueTitle: `資産ライフサイクル全体の価値マネジメント`, valueIntro: `従来の不動産会社が行うのは「売買仲介」だけ。私たちはすべてのサービスを、バラバラのメニューではなく一本のバリューチェーンに統合します。`,
     matrixTitle: `私たちの差別化`, matrixSubtitle: `不動産会社、運営会社、コンサル会社は数あれど、この三つを兼ね備える会社はごくわずかです。`, matrixCapHeader: `能力`,
     strengthsTitle: `四つの中核的な強み`, valueCtaButton: `ご要望を相談する`,
@@ -190,38 +183,31 @@ const zh = {
     { key: 'industry', title: `行业的边界`, body: `用透明、清洁的取引，打破日本不动产业「不透明」的旧形象。` },
   ],
   group: {
-    intro: `CROSSBORDERS 不是从零起步的新公司。我们的根基，来自集团内部已经验证过的两个品牌。`,
+    intro: `CROSSBORDERS 不是从零起步的新公司。我们的根基，来自 FIKA 集团多年积累的宿泊运营与空间企划实绩。`,
     fika: {
       name: 'FIKA',
       role: `集团母公司`,
-      body: `深耕日本宿泊运营、空间企划、不动产价值升级。不仅理解「不动产」，更理解「人在空间中的体验」。`,
-      scope: [`ホステル「UNPLAN」的经营与运营`, `空间企划与品牌制作`, `酒店运营受託`, `宿泊业运营咨询`, `地方创生事业`],
+      body: `深耕日本宿泊运营、空间企划与不动产价值升级的集团。不仅理解「不动产」，更理解「人在空间中的体验」。`,
+      scope: [`宿泊设施的经营与运营`, `空间企划与品牌制作`, `酒店运营受託`, `宿泊业运营咨询`, `地方创生事业`],
     },
-    unplan: {
-      name: 'UNPLAN',
-      role: `我们打造的国际化品牌`,
-      body: `取自 "unplanned"（计划外）。旅行最美的不是行程表上的「计划」，而是「计划外的相遇」。`,
-      stores: [
-        { name: 'UNPLAN Kagurazaka', year: '2016', note: `神乐坂。和洋融合，设有咖啡&酒吧，是品牌起点。` },
-        { name: 'UNPLAN Shinjuku', year: '2019', note: `新宿。「Urban Play」概念，都内最大级 hostel。` },
-        { name: 'UNPLAN Fukuoka', year: `近年`, note: `福冈。延展品牌的地方布局。` },
-      ],
-      abilities: [
-        `空间设计力 — 被称为「有点高级感的 hostel」`,
-        `品牌打造力 — 从一家店扩展为多店铺的统一品牌`,
-        `国际化运营 — 英中日多语对应，服务全球旅人`,
-        `社群营造 — 把住客之间的「计划外相遇」做成体验`,
+    capabilities: {
+      title: `集团积累的能力`,
+      items: [
+        `空间设计力 — 被称为「有点高级感」的空间营造`,
+        `品牌打造力 — 从一处扩展为多处的统一品牌`,
+        `国际化运营 — 英中日多语对应，服务全球宾客`,
+        `社群营造 — 把人与人的「计划外相遇」做成体验`,
       ],
     },
     positioning: {
-      line: `FIKA 做「运营」 × UNPLAN 做「品牌」 × CROSSBORDERS 做「资产价值的整合与升级」。`,
+      line: `FIKA 集团的运营与空间企划能力 × CROSSBORDERS 的资产价值整合与提升。`,
       body: `我们是 FIKA 集团衍生出的、专注于不动产资产价值提升的公司。`,
     },
   },
   valueChain: [
     { n: '01', en: 'DISCOVER', cn: `发掘`, title: `发掘有潜力的物件`, body: `通过提携业者网络获取非公开物件信息，以「宿泊运营 × 投资」双重视角，找出隐藏价值的物件。` },
     { n: '02', en: 'ACQUIRE', cn: `取得`, title: `支援购入决策`, body: `提供包含民泊、合租等运营场景的「真实利回り」分析，而非仅仅是表面租赁利回り。多语言对应海外投资家。` },
-    { n: '03', en: 'ELEVATE', cn: `价值提升`, title: `提升资产价值`, body: `运用 FIKA / UNPLAN 累积的设计与品牌力，把普通物件改造为有价值的体验空间。改装企划、内装设计、品牌定位。` },
+    { n: '03', en: 'ELEVATE', cn: `价值提升`, title: `提升资产价值`, body: `运用 FIKA 集团累积的设计与品牌力，把普通物件改造为有价值的体验空间。改装企划、内装设计、品牌定位。` },
     { n: '04', en: 'OPERATE', cn: `运营`, title: `稳定运营变现`, body: `自社受託运营，Airbnb / Booking.com 等 OTA 集客，多语言客服，持续监控收益表现。` },
     { n: '05', en: 'EXIT', cn: `退出`, title: `策略性退出或续投`, body: `通过运营数据 + 价值升级后的实绩，实现高于市场水准的售出价格。或转入下一轮资产配置。` },
   ],
@@ -240,8 +226,8 @@ const zh = {
   },
   strengths: [
     { n: '01', title: `多语言对应能力`, en: 'Multilingual Service', body: `日英中三语对应。不仅是「能说」，而是「能用三种文化的视角理解客户」。` },
-    { n: '02', title: `宿泊运营的实战经验`, en: 'Hospitality Expertise', body: `依托 FIKA / UNPLAN 的运营经验，我们能看到「房子作为体验空间」的价值，而非仅是「面积 × 单价」。` },
-    { n: '03', title: `品牌与空间的打造力`, en: 'Brand & Space Design', body: `UNPLAN 证明：我们能把一栋普通建筑变成有故事、有粉丝、能产生溢价的品牌空间。` },
+    { n: '02', title: `宿泊运营的实战经验`, en: 'Hospitality Expertise', body: `依托 FIKA 集团的运营经验，我们能看到「房子作为体验空间」的价值，而非仅是「面积 × 单价」。` },
+    { n: '03', title: `品牌与空间的打造力`, en: 'Brand & Space Design', body: `集团实绩证明：我们能把一栋普通建筑变成有故事、有粉丝、能产生溢价的品牌空间。` },
     { n: '04', title: `国际化的客户网络`, en: 'Global Customer Network', body: `服务过来自全球的旅人、学生、投资家。我们天然具备国际化基因。` },
   ],
   partnership: {
@@ -252,7 +238,7 @@ const zh = {
     types: [
       { title: `物件提携`, en: 'Property Partnership', target: `不动产公司・地主`, service: `为持有物件的伙伴提供：海外投资家网络、出口战略、运营提案、价值升级方案。让您的物件接触到全球客户。`, value: `为您的物件找到「不只是买家，而是真正能让物件发挥最大价值的客户」。` },
       { title: `顧客送客`, en: 'Customer Referral', target: `语言学校・大学・士业・金融机构`, service: `为您的客户提供：多语言不动产服务、外国人入居支援、海外投资家接待。建立互推送客的长期网络。`, value: `把您的客户对不动产的「头痛」，变成「贵公司给我推荐的好伙伴」。` },
-      { title: `運営提携`, en: 'Operation Partnership', target: `宿泊事业者・投资家・地方自治体`, service: `提供 FIKA / UNPLAN 累积的运营受託、OTA 集客、空间企划、地方创生协作。`, value: `把您持有的空间，通过我们的运营品牌，变成「有故事、有粉丝」的资产。` },
+      { title: `運営提携`, en: 'Operation Partnership', target: `宿泊事业者・投资家・地方自治体`, service: `提供 FIKA 集团累积的运营受託、OTA 集客、空间企划、地方创生协作。`, value: `把您持有的空间，通过我们的运营品牌，变成「有故事、有粉丝」的资产。` },
     ],
   },
   contactTopics: [`物件提携`, `顧客送客`, `運営提携`, `投资咨询`, `其他`],
@@ -262,7 +248,7 @@ const zh = {
     valueTeaserTitle: `资产生命周期的全程价值管理`, valueTeaserSubtitle: `从 Discover 到 Exit，我们陪伴客户走完每一步——这就是「Cross the Borders」在业务层面的真正含义。`, valueTeaserLink: `查看完整价值链 →`,
     homeCtaTitle: `让我们一起跨越边界`, homeCtaSubtitle: `无论您是地主、投资家，还是寻求合作的伙伴——告诉我们您的需求。`, homeCtaButton: `预约咨询`,
     aboutEyebrow1: `01 · 品牌哲学`, aboutTitle1: `CROSSBORDERS 的含义`, aboutIntro1: `"Cross the Borders" —— 跨越边界。我们的公司名不仅是名称，更是一种思想。我们相信，日本的不动产行业仍然被五道无形的「边界」所阻隔。`,
-    aboutEyebrow2: `02 · 我们的底蕴`, aboutTitle2: `来自 FIKA 与 UNPLAN`, unplanStoresTitle: `UNPLAN 旗下店铺`, positioningEyebrow: `CROSSBORDERS 在集团中的定位`,
+    aboutEyebrow2: `02 · 我们的底蕴`, aboutTitle2: `来自 FIKA 集团`, unplanStoresTitle: `UNPLAN 旗下店铺`, positioningEyebrow: `CROSSBORDERS 在集团中的定位`,
     valueEyebrow: `03 · 我们如何创造价值`, valueTitle: `资产生命周期的全程价值管理`, valueIntro: `传统不动产公司只做「买卖中介」。我们把所有服务整合成一条完整的价值链，而不是零散的服务项目。`,
     matrixTitle: `我们的差别化`, matrixSubtitle: `市场上不乏各类公司，但能把不动产、运营、咨询三者结合的，极少。`, matrixCapHeader: `能力`,
     strengthsTitle: `四大核心强项`, valueCtaButton: `讨论您的需求`,
@@ -323,38 +309,31 @@ const en = {
     { key: 'industry', title: `The industry border`, body: `With transparent, clean dealing, we break the old "opaque" image of Japan's real estate industry.` },
   ],
   group: {
-    intro: `CROSSBORDERS did not start from zero. Our foundation comes from two brands already proven within our group.`,
+    intro: `CROSSBORDERS did not start from zero. Our foundation is the hospitality-operation and space-planning track record built within the FIKA group.`,
     fika: {
       name: 'FIKA',
       role: `Group parent company`,
-      body: `Deeply rooted in Japanese hospitality operation, space planning and property value-up. We understand not just "real estate" but "how people experience a space."`,
-      scope: [`Operating the "UNPLAN" hostel brand`, `Space planning & brand creation`, `Hotel operation outsourcing`, `Hospitality operation consulting`, `Regional revitalization`],
+      body: `A group deeply rooted in Japanese hospitality operation, space planning and property value-up. We understand not just "real estate" but "how people experience a space."`,
+      scope: [`Operating accommodation facilities`, `Space planning & brand creation`, `Hotel operation outsourcing`, `Hospitality operation consulting`, `Regional revitalization`],
     },
-    unplan: {
-      name: 'UNPLAN',
-      role: `The international brand we built`,
-      body: `Named after "unplanned." We believe the most beautiful part of travel is not the plan on the itinerary, but the unplanned encounters.`,
-      stores: [
-        { name: 'UNPLAN Kagurazaka', year: '2016', note: `Kagurazaka. A Japanese-Western blend with a café & bar — where the brand began.` },
-        { name: 'UNPLAN Shinjuku', year: '2019', note: `Shinjuku. The "Urban Play" concept; one of Tokyo's largest hostels.` },
-        { name: 'UNPLAN Fukuoka', year: `Recent`, note: `Fukuoka. Extending the brand into the regions.` },
-      ],
-      abilities: [
-        `Spatial design — called "a slightly upscale hostel"`,
-        `Brand building — from one store to a unified multi-store brand`,
-        `International operation — multilingual (EN/CN/JP) for travelers worldwide`,
-        `Community — turning guests' unplanned encounters into experiences`,
+    capabilities: {
+      title: `Capabilities built within the group`,
+      items: [
+        `Spatial design — spaces praised as "a touch upscale"`,
+        `Brand building — from a single site to a unified multi-site brand`,
+        `International operation — multilingual (EN/CN/JP) hospitality for guests worldwide`,
+        `Community — turning unplanned encounters between people into experiences`,
       ],
     },
     positioning: {
-      line: `FIKA does "operation" × UNPLAN does "brand" × CROSSBORDERS does "integrating and elevating asset value."`,
+      line: `FIKA group's operation & space-planning capability × CROSSBORDERS' integration and elevation of asset value.`,
       body: `We are the company spun out of the FIKA group, dedicated to elevating real-estate asset value.`,
     },
   },
   valueChain: [
     { n: '01', en: 'DISCOVER', cn: ``, title: `Discover high-potential properties`, body: `Through our partner network we access off-market listings, and with a dual "operation × investment" lens we uncover properties with hidden value.` },
     { n: '02', en: 'ACQUIRE', cn: ``, title: `Support the purchase decision`, body: `We analyze the real yield including operating scenarios such as vacation rentals and shared housing — not just surface rental yield. Multilingual support for overseas investors.` },
-    { n: '03', en: 'ELEVATE', cn: ``, title: `Elevate asset value`, body: `Using the design and brand strength built at FIKA / UNPLAN, we turn ordinary properties into valuable experiential spaces — renovation planning, interior design, brand positioning.` },
+    { n: '03', en: 'ELEVATE', cn: ``, title: `Elevate asset value`, body: `Using the design and brand strength built within the FIKA group, we turn ordinary properties into valuable experiential spaces — renovation planning, interior design, brand positioning.` },
     { n: '04', en: 'OPERATE', cn: ``, title: `Operate for stable returns`, body: `We operate in-house, attract guests via OTAs like Airbnb / Booking.com, provide multilingual customer service and continuously monitor performance.` },
     { n: '05', en: 'EXIT', cn: ``, title: `Strategic exit or reinvestment`, body: `With operating data and proven value-up results, we achieve sale prices above market — or roll into the next allocation.` },
   ],
@@ -373,8 +352,8 @@ const en = {
   },
   strengths: [
     { n: '01', title: `Multilingual capability`, en: 'Multilingual Service', body: `Trilingual in JP, EN and CN. Not just "able to speak," but "able to understand clients through three cultural lenses."` },
-    { n: '02', title: `Hands-on hospitality experience`, en: 'Hospitality Expertise', body: `With operating experience from FIKA / UNPLAN, we see a building's value "as an experiential space" — not merely "area × unit price."` },
-    { n: '03', title: `Brand & space creation`, en: 'Brand & Space Design', body: `As UNPLAN proved, we can turn an ordinary building into a branded space with a story, fans and a premium.` },
+    { n: '02', title: `Hands-on hospitality experience`, en: 'Hospitality Expertise', body: `With operating experience from the FIKA group, we see a building's value "as an experiential space" — not merely "area × unit price."` },
+    { n: '03', title: `Brand & space creation`, en: 'Brand & Space Design', body: `As the group has proven, we can turn an ordinary building into a branded space with a story, fans and a premium.` },
     { n: '04', title: `Global customer network`, en: 'Global Customer Network', body: `We have served travelers, students and investors from around the world. We are international by nature.` },
   ],
   partnership: {
@@ -385,7 +364,7 @@ const en = {
     types: [
       { title: `Property Partnership`, en: ``, target: `Real-estate companies & owners`, service: `For partners who hold properties: an overseas-investor network, exit strategy, operation proposals and value-up plans. Bring your property to clients worldwide.`, value: `We find not "just a buyer," but "a client who can draw out your property's full value."` },
       { title: `Customer Referral`, en: ``, target: `Language schools, universities, professional & financial firms`, service: `For your clients: multilingual real-estate service, move-in support for foreign residents, hosting of overseas investors — a long-term mutual-referral network.`, value: `Turn your clients' real-estate "headache" into "the reliable partner your company referred."` },
-      { title: `Operation Partnership`, en: ``, target: `Hospitality operators, investors, local governments`, service: `We provide operation outsourcing, OTA marketing, space planning and regional-revitalization collaboration built at FIKA / UNPLAN.`, value: `Turn the space you hold into an asset "with a story and fans" through our operating brand.` },
+      { title: `Operation Partnership`, en: ``, target: `Hospitality operators, investors, local governments`, service: `We provide operation outsourcing, OTA marketing, space planning and regional-revitalization collaboration built within the FIKA group.`, value: `Turn the space you hold into an asset "with a story and fans" through our operating brand.` },
     ],
   },
   contactTopics: [`Property Partnership`, `Customer Referral`, `Operation Partnership`, `Investment inquiry`, `Other`],
@@ -395,7 +374,7 @@ const en = {
     valueTeaserTitle: `Value management across the asset lifecycle`, valueTeaserSubtitle: `From Discover to Exit, we accompany clients every step — this is what "Cross the Borders" truly means in business.`, valueTeaserLink: `See the full value chain →`,
     homeCtaTitle: `Let's cross borders together`, homeCtaSubtitle: `Whether you are an owner, an investor, or a prospective partner — tell us what you need.`, homeCtaButton: `Book a consultation`,
     aboutEyebrow1: `01 · Brand philosophy`, aboutTitle1: `What CROSSBORDERS means`, aboutIntro1: `"Cross the Borders." Our name is not merely a name but a philosophy. We believe Japan's real-estate industry is still divided by five invisible "borders."`,
-    aboutEyebrow2: `02 · Our foundation`, aboutTitle2: `From FIKA and UNPLAN`, unplanStoresTitle: `UNPLAN locations`, positioningEyebrow: `Where CROSSBORDERS sits in the group`,
+    aboutEyebrow2: `02 · Our foundation`, aboutTitle2: `From the FIKA group`, unplanStoresTitle: `UNPLAN locations`, positioningEyebrow: `Where CROSSBORDERS sits in the group`,
     valueEyebrow: `03 · How we create value`, valueTitle: `Value management across the asset lifecycle`, valueIntro: `A traditional agency only does "brokerage." We integrate every service into one value chain, not scattered offerings.`,
     matrixTitle: `How we differ`, matrixSubtitle: `There are plenty of agencies, operators and consultancies — but very few combine all three.`, matrixCapHeader: `Capability`,
     strengthsTitle: `Four core strengths`, valueCtaButton: `Discuss your needs`,

@@ -59,15 +59,11 @@ export default function About() {
               </ul>
             </div>
 
-            {/* UNPLAN */}
+            {/* Group capabilities */}
             <div className="rounded-2xl bg-white p-8 shadow-sm">
-              <div className="flex items-baseline gap-3">
-                <h3 className="text-2xl font-bold text-ink">{group.unplan.name}</h3>
-                <span className="text-sm text-red-dark">{group.unplan.role}</span>
-              </div>
-              <p className="mt-4 text-sm leading-relaxed text-ink-soft">{group.unplan.body}</p>
+              <h3 className="text-lg font-semibold text-ink">{group.capabilities.title}</h3>
               <ul className="mt-5 space-y-2">
-                {group.unplan.abilities.map((a) => (
+                {group.capabilities.items.map((a) => (
                   <li key={a} className="flex gap-2 text-sm text-ink-soft">
                     <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-red" />
                     {a}
@@ -75,20 +71,6 @@ export default function About() {
                 ))}
               </ul>
             </div>
-          </div>
-
-          {/* UNPLAN stores */}
-          <h3 className="mt-14 text-lg font-semibold text-ink">{ui.unplanStoresTitle}</h3>
-          <div className="mt-5 grid gap-5 md:grid-cols-3">
-            {group.unplan.stores.map((s) => (
-              <div key={s.name} className="rounded-2xl bg-white p-6 shadow-sm">
-                <div className="flex items-baseline justify-between">
-                  <h4 className="font-semibold text-ink">{s.name}</h4>
-                  <span className="text-xs font-semibold text-red-dark">{s.year}</span>
-                </div>
-                <p className="mt-2 text-sm leading-relaxed text-ink-soft">{s.note}</p>
-              </div>
-            ))}
           </div>
         </div>
       </section>

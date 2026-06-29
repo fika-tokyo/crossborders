@@ -1,3 +1,4 @@
+import { Fragment } from 'react'
 import { Link } from 'react-router-dom'
 import { useLang } from '../i18n.jsx'
 
@@ -17,26 +18,30 @@ export default function Value() {
         </div>
       </section>
 
-      {/* Value chain */}
-      <section className="mx-auto max-w-5xl px-6 py-20">
-        <div className="space-y-5">
-          {valueChain.map((v) => (
-            <div
-              key={v.en}
-              className="flex flex-col gap-4 rounded-2xl border border-line bg-white p-7 transition hover:border-red hover:shadow-lg md:flex-row md:items-center"
-            >
-              <div className="flex items-center gap-4 md:w-64 md:shrink-0">
-                <span className="text-4xl font-bold text-red/40">{v.n}</span>
+      {/* Value chain — vertical flow with arrows */}
+      <section className="mx-auto max-w-3xl px-6 py-20">
+        <div className="flex flex-col">
+          {valueChain.map((v, i) => (
+            <Fragment key={v.en}>
+              <div className="flex flex-col gap-4 rounded-2xl border border-line bg-white p-7 transition hover:border-red hover:shadow-lg sm:flex-row sm:items-center">
+                <div className="flex items-center gap-4 sm:w-52 sm:shrink-0">
+                  <span className="text-4xl font-bold text-red/40">{v.n}</span>
+                  <div>
+                    <p className="text-sm font-bold tracking-widest text-red-dark">{v.en}</p>
+                    {v.cn && <p className="text-xs text-ink-soft">{v.cn}</p>}
+                  </div>
+                </div>
                 <div>
-                  <p className="text-sm font-bold tracking-widest text-red-dark">{v.en}</p>
-                  {v.cn && <p className="text-xs text-ink-soft">{v.cn}</p>}
+                  <h3 className="font-semibold text-ink">{v.title}</h3>
+                  <p className="mt-1.5 text-sm leading-relaxed text-ink-soft">{v.body}</p>
                 </div>
               </div>
-              <div>
-                <h3 className="font-semibold text-ink">{v.title}</h3>
-                <p className="mt-1.5 text-sm leading-relaxed text-ink-soft">{v.body}</p>
-              </div>
-            </div>
+              {i < valueChain.length - 1 && (
+                <div className="flex justify-center py-2">
+                  <span className="text-2xl font-bold text-red/60">↓</span>
+                </div>
+              )}
+            </Fragment>
           ))}
         </div>
       </section>
