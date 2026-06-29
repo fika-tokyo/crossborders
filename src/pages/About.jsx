@@ -88,13 +88,13 @@ export default function About() {
       </section>
 
       {/* Positioning */}
-      <section className="bg-navy py-20">
+      <section className="bg-white py-20">
         <div className="mx-auto max-w-3xl px-6 text-center">
-          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-red">{ui.positioningEyebrow}</p>
-          <p className="mt-6 text-2xl font-medium leading-relaxed text-white md:text-3xl">
+          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-red-dark">{ui.positioningEyebrow}</p>
+          <p className="mt-6 text-2xl font-medium leading-relaxed text-ink md:text-3xl">
             {group.positioning.line}
           </p>
-          <p className="mt-6 text-white/60">{group.positioning.body}</p>
+          <p className="mt-6 text-ink-soft">{group.positioning.body}</p>
         </div>
       </section>
     </>
