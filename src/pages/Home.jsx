@@ -109,9 +109,9 @@ export default function Home() {
         <div className="mt-12 flex flex-wrap items-stretch gap-3">
           {valueChain.map((v, i) => (
             <div key={v.en} className="flex flex-1 items-center gap-3 min-w-[160px]">
-              <div className="flex-1 rounded-2xl bg-navy p-5 text-white">
-                <span className="text-xs font-semibold tracking-widest text-red">{v.en}</span>
-                <p className="mt-2 text-sm font-medium">{v.title}</p>
+              <div className="flex-1 rounded-2xl border border-navy/25 bg-white p-5 transition hover:border-red hover:shadow-md">
+                <span className="text-xs font-semibold tracking-widest text-red-dark">{v.en}</span>
+                <p className="mt-2 text-sm font-medium text-ink">{v.title}</p>
               </div>
               {i < valueChain.length - 1 && (
                 <span className="hidden text-red lg:inline">→</span>
