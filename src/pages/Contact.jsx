@@ -1,12 +1,13 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { site, contactTopics } from '../content.js'
-
-const emptyForm = { name: '', email: '', company: '', topic: contactTopics[0], message: '' }
+import { useLang } from '../i18n.jsx'
 
 export default function Contact() {
   const navigate = useNavigate()
-  const [form, setForm] = useState(emptyForm)
+  const { t } = useLang()
+  const { site, contactTopics, ui } = t
+
+  const [form, setForm] = useState({ name: '', email: '', company: '', topic: contactTopics[0], message: '' })
   const [errors, setErrors] = useState({})
 
   function update(field, value) {
@@ -16,9 +17,9 @@ export default function Contact() {
 
   function validate() {
     const next = {}
-    if (!form.name.trim()) next.name = '请填写您的称呼'
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email)) next.email = '请填写有效的邮箱'
-    if (!form.message.trim()) next.message = '请简单描述您的需求'
+    if (!form.name.trim()) next.name = ui.errName
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email)) next.email = ui.errEmail
+    if (!form.message.trim()) next.message = ui.errMessage
     return next
   }
 
@@ -30,7 +31,6 @@ export default function Contact() {
       return
     }
     // TODO: connect to a real backend / email service here.
-    // For now we carry the submission to the thank-you page via router state.
     navigate('/thank-you', { state: { name: form.name } })
   }
 
@@ -44,17 +44,15 @@ export default function Contact() {
       <div className="mx-auto grid max-w-6xl gap-12 px-6 md:grid-cols-2">
         {/* Left: intro */}
         <div>
-          <h1 className="text-4xl font-bold tracking-tight text-ink md:text-5xl">联系咨询</h1>
-          <p className="mt-6 max-w-md text-lg leading-relaxed text-ink-soft">
-            填写下面的表单，我们会在一个工作日内与您取得联系。也欢迎直接通过邮件或电话联系我们。
-          </p>
+          <h1 className="text-4xl font-bold tracking-tight text-ink md:text-5xl">{ui.contactTitle}</h1>
+          <p className="mt-6 max-w-md text-lg leading-relaxed text-ink-soft">{ui.contactIntro}</p>
           <ul className="mt-8 space-y-3 text-sm text-ink-soft">
             <li>
-              <span className="font-semibold text-ink">邮箱：</span>
+              <span className="font-semibold text-ink">{ui.emailLabel}</span>
               <a href={`mailto:${site.email}`} className="text-red-dark hover:underline">{site.email}</a>
             </li>
-            <li><span className="font-semibold text-ink">电话：</span>{site.phone}</li>
-            <li><span className="font-semibold text-ink">地址：</span>{site.address}</li>
+            <li><span className="font-semibold text-ink">{ui.phoneLabel}</span>{site.phone}</li>
+            <li><span className="font-semibold text-ink">{ui.addressLabel}</span>{site.address}</li>
           </ul>
         </div>
 
@@ -62,61 +60,61 @@ export default function Contact() {
         <form onSubmit={handleSubmit} noValidate className="rounded-2xl bg-white p-8 shadow-sm">
           <div className="space-y-5">
             <div>
-              <label className="mb-1.5 block text-sm font-medium text-ink">称呼 *</label>
+              <label className="mb-1.5 block text-sm font-medium text-ink">{ui.formName}</label>
               <input
                 type="text"
                 value={form.name}
                 onChange={(e) => update('name', e.target.value)}
                 className={fieldClass('name')}
-                placeholder="您的姓名"
+                placeholder={ui.formNamePh}
               />
               {errors.name && <p className="mt-1 text-xs text-red-500">{errors.name}</p>}
             </div>
 
             <div>
-              <label className="mb-1.5 block text-sm font-medium text-ink">邮箱 *</label>
+              <label className="mb-1.5 block text-sm font-medium text-ink">{ui.formEmail}</label>
               <input
                 type="email"
                 value={form.email}
                 onChange={(e) => update('email', e.target.value)}
                 className={fieldClass('email')}
-                placeholder="you@company.com"
+                placeholder={ui.formEmailPh}
               />
               {errors.email && <p className="mt-1 text-xs text-red-500">{errors.email}</p>}
             </div>
 
             <div>
-              <label className="mb-1.5 block text-sm font-medium text-ink">公司</label>
+              <label className="mb-1.5 block text-sm font-medium text-ink">{ui.formCompany}</label>
               <input
                 type="text"
                 value={form.company}
                 onChange={(e) => update('company', e.target.value)}
                 className={fieldClass('company')}
-                placeholder="公司名称（选填）"
+                placeholder={ui.formCompanyPh}
               />
             </div>
 
             <div>
-              <label className="mb-1.5 block text-sm font-medium text-ink">咨询主题</label>
+              <label className="mb-1.5 block text-sm font-medium text-ink">{ui.formTopic}</label>
               <select
                 value={form.topic}
                 onChange={(e) => update('topic', e.target.value)}
                 className={fieldClass('topic')}
               >
-                {contactTopics.map((t) => (
-                  <option key={t}>{t}</option>
+                {contactTopics.map((topic) => (
+                  <option key={topic}>{topic}</option>
                 ))}
               </select>
             </div>
 
             <div>
-              <label className="mb-1.5 block text-sm font-medium text-ink">需求描述 *</label>
+              <label className="mb-1.5 block text-sm font-medium text-ink">{ui.formMessage}</label>
               <textarea
                 rows={4}
                 value={form.message}
                 onChange={(e) => update('message', e.target.value)}
                 className={fieldClass('message')}
-                placeholder="简单介绍您面临的挑战或目标…"
+                placeholder={ui.formMessagePh}
               />
               {errors.message && <p className="mt-1 text-xs text-red-500">{errors.message}</p>}
             </div>
@@ -125,7 +123,7 @@ export default function Contact() {
               type="submit"
               className="w-full rounded-full bg-navy py-3 text-sm font-semibold text-white transition-colors hover:bg-red-dark"
             >
-              提交咨询
+              {ui.formSubmit}
             </button>
           </div>
         </form>

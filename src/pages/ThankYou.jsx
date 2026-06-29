@@ -1,8 +1,13 @@
 import { Link, useLocation } from 'react-router-dom'
+import { useLang } from '../i18n.jsx'
 
 export default function ThankYou() {
   const { state } = useLocation()
   const name = state?.name
+  const { t } = useLang()
+  const { ui } = t
+
+  const title = name ? ui.thankName.replace('{name}', name) : ui.thankNoName
 
   return (
     <section className="flex min-h-[70vh] items-center justify-center bg-mist px-6 py-20">
@@ -12,17 +17,13 @@ export default function ThankYou() {
             <path d="M20 6 9 17l-5-5" />
           </svg>
         </div>
-        <h1 className="text-3xl font-bold tracking-tight text-ink">
-          {name ? `谢谢您，${name}！` : '谢谢您！'}
-        </h1>
-        <p className="mt-4 text-ink-soft">
-          我们已收到您的咨询，团队会在一个工作日内与您联系。
-        </p>
+        <h1 className="text-3xl font-bold tracking-tight text-ink">{title}</h1>
+        <p className="mt-4 text-ink-soft">{ui.thankBody}</p>
         <Link
           to="/"
           className="mt-8 inline-block rounded-full bg-navy px-7 py-3 text-sm font-semibold text-white transition-colors hover:bg-red-dark"
         >
-          返回首页
+          {ui.backHome}
         </Link>
       </div>
     </section>

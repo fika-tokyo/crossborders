@@ -1,23 +1,23 @@
-import { borders, group } from '../content.js'
+import { useLang } from '../i18n.jsx'
 
 export default function About() {
+  const { t } = useLang()
+  const { borders, group, ui } = t
+
   return (
     <>
-      {/* 品牌哲学 */}
+      {/* Brand philosophy */}
       <section className="bg-mist py-20">
         <div className="mx-auto max-w-3xl px-6">
-          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-red-dark">01 · 品牌哲学</p>
+          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-red-dark">{ui.aboutEyebrow1}</p>
           <h1 className="mt-4 text-4xl font-bold tracking-tight text-ink md:text-5xl">
-            CROSSBORDERS 的含义
+            {ui.aboutTitle1}
           </h1>
-          <p className="mt-6 text-lg leading-relaxed text-ink-soft">
-            “Cross the Borders” —— 跨越边界。我们的公司名不仅是名称，更是一种思想。我们相信，
-            日本的不动产行业仍然被五道无形的「边界」所阻隔。
-          </p>
+          <p className="mt-6 text-lg leading-relaxed text-ink-soft">{ui.aboutIntro1}</p>
         </div>
       </section>
 
-      {/* 五道边界 */}
+      {/* Five borders */}
       <section className="mx-auto max-w-5xl px-6 py-20">
         <div className="space-y-px overflow-hidden rounded-2xl border border-line">
           {borders.map((b, i) => (
@@ -32,12 +32,12 @@ export default function About() {
         </div>
       </section>
 
-      {/* 集团底蕴 */}
+      {/* Group foundation */}
       <section className="bg-mist py-20">
         <div className="mx-auto max-w-5xl px-6">
-          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-red-dark">02 · 我们的底蕴</p>
+          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-red-dark">{ui.aboutEyebrow2}</p>
           <h2 className="mt-4 text-3xl font-bold tracking-tight text-ink md:text-4xl">
-            来自 FIKA 与 UNPLAN
+            {ui.aboutTitle2}
           </h2>
           <p className="mt-4 max-w-2xl text-ink-soft">{group.intro}</p>
 
@@ -77,8 +77,8 @@ export default function About() {
             </div>
           </div>
 
-          {/* UNPLAN 店铺 */}
-          <h3 className="mt-14 text-lg font-semibold text-ink">UNPLAN 旗下店铺</h3>
+          {/* UNPLAN stores */}
+          <h3 className="mt-14 text-lg font-semibold text-ink">{ui.unplanStoresTitle}</h3>
           <div className="mt-5 grid gap-5 md:grid-cols-3">
             {group.unplan.stores.map((s) => (
               <div key={s.name} className="rounded-2xl bg-white p-6 shadow-sm">
@@ -93,10 +93,10 @@ export default function About() {
         </div>
       </section>
 
-      {/* 定位 */}
+      {/* Positioning */}
       <section className="bg-navy py-20">
         <div className="mx-auto max-w-3xl px-6 text-center">
-          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-red">CROSSBORDERS 在集团中的定位</p>
+          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-red">{ui.positioningEyebrow}</p>
           <p className="mt-6 text-2xl font-medium leading-relaxed text-white md:text-3xl">
             {group.positioning.line}
           </p>
