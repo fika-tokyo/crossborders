@@ -4,7 +4,7 @@ import heroBg from '../assets/hero-tokyo.jpg'
 
 export default function Home() {
   const { t } = useLang()
-  const { hero, purpose, borders, valueChain, ui } = t
+  const { hero, purpose, borders, valueChain, partnership, ui } = t
 
   return (
     <>
@@ -118,6 +118,35 @@ export default function Home() {
               )}
             </div>
           ))}
+        </div>
+      </section>
+
+      {/* ---------------- Partnership teaser (for B2B partners) ---------------- */}
+      <section className="bg-mist py-24">
+        <div className="mx-auto max-w-6xl px-6">
+          <div className="flex flex-col items-start justify-between gap-4 md:flex-row md:items-end">
+            <div>
+              <h2 className="text-3xl font-bold tracking-tight text-ink md:text-4xl">
+                {ui.homePartnerTitle}
+              </h2>
+              <p className="mt-3 max-w-2xl text-ink-soft">{ui.homePartnerSubtitle}</p>
+            </div>
+            <Link to="/partnership" className="shrink-0 text-sm font-semibold text-red-dark hover:underline">
+              {ui.homePartnerLink}
+            </Link>
+          </div>
+          <div className="mt-12 grid gap-6 md:grid-cols-3">
+            {partnership.types.map((type) => (
+              <Link
+                key={type.title}
+                to="/partnership"
+                className="group rounded-2xl border border-line bg-white p-7 transition hover:border-red hover:shadow-lg"
+              >
+                <h3 className="text-lg font-semibold text-ink">{type.title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-ink-soft">{type.target}</p>
+              </Link>
+            ))}
+          </div>
         </div>
       </section>
     </>

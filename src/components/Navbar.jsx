@@ -37,9 +37,9 @@ export default function Navbar() {
           <Wordmark className="text-base" />
         </Link>
 
-        {/* Desktop nav */}
+        {/* Desktop nav — omit the Contact text link (the button below covers it) */}
         <nav className="hidden items-center gap-8 md:flex">
-          {t.nav.map((item) => (
+          {t.nav.filter((item) => item.to !== '/contact').map((item) => (
             <NavLink
               key={item.to}
               to={item.to}

@@ -3,7 +3,7 @@ import { useLang } from '../i18n.jsx'
 
 export default function Value() {
   const { t } = useLang()
-  const { valueChain, matrix, strengths, ui } = t
+  const { valueChain, matrix, strengths, contactTopics, ui } = t
 
   return (
     <>
@@ -106,6 +106,7 @@ export default function Value() {
         <div className="mt-14 text-center">
           <Link
             to="/contact"
+            state={{ topic: contactTopics[3] }}
             className="inline-block rounded-full bg-navy px-8 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-red-dark"
           >
             {ui.valueCtaButton}

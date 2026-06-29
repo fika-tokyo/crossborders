@@ -1,9 +1,13 @@
+import { Link, useLocation } from 'react-router-dom'
 import { useLang } from '../i18n.jsx'
 import footerBg from '../assets/cta-ocean.jpg'
 
 export default function Footer() {
   const { t } = useLang()
   const { site, ui } = t
+  const { pathname } = useLocation()
+  // Don't repeat the "tell us your needs" CTA on the contact / thank-you pages.
+  const hideCta = pathname === '/contact' || pathname === '/thank-you'
 
   return (
     <footer className="relative overflow-hidden text-white">
@@ -17,18 +21,26 @@ export default function Footer() {
       <div className="absolute inset-0 bg-gradient-to-b from-navy/70 via-navy/85 to-navy/95" />
 
       <div className="relative">
-        {/* CTA banner */}
-        <div className="mx-auto max-w-3xl px-6 pt-20 pb-14 text-center">
-          <h2 className="text-3xl font-bold tracking-tight [text-shadow:0_2px_12px_rgba(11,20,30,0.5)] md:text-4xl">
-            {ui.homeCtaTitle}
-          </h2>
-          <p className="mx-auto mt-4 max-w-lg text-white/85 [text-shadow:0_1px_8px_rgba(11,20,30,0.5)]">
-            {ui.homeCtaSubtitle}
-          </p>
-        </div>
+        {/* CTA banner (hidden on the contact / thank-you pages) */}
+        {!hideCta && (
+          <div className="mx-auto max-w-3xl px-6 pt-20 pb-14 text-center">
+            <h2 className="text-3xl font-bold tracking-tight [text-shadow:0_2px_12px_rgba(11,20,30,0.5)] md:text-4xl">
+              {ui.homeCtaTitle}
+            </h2>
+            <p className="mx-auto mt-4 max-w-lg text-white/85 [text-shadow:0_1px_8px_rgba(11,20,30,0.5)]">
+              {ui.homeCtaSubtitle}
+            </p>
+            <Link
+              to="/contact"
+              className="mt-8 inline-block rounded-full bg-red px-8 py-3.5 text-sm font-semibold text-white shadow-lg transition-colors hover:bg-white hover:text-navy"
+            >
+              {ui.homeCtaButton}
+            </Link>
+          </div>
+        )}
 
         {/* Tagline (left) + contact (right) */}
-        <div className="mx-auto flex max-w-6xl flex-col gap-8 px-6 pb-10 md:flex-row md:items-center md:justify-between">
+        <div className={`mx-auto flex max-w-6xl flex-col gap-8 px-6 pb-10 md:flex-row md:items-center md:justify-between ${hideCta ? 'pt-16' : ''}`}>
           <div>
             <p className="text-lg font-semibold text-white">{site.tagline}</p>
             {site.taglineEn && (

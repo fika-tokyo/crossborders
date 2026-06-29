@@ -43,6 +43,13 @@ export default function Partnership() {
                   <p className="mt-1 text-ink-soft">{type.value}</p>
                 </div>
               </div>
+              <Link
+                to="/contact"
+                state={{ topic: type.title }}
+                className="mt-6 inline-block text-sm font-semibold text-red-dark hover:underline"
+              >
+                {ui.discussThis}
+              </Link>
             </div>
           ))}
         </div>

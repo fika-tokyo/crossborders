@@ -135,6 +135,8 @@ const ja = {
     strengthsTitle: `四つの中核的な強み`, valueCtaButton: `ご要望を相談する`,
     partnershipEyebrow: `05 · 協働の哲学`, partnershipTitle: `三つの協働のかたち`, partnershipSubtitle: `異なる分野のパートナーと、さまざまな形の価値を生み出せます。`,
     targetLabel: `対象：`, serviceLabel: `サービス内容`, valueLabel: `あなたへの価値`, partnershipCtaButton: `協働について相談する`,
+    discussThis: `このパートナーシップを相談する →`,
+    homePartnerTitle: `パートナーの皆様へ`, homePartnerSubtitle: `不動産会社・地主、語学学校や大学、宿泊事業者の皆様とも、さまざまな形で価値を共創します。`, homePartnerLink: `提携について →`,
     contactTitle: `お問い合わせ`, contactIntro: `下記のフォームにご記入ください。1営業日以内にご連絡いたします。メールやお電話でのご連絡も歓迎します。`, emailLabel: `メール：`, phoneLabel: `電話：`, addressLabel: `所在地：`,
     formName: `お名前 *`, formNamePh: `お名前`, formEmail: `メール *`, formEmailPh: 'you@company.com', formCompany: `会社名`, formCompanyPh: `会社名（任意）`, formTopic: `ご相談内容`, formMessage: `ご要望 *`, formMessagePh: `直面している課題や目標を簡単にご記入ください…`, formSubmit: `送信する`,
     errName: `お名前をご記入ください`, errEmail: `有効なメールアドレスをご記入ください`, errMessage: `ご要望を簡単にご記入ください`,
@@ -264,6 +266,8 @@ const zh = {
     strengthsTitle: `四大核心强项`, valueCtaButton: `讨论您的需求`,
     partnershipEyebrow: `05 · 合作哲学`, partnershipTitle: `三种合作可能`, partnershipSubtitle: `我们与不同领域的伙伴，可以创造不同形式的价值。`,
     targetLabel: `对象：`, serviceLabel: `服务内容`, valueLabel: `对您的价值`, partnershipCtaButton: `探讨合作`,
+    discussThis: `咨询此合作 →`,
+    homePartnerTitle: `致合作伙伴`, homePartnerSubtitle: `无论您是地产公司・地主、语言学校 / 大学，还是宿泊运营商，我们都能以多种形式共创价值。`, homePartnerLink: `了解合作 →`,
     contactTitle: `联系咨询`, contactIntro: `填写下面的表单，我们会在一个工作日内与您取得联系。也欢迎直接通过邮件或电话联系我们。`, emailLabel: `邮箱：`, phoneLabel: `电话：`, addressLabel: `地址：`,
     formName: `称呼 *`, formNamePh: `您的姓名`, formEmail: `邮箱 *`, formEmailPh: 'you@company.com', formCompany: `公司`, formCompanyPh: `公司名称（选填）`, formTopic: `咨询主题`, formMessage: `需求描述 *`, formMessagePh: `简单介绍您面临的挑战或目标…`, formSubmit: `提交咨询`,
     errName: `请填写您的称呼`, errEmail: `请填写有效的邮箱`, errMessage: `请简单描述您的需求`,
@@ -393,6 +397,8 @@ const en = {
     strengthsTitle: `Four core strengths`, valueCtaButton: `Discuss your needs`,
     partnershipEyebrow: `05 · Partnership philosophy`, partnershipTitle: `Three ways to partner`, partnershipSubtitle: `With partners across different fields, we can create value in different forms.`,
     targetLabel: `For: `, serviceLabel: `What we offer`, valueLabel: `Value to you`, partnershipCtaButton: `Discuss a partnership`,
+    discussThis: `Discuss this partnership →`,
+    homePartnerTitle: `For our partners`, homePartnerSubtitle: `Real-estate firms & owners, language schools & universities, hospitality operators — we co-create value in many forms.`, homePartnerLink: `About partnership →`,
     contactTitle: `Contact us`, contactIntro: `Fill in the form below and we'll get back to you within one business day. You're also welcome to reach us by email or phone.`, emailLabel: `Email: `, phoneLabel: `Phone: `, addressLabel: `Location: `,
     formName: `Name *`, formNamePh: `Your name`, formEmail: `Email *`, formEmailPh: 'you@company.com', formCompany: `Company`, formCompanyPh: `Company name (optional)`, formTopic: `Topic`, formMessage: `Message *`, formMessagePh: `Briefly describe your challenge or goal…`, formSubmit: `Send`,
     errName: `Please enter your name`, errEmail: `Please enter a valid email`, errMessage: `Please describe your needs briefly`,
@@ -411,6 +417,10 @@ export function LangProvider({ children }) {
     try {
       const saved = localStorage.getItem('cb-lang')
       if (saved && dict[saved]) return saved
+      // First visit: default by the visitor's browser language.
+      const nav = (navigator.language || '').slice(0, 2).toLowerCase()
+      if (nav === 'zh') return 'zh'
+      if (nav === 'en') return 'en'
     } catch (e) { /* ignore */ }
     return 'ja'
   })

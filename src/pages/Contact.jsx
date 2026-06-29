@@ -1,13 +1,16 @@
 import { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, useLocation } from 'react-router-dom'
 import { useLang } from '../i18n.jsx'
 
 export default function Contact() {
   const navigate = useNavigate()
+  const { state } = useLocation()
   const { t } = useLang()
   const { site, contactTopics, ui } = t
 
-  const [form, setForm] = useState({ name: '', email: '', company: '', topic: contactTopics[0], message: '' })
+  // Preselect the topic when the visitor arrived from a specific CTA.
+  const initialTopic = contactTopics.includes(state?.topic) ? state.topic : contactTopics[0]
+  const [form, setForm] = useState({ name: '', email: '', company: '', topic: initialTopic, message: '' })
   const [errors, setErrors] = useState({})
 
   function update(field, value) {
