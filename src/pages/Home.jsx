@@ -1,9 +1,10 @@
 import { Link } from 'react-router-dom'
 import { useLang } from '../i18n.jsx'
 import heroBg from '../assets/hero-tokyo.jpg'
-import imgBorders from '../assets/cross-borders.jpg'
+// Section images — the blurred crossing shot leads the page (first section).
+import imgBorders from '../assets/cross-partner.jpg'
 import imgValue from '../assets/cross-value.jpg'
-import imgPartner from '../assets/cross-partner.jpg'
+import imgPartner from '../assets/cross-borders.jpg'
 
 export default function Home() {
   const { t } = useLang()
@@ -76,8 +77,9 @@ export default function Home() {
       {/* ---------------- Five borders (image left) ---------------- */}
       <section className="bg-mist py-20 md:py-28">
         <div className="mx-auto grid max-w-6xl gap-10 px-6 md:grid-cols-2 lg:gap-16">
-          <div className="relative aspect-[4/5] overflow-hidden rounded-2xl shadow-lg md:aspect-auto">
+          <div className="relative aspect-[4/5] self-center overflow-hidden rounded-2xl shadow-lg">
             <img src={imgBorders} alt="" className="absolute inset-0 h-full w-full object-cover" />
+            <div className="absolute inset-0 bg-navy/30" />
           </div>
           <div className="flex flex-col justify-center">
             <h2 className="text-3xl font-bold tracking-tight text-ink md:text-4xl">
@@ -102,8 +104,9 @@ export default function Home() {
       {/* ---------------- Value chain teaser (image right) ---------------- */}
       <section className="py-20 md:py-28">
         <div className="mx-auto grid max-w-6xl gap-10 px-6 md:grid-cols-2 lg:gap-16">
-          <div className="relative aspect-[4/5] overflow-hidden rounded-2xl shadow-lg md:order-2 md:aspect-auto">
+          <div className="relative aspect-[4/5] self-center overflow-hidden rounded-2xl shadow-lg md:order-2">
             <img src={imgValue} alt="" className="absolute inset-0 h-full w-full object-cover" />
+            <div className="absolute inset-0 bg-navy/30" />
           </div>
           <div className="flex flex-col justify-center md:order-1">
             <h2 className="text-3xl font-bold tracking-tight text-ink md:text-4xl">
@@ -128,8 +131,9 @@ export default function Home() {
       {/* ---------------- Partnership teaser (image left) ---------------- */}
       <section className="bg-mist py-20 md:py-28">
         <div className="mx-auto grid max-w-6xl gap-10 px-6 md:grid-cols-2 lg:gap-16">
-          <div className="relative aspect-[4/5] overflow-hidden rounded-2xl shadow-lg md:aspect-auto">
+          <div className="relative aspect-[4/5] self-center overflow-hidden rounded-2xl shadow-lg">
             <img src={imgPartner} alt="" className="absolute inset-0 h-full w-full object-cover" />
+            <div className="absolute inset-0 bg-navy/30" />
           </div>
           <div className="flex flex-col justify-center">
             <h2 className="text-3xl font-bold tracking-tight text-ink md:text-4xl">
