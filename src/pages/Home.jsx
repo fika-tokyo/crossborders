@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
-import { LogoEmblem } from '../components/Logo.jsx'
 import { useLang } from '../i18n.jsx'
+import heroBg from '../assets/hero-tokyo.jpg'
 
 export default function Home() {
   const { t } = useLang()
@@ -9,15 +9,24 @@ export default function Home() {
   return (
     <>
       {/* ---------------- Hero ---------------- */}
-      <section className="relative overflow-hidden bg-navy text-white">
-        <div className="pointer-events-none absolute -right-32 -top-32 h-[28rem] w-[28rem] rounded-full bg-red/20 blur-3xl" />
-        <div className="pointer-events-none absolute -bottom-40 -left-20 h-96 w-96 rounded-full bg-red/10 blur-3xl" />
-        <div className="mx-auto grid max-w-6xl items-center gap-12 px-6 py-24 md:grid-cols-[1.2fr_1fr] md:py-32">
-          <div>
+      <section className="relative overflow-hidden text-white">
+        {/* Tokyo skyline background */}
+        <img
+          src={heroBg}
+          alt=""
+          aria-hidden="true"
+          className="absolute inset-0 h-full w-full object-cover"
+        />
+        {/* Dark overlay so the text stays readable over the photo */}
+        <div className="absolute inset-0 bg-gradient-to-r from-navy/95 via-navy/70 to-navy/30" />
+        <div className="absolute inset-0 bg-gradient-to-t from-navy/80 via-transparent to-transparent" />
+
+        <div className="relative mx-auto max-w-6xl px-6 py-28 md:py-40">
+          <div className="max-w-2xl">
             <p className="animate-rise text-sm font-semibold uppercase tracking-[0.2em] text-red">
               {hero.eyebrow}
             </p>
-            <h1 className="animate-rise delay-1 mt-6 whitespace-pre-line text-5xl font-bold leading-[1.05] tracking-tight md:text-7xl">
+            <h1 className="animate-rise delay-1 mt-6 whitespace-pre-line text-5xl font-bold leading-[1.05] tracking-tight drop-shadow-sm md:text-7xl">
               {hero.title}
             </h1>
             {hero.titleEn && (
@@ -25,7 +34,7 @@ export default function Home() {
                 {hero.titleEn}
               </p>
             )}
-            <p className="animate-rise delay-3 mt-8 max-w-xl text-lg leading-relaxed text-white/70">
+            <p className="animate-rise delay-3 mt-8 max-w-xl text-lg leading-relaxed text-white/80">
               {hero.subtitle}
             </p>
             <div className="animate-rise delay-3 mt-10 flex flex-wrap gap-4">
@@ -37,17 +46,10 @@ export default function Home() {
               </Link>
               <Link
                 to={hero.secondaryCta.to}
-                className="rounded-full border border-white/25 px-8 py-3.5 text-sm font-semibold text-white transition-colors hover:border-red hover:text-red"
+                className="rounded-full border border-white/40 px-8 py-3.5 text-sm font-semibold text-white transition-colors hover:border-red hover:text-red"
               >
                 {hero.secondaryCta.label}
               </Link>
-            </div>
-          </div>
-
-          {/* Brand emblem badge */}
-          <div className="animate-rise delay-2 hidden justify-center md:flex">
-            <div className="flex aspect-square w-full max-w-xs items-center justify-center rounded-3xl bg-white p-10 shadow-2xl">
-              <LogoEmblem className="h-full w-full" />
             </div>
           </div>
         </div>
