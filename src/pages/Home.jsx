@@ -32,11 +32,8 @@ export default function Home() {
         <div className="absolute inset-0 bg-gradient-to-r from-navy/10 via-navy/25 to-navy/75" />
 
         <div className="relative mx-auto flex max-w-6xl px-6 py-28 md:py-40">
-          <div className="max-w-xl md:ml-auto md:text-right">
-            <p className="animate-rise text-sm font-semibold uppercase tracking-[0.2em] text-red drop-shadow">
-              {hero.eyebrow}
-            </p>
-            <h1 className="animate-rise delay-1 mt-6 whitespace-pre-line text-5xl font-bold leading-[1.05] tracking-tight [text-shadow:0_2px_12px_rgba(11,20,30,0.45)] md:text-7xl">
+          <div className="max-w-xl md:ml-auto">
+            <h1 className="animate-rise delay-1 whitespace-pre-line text-5xl font-bold leading-[1.05] tracking-tight [text-shadow:0_2px_12px_rgba(11,20,30,0.45)] md:text-7xl">
               {hero.title}
             </h1>
             {hero.titleEn && (
@@ -44,10 +41,10 @@ export default function Home() {
                 {hero.titleEn}
               </p>
             )}
-            <p className="animate-rise delay-3 mt-8 text-lg leading-relaxed text-white [text-shadow:0_1px_8px_rgba(11,20,30,0.55)] md:ml-auto md:max-w-md">
+            <p className="animate-rise delay-3 mt-8 whitespace-pre-line text-lg leading-relaxed text-white [text-shadow:0_1px_8px_rgba(11,20,30,0.55)] md:max-w-md">
               {hero.subtitle}
             </p>
-            <div className="animate-rise delay-3 mt-10 flex flex-wrap gap-4 md:justify-end">
+            <div className="animate-rise delay-3 mt-10 flex flex-wrap gap-4">
               <Link
                 to={hero.primaryCta.to}
                 className="rounded-full bg-red px-8 py-3.5 text-sm font-semibold text-white shadow-lg transition-colors hover:bg-white hover:text-navy"
@@ -67,7 +64,7 @@ export default function Home() {
 
       {/* ---------------- One-line positioning ---------------- */}
       <section className="mx-auto max-w-3xl px-6 py-20 text-center md:py-28">
-        <p className="text-2xl font-medium leading-relaxed text-ink md:text-3xl">
+        <p className="whitespace-pre-line text-2xl font-medium leading-relaxed text-ink md:text-3xl">
           {ui.homePositioning}
         </p>
       </section>
