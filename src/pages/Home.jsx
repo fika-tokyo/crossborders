@@ -1,6 +1,9 @@
 import { Link } from 'react-router-dom'
 import { useLang } from '../i18n.jsx'
 import heroBg from '../assets/hero-tokyo.jpg'
+import imgBorders from '../assets/cross-borders.jpg'
+import imgValue from '../assets/cross-value.jpg'
+import imgPartner from '../assets/cross-partner.jpg'
 
 export default function Home() {
   const { t } = useLang()
@@ -70,82 +73,80 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ---------------- Five borders ---------------- */}
-      <section className="bg-mist py-24">
-        <div className="mx-auto max-w-6xl px-6">
-          <h2 className="text-3xl font-bold tracking-tight text-ink md:text-4xl">
-            {ui.bordersTitle}
-          </h2>
-          <p className="mt-3 text-ink-soft">{ui.bordersSubtitle}</p>
-          <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-5">
-            {borders.map((b, i) => (
-              <div
-                key={b.key}
-                className="animate-rise rounded-2xl border border-line bg-white p-6 transition hover:border-red hover:shadow-lg"
-                style={{ animationDelay: `${i * 0.06}s` }}
-              >
-                <span className="text-3xl font-bold text-red/40">0{i + 1}</span>
-                <h3 className="mt-3 text-base font-semibold text-ink">{b.title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-ink-soft">{b.body}</p>
-              </div>
-            ))}
+      {/* ---------------- Five borders (image left) ---------------- */}
+      <section className="bg-mist py-20 md:py-28">
+        <div className="mx-auto grid max-w-6xl gap-10 px-6 md:grid-cols-2 lg:gap-16">
+          <div className="relative aspect-[4/5] overflow-hidden rounded-2xl shadow-lg md:aspect-auto">
+            <img src={imgBorders} alt="" className="absolute inset-0 h-full w-full object-cover" />
+          </div>
+          <div className="flex flex-col justify-center">
+            <h2 className="text-3xl font-bold tracking-tight text-ink md:text-4xl">
+              {ui.bordersTitle}
+            </h2>
+            <p className="mt-3 text-ink-soft">{ui.bordersSubtitle}</p>
+            <ul className="mt-8 space-y-5">
+              {borders.map((b, i) => (
+                <li key={b.key} className="flex gap-4">
+                  <span className="text-xl font-bold text-red/50">0{i + 1}</span>
+                  <div>
+                    <h3 className="font-semibold text-ink">{b.title}</h3>
+                    <p className="mt-0.5 text-sm leading-relaxed text-ink-soft">{b.body}</p>
+                  </div>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
       </section>
 
-      {/* ---------------- Value chain teaser ---------------- */}
-      <section className="mx-auto max-w-6xl px-6 py-24">
-        <div className="flex flex-col items-start justify-between gap-4 md:flex-row md:items-end">
-          <div>
+      {/* ---------------- Value chain teaser (image right) ---------------- */}
+      <section className="py-20 md:py-28">
+        <div className="mx-auto grid max-w-6xl gap-10 px-6 md:grid-cols-2 lg:gap-16">
+          <div className="relative aspect-[4/5] overflow-hidden rounded-2xl shadow-lg md:order-2 md:aspect-auto">
+            <img src={imgValue} alt="" className="absolute inset-0 h-full w-full object-cover" />
+          </div>
+          <div className="flex flex-col justify-center md:order-1">
             <h2 className="text-3xl font-bold tracking-tight text-ink md:text-4xl">
               {ui.valueTeaserTitle}
             </h2>
-            <p className="mt-3 max-w-xl text-ink-soft">{ui.valueTeaserSubtitle}</p>
+            <p className="mt-3 text-ink-soft">{ui.valueTeaserSubtitle}</p>
+            <ul className="mt-8 space-y-3">
+              {valueChain.map((v) => (
+                <li key={v.en} className="rounded-xl border border-navy/20 bg-white p-4">
+                  <span className="text-xs font-semibold tracking-widest text-red-dark">{v.en}</span>
+                  <p className="mt-1 text-sm font-medium text-ink">{v.title}</p>
+                </li>
+              ))}
+            </ul>
+            <Link to="/value" className="mt-6 inline-block text-sm font-semibold text-red-dark hover:underline">
+              {ui.valueTeaserLink}
+            </Link>
           </div>
-          <Link to="/value" className="shrink-0 text-sm font-semibold text-red-dark hover:underline">
-            {ui.valueTeaserLink}
-          </Link>
-        </div>
-        <div className="mt-12 flex flex-wrap items-stretch gap-3">
-          {valueChain.map((v, i) => (
-            <div key={v.en} className="flex flex-1 items-center gap-3 min-w-[160px]">
-              <div className="flex-1 rounded-2xl border border-navy/25 bg-white p-5 transition hover:border-red hover:shadow-md">
-                <span className="text-xs font-semibold tracking-widest text-red-dark">{v.en}</span>
-                <p className="mt-2 text-sm font-medium text-ink">{v.title}</p>
-              </div>
-              {i < valueChain.length - 1 && (
-                <span className="hidden text-red lg:inline">→</span>
-              )}
-            </div>
-          ))}
         </div>
       </section>
 
-      {/* ---------------- Partnership teaser (for B2B partners) ---------------- */}
-      <section className="bg-mist py-24">
-        <div className="mx-auto max-w-6xl px-6">
-          <div className="flex flex-col items-start justify-between gap-4 md:flex-row md:items-end">
-            <div>
-              <h2 className="text-3xl font-bold tracking-tight text-ink md:text-4xl">
-                {ui.homePartnerTitle}
-              </h2>
-              <p className="mt-3 max-w-2xl text-ink-soft">{ui.homePartnerSubtitle}</p>
-            </div>
-            <Link to="/partnership" className="shrink-0 text-sm font-semibold text-red-dark hover:underline">
+      {/* ---------------- Partnership teaser (image left) ---------------- */}
+      <section className="bg-mist py-20 md:py-28">
+        <div className="mx-auto grid max-w-6xl gap-10 px-6 md:grid-cols-2 lg:gap-16">
+          <div className="relative aspect-[4/5] overflow-hidden rounded-2xl shadow-lg md:aspect-auto">
+            <img src={imgPartner} alt="" className="absolute inset-0 h-full w-full object-cover" />
+          </div>
+          <div className="flex flex-col justify-center">
+            <h2 className="text-3xl font-bold tracking-tight text-ink md:text-4xl">
+              {ui.homePartnerTitle}
+            </h2>
+            <p className="mt-3 text-ink-soft">{ui.homePartnerSubtitle}</p>
+            <ul className="mt-8 space-y-4">
+              {partnership.types.map((type) => (
+                <li key={type.title} className="border-l-2 border-red/40 pl-4">
+                  <h3 className="font-semibold text-ink">{type.title}</h3>
+                  <p className="mt-0.5 text-sm leading-relaxed text-ink-soft">{type.target}</p>
+                </li>
+              ))}
+            </ul>
+            <Link to="/partnership" className="mt-6 inline-block text-sm font-semibold text-red-dark hover:underline">
               {ui.homePartnerLink}
             </Link>
-          </div>
-          <div className="mt-12 grid gap-6 md:grid-cols-3">
-            {partnership.types.map((type) => (
-              <Link
-                key={type.title}
-                to="/partnership"
-                className="group rounded-2xl border border-line bg-white p-7 transition hover:border-red hover:shadow-lg"
-              >
-                <h3 className="text-lg font-semibold text-ink">{type.title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-ink-soft">{type.target}</p>
-              </Link>
-            ))}
           </div>
         </div>
       </section>
