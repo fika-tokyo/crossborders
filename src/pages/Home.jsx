@@ -1,14 +1,20 @@
+import { Fragment } from 'react'
 import { Link } from 'react-router-dom'
 import { useLang } from '../i18n.jsx'
 import heroBg from '../assets/hero-tokyo.jpg'
-// Section images — the blurred crossing shot leads the page (first section).
-import imgBorders from '../assets/cross-partner.jpg'
+import imgAbout from '../assets/cross-partner.jpg'
 import imgValue from '../assets/cross-value.jpg'
 import imgPartner from '../assets/cross-borders.jpg'
 
 export default function Home() {
   const { t } = useLang()
-  const { hero, purpose, borders, valueChain, partnership, ui } = t
+  const { hero, valueChain, ui } = t
+
+  const portals = [
+    { to: '/about', title: ui.portalAbout, img: imgAbout },
+    { to: '/value', title: ui.portalValue, img: imgValue },
+    { to: '/partnership', title: ui.portalPartner, img: imgPartner },
+  ]
 
   return (
     <>
@@ -59,105 +65,62 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ---------------- Purpose ---------------- */}
-      <section className="mx-auto max-w-4xl px-6 py-24 text-center">
+      {/* ---------------- One-line positioning ---------------- */}
+      <section className="mx-auto max-w-3xl px-6 py-20 text-center md:py-28">
         <p className="text-2xl font-medium leading-relaxed text-ink md:text-3xl">
-          “{purpose.quote}”
+          {ui.homePositioning}
         </p>
-        <div className="mt-14 grid gap-6 text-left md:grid-cols-3">
-          {purpose.needs.map((n) => (
-            <div key={n.who} className="rounded-2xl bg-mist p-6">
-              <span className="text-sm font-semibold text-red-dark">{n.who}{ui.needSuffix}</span>
-              <p className="mt-2 text-sm leading-relaxed text-ink-soft">{n.want}</p>
-            </div>
+      </section>
+
+      {/* ---------------- Three portal cards ---------------- */}
+      <section className="mx-auto max-w-6xl px-6 pb-4">
+        <div className="grid gap-6 md:grid-cols-3">
+          {portals.map((c) => (
+            <Link
+              key={c.to}
+              to={c.to}
+              className="group flex flex-col overflow-hidden rounded-2xl border border-line bg-white transition hover:-translate-y-1 hover:shadow-xl"
+            >
+              <div className="relative aspect-[4/3] overflow-hidden">
+                <img src={c.img} alt="" className="absolute inset-0 h-full w-full object-cover transition duration-500 group-hover:scale-105" />
+                <div className="absolute inset-0 bg-navy/35" />
+              </div>
+              <div className="flex flex-1 flex-col p-6">
+                <h3 className="text-lg font-semibold leading-snug text-ink">{c.title}</h3>
+                <span className="mt-4 inline-block text-sm font-semibold text-red-dark group-hover:underline">
+                  {ui.learnMore}
+                </span>
+              </div>
+            </Link>
           ))}
         </div>
       </section>
 
-      {/* ---------------- Five borders (image flush left) ---------------- */}
-      <section className="bg-mist">
-        <div className="grid items-stretch md:min-h-[44rem] md:grid-cols-2">
-          <div className="relative min-h-[22rem] md:min-h-[40rem]">
-            <img src={imgBorders} alt="" className="absolute inset-0 h-full w-full object-cover" />
-            <div className="absolute inset-0 bg-navy/30" />
-          </div>
-          <div className="flex flex-col justify-center px-6 py-14 md:px-12 lg:px-20">
-            <div className="max-w-xl">
-              <h2 className="text-3xl font-bold tracking-tight text-ink md:text-4xl">
-                {ui.bordersTitle}
-              </h2>
-              <p className="mt-4 leading-relaxed text-ink-soft">{ui.bordersSubtitle}</p>
-              <ul className="mt-8 space-y-5">
-                {borders.map((b) => (
-                  <li key={b.key}>
-                    <h3 className="font-semibold text-ink">{b.title}</h3>
-                    <p className="mt-1 text-sm leading-relaxed text-ink-soft line-clamp-1">{b.body}</p>
-                  </li>
-                ))}
-              </ul>
-              <Link to="/about" className="mt-8 inline-block text-sm font-semibold text-red-dark hover:underline">
-                {hero.secondaryCta.label}
-              </Link>
-            </div>
-          </div>
+      {/* ---------------- Value chain arrow teaser (shape only) ---------------- */}
+      <section className="mx-auto max-w-6xl px-6 py-20 md:py-28">
+        <div className="flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
+          <h2 className="text-2xl font-bold tracking-tight text-ink md:text-3xl">
+            {ui.valueTeaserTitle}
+          </h2>
+          <Link to="/value" className="text-sm font-semibold text-red-dark hover:underline">
+            {ui.valueTeaserLink}
+          </Link>
         </div>
-      </section>
-
-      {/* ---------------- Value chain teaser (image flush right) ---------------- */}
-      <section className="bg-white">
-        <div className="grid items-stretch md:min-h-[44rem] md:grid-cols-2">
-          <div className="relative min-h-[22rem] md:order-2 md:min-h-[40rem]">
-            <img src={imgValue} alt="" className="absolute inset-0 h-full w-full object-cover" />
-            <div className="absolute inset-0 bg-navy/30" />
-          </div>
-          <div className="flex flex-col justify-center px-6 py-14 md:order-1 md:items-end md:px-12 lg:px-20">
-            <div className="max-w-xl">
-              <h2 className="text-3xl font-bold tracking-tight text-ink md:text-4xl">
-                {ui.valueTeaserTitle}
-              </h2>
-              <p className="mt-4 leading-relaxed text-ink-soft">{ui.valueTeaserSubtitle}</p>
-              <ul className="mt-8 space-y-5">
-                {valueChain.map((v) => (
-                  <li key={v.en}>
-                    <h3 className="font-semibold text-ink">{v.title}</h3>
-                    <p className="mt-1 text-sm leading-relaxed text-ink-soft line-clamp-1">{v.body}</p>
-                  </li>
-                ))}
-              </ul>
-              <Link to="/value" className="mt-8 inline-block text-sm font-semibold text-red-dark hover:underline">
-                {ui.valueTeaserLink}
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ---------------- Partnership teaser (image flush left) ---------------- */}
-      <section className="bg-mist">
-        <div className="grid items-stretch md:min-h-[44rem] md:grid-cols-2">
-          <div className="relative min-h-[22rem] md:min-h-[40rem]">
-            <img src={imgPartner} alt="" className="absolute inset-0 h-full w-full object-cover" />
-            <div className="absolute inset-0 bg-navy/30" />
-          </div>
-          <div className="flex flex-col justify-center px-6 py-14 md:px-12 lg:px-20">
-            <div className="max-w-xl">
-              <h2 className="text-3xl font-bold tracking-tight text-ink md:text-4xl">
-                {ui.homePartnerTitle}
-              </h2>
-              <p className="mt-4 leading-relaxed text-ink-soft">{ui.homePartnerSubtitle}</p>
-              <ul className="mt-8 space-y-5">
-                {partnership.types.map((type) => (
-                  <li key={type.title}>
-                    <h3 className="font-semibold text-ink">{type.title}</h3>
-                    <p className="mt-1 text-sm leading-relaxed text-ink-soft line-clamp-1">{type.target}</p>
-                  </li>
-                ))}
-              </ul>
-              <Link to="/partnership" className="mt-8 inline-block text-sm font-semibold text-red-dark hover:underline">
-                {ui.homePartnerLink}
-              </Link>
-            </div>
-          </div>
+        <div className="mt-8 flex flex-col gap-2 md:flex-row md:items-center">
+          {valueChain.map((v, i) => (
+            <Fragment key={v.en}>
+              <div className="rounded-xl border border-navy/25 bg-white px-4 py-3 text-center md:flex-1">
+                <span className="text-xs font-semibold tracking-widest text-red-dark">{v.en}</span>
+                <p className="mt-0.5 text-sm font-medium text-ink">{v.cn || v.en}</p>
+              </div>
+              {i < valueChain.length - 1 && (
+                <span className="self-center text-lg font-bold text-red">
+                  <span className="md:hidden">↓</span>
+                  <span className="hidden md:inline">→</span>
+                </span>
+              )}
+            </Fragment>
+          ))}
         </div>
       </section>
     </>
