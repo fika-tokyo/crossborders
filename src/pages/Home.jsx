@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import { useLang } from '../i18n.jsx'
 import heroBg from '../assets/hero-tokyo.jpg'
+import ctaBg from '../assets/cta-ocean.jpg'
 
 export default function Home() {
   const { t } = useLang()
@@ -122,15 +123,24 @@ export default function Home() {
       </section>
 
       {/* ---------------- CTA ---------------- */}
-      <section className="bg-navy py-20">
-        <div className="mx-auto max-w-3xl px-6 text-center">
-          <h2 className="text-3xl font-bold tracking-tight text-white md:text-4xl">
+      <section className="relative overflow-hidden py-28 text-white">
+        {/* Ocean & rocks background (sea / horizon — the brand's motif) */}
+        <img
+          src={ctaBg}
+          alt=""
+          aria-hidden="true"
+          className="absolute inset-0 h-full w-full object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-navy/85 via-navy/65 to-navy/85" />
+
+        <div className="relative mx-auto max-w-3xl px-6 text-center">
+          <h2 className="text-3xl font-bold tracking-tight text-white [text-shadow:0_2px_12px_rgba(11,20,30,0.5)] md:text-4xl">
             {ui.homeCtaTitle}
           </h2>
-          <p className="mx-auto mt-4 max-w-lg text-white/70">{ui.homeCtaSubtitle}</p>
+          <p className="mx-auto mt-4 max-w-lg text-white/85 [text-shadow:0_1px_8px_rgba(11,20,30,0.55)]">{ui.homeCtaSubtitle}</p>
           <Link
             to="/contact"
-            className="mt-8 inline-block rounded-full bg-red px-8 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-white hover:text-navy"
+            className="mt-8 inline-block rounded-full bg-red px-8 py-3.5 text-sm font-semibold text-white shadow-lg transition-colors hover:bg-white hover:text-navy"
           >
             {ui.homeCtaButton}
           </Link>
