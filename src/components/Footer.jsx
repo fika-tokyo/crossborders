@@ -1,14 +1,25 @@
 import { Link } from 'react-router-dom'
 import { LogoEmblem, Wordmark } from './Logo.jsx'
 import { useLang } from '../i18n.jsx'
+import footerBg from '../assets/cta-ocean.jpg'
 
 export default function Footer() {
   const { t } = useLang()
   const { site, nav, ui } = t
 
   return (
-    <footer className="bg-navy text-white">
-      <div className="mx-auto grid max-w-6xl gap-10 px-6 py-14 md:grid-cols-3">
+    <footer className="relative overflow-hidden text-white">
+      {/* Ocean background (same motif as the hero / CTA) with a dark overlay
+          so the many footer links stay readable. */}
+      <img
+        src={footerBg}
+        alt=""
+        aria-hidden="true"
+        className="absolute inset-0 h-full w-full object-cover"
+      />
+      <div className="absolute inset-0 bg-gradient-to-b from-navy/80 to-navy/95" />
+
+      <div className="relative mx-auto grid max-w-6xl gap-10 px-6 py-14 md:grid-cols-3">
         <div>
           <div className="flex items-center gap-3">
             <span className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-white">
@@ -44,8 +55,8 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="border-t border-white/10">
-        <div className="mx-auto flex max-w-6xl flex-col gap-2 px-6 py-6 text-xs text-white/40 md:flex-row md:items-center md:justify-between">
+      <div className="relative border-t border-white/10">
+        <div className="mx-auto flex max-w-6xl flex-col gap-2 px-6 py-6 text-xs text-white/50 md:flex-row md:items-center md:justify-between">
           <span>© {new Date().getFullYear()} {site.brandFull} {ui.footerRights}</span>
           <span>{site.tagline}{site.taglineEn ? ` · ${site.taglineEn}` : ''}</span>
         </div>
