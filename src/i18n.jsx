@@ -23,8 +23,8 @@ const ja = {
     tagline: `境界を越え、価値を創る`,
     taglineEn: `Cross the Borders, Create the Value.`,
     email: 'contact@crossborders.jp',
-    phone: '+81 3-0000-0000',
-    address: `東京・福岡（日本）`,
+    phone: '050-1722-7286',
+    address: `東京都 目黒区`,
   },
   nav: [
     { label: `ホーム`, to: '/' },
@@ -152,8 +152,8 @@ const zh = {
     tagline: `跨越边界，创造价值`,
     taglineEn: `Cross the Borders, Create the Value.`,
     email: 'contact@crossborders.jp',
-    phone: '+81 3-0000-0000',
-    address: 'Tokyo · Fukuoka, Japan',
+    phone: '050-1722-7286',
+    address: '东京都 目黑区',
   },
   nav: [
     { label: `首页`, to: '/' },
@@ -281,8 +281,8 @@ const en = {
     tagline: `Cross the Borders, Create the Value.`,
     taglineEn: ``,
     email: 'contact@crossborders.jp',
-    phone: '+81 3-0000-0000',
-    address: 'Tokyo · Fukuoka, Japan',
+    phone: '050-1722-7286',
+    address: 'Meguro-ku, Tokyo, Japan',
   },
   nav: [
     { label: `Home`, to: '/' },

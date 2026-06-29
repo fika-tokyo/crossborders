@@ -1,5 +1,3 @@
-import { Link } from 'react-router-dom'
-import { LogoEmblem, Wordmark } from './Logo.jsx'
 import { useLang } from '../i18n.jsx'
 import footerBg from '../assets/cta-ocean.jpg'
 
@@ -9,8 +7,7 @@ export default function Footer() {
 
   return (
     <footer className="relative overflow-hidden text-white">
-      {/* Single ocean background for the whole bottom block (CTA + footer),
-          so it reads as one continuous image. */}
+      {/* Single ocean background for the whole bottom block. */}
       <img
         src={footerBg}
         alt=""
@@ -21,33 +18,22 @@ export default function Footer() {
 
       <div className="relative">
         {/* CTA banner */}
-        <div className="mx-auto max-w-3xl px-6 pt-20 pb-16 text-center">
+        <div className="mx-auto max-w-3xl px-6 pt-20 pb-14 text-center">
           <h2 className="text-3xl font-bold tracking-tight [text-shadow:0_2px_12px_rgba(11,20,30,0.5)] md:text-4xl">
             {ui.homeCtaTitle}
           </h2>
           <p className="mx-auto mt-4 max-w-lg text-white/85 [text-shadow:0_1px_8px_rgba(11,20,30,0.5)]">
             {ui.homeCtaSubtitle}
           </p>
-          <Link
-            to="/contact"
-            className="mt-8 inline-block rounded-full bg-red px-8 py-3.5 text-sm font-semibold text-white shadow-lg transition-colors hover:bg-white hover:text-navy"
-          >
-            {ui.homeCtaButton}
-          </Link>
         </div>
 
-        {/* Slim info row: brand (left) + contact (right) */}
-        <div className="mx-auto flex max-w-6xl flex-col gap-8 border-t border-white/15 px-6 py-10 md:flex-row md:items-center md:justify-between">
+        {/* Tagline (left) + contact (right) */}
+        <div className="mx-auto flex max-w-6xl flex-col gap-8 px-6 pb-10 md:flex-row md:items-center md:justify-between">
           <div>
-            <div className="flex items-center gap-3">
-              <span className="inline-flex h-11 w-11 items-center justify-center rounded-full bg-white">
-                <LogoEmblem className="h-8 w-9" />
-              </span>
-              <Wordmark className="text-base" onDark />
-            </div>
-            <p className="mt-3 max-w-xs text-sm text-white/60">
-              {site.tagline}{site.taglineEn ? ` · ${site.taglineEn}` : ''}
-            </p>
+            <p className="text-lg font-semibold text-white">{site.tagline}</p>
+            {site.taglineEn && (
+              <p className="mt-1 text-sm text-white/70">{site.taglineEn}</p>
+            )}
           </div>
 
           <ul className="space-y-1.5 text-sm text-white/80 md:text-right">
@@ -57,12 +43,9 @@ export default function Footer() {
           </ul>
         </div>
 
-        {/* Bottom bar */}
-        <div className="border-t border-white/10">
-          <div className="mx-auto flex max-w-6xl flex-col gap-2 px-6 py-5 text-xs text-white/50 md:flex-row md:items-center md:justify-between">
-            <span>© {new Date().getFullYear()} {site.brandFull} {ui.footerRights}</span>
-            <span>{site.tagline}{site.taglineEn ? ` · ${site.taglineEn}` : ''}</span>
-          </div>
+        {/* Bottom legal bar */}
+        <div className="mx-auto max-w-6xl px-6 pb-8 text-xs text-white/50">
+          © {new Date().getFullYear()} {site.brandFull} {ui.footerRights}
         </div>
       </div>
     </footer>
