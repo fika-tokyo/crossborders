@@ -291,7 +291,7 @@ const en = {
     eyebrow: 'CROSSBORDERS CO., LTD.',
     title: `Cross the Borders,\nCreate the Value.`,
     titleEn: ``,
-    subtitle: `We are not "just another real estate company."\nWe exist for clients who need to cross borders and create value across the entire journey.`,
+    subtitle: `We are not "just another real estate company." We exist for clients who need to cross borders and create value across the entire journey.`,
     primaryCta: { label: `Get in touch`, to: '/contact' },
     secondaryCta: { label: `Our philosophy`, to: '/about' },
   },

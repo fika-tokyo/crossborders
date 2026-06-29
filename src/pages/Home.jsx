@@ -32,8 +32,8 @@ export default function Home() {
         <div className="absolute inset-0 bg-gradient-to-r from-navy/10 via-navy/25 to-navy/75" />
 
         <div className="relative mx-auto flex max-w-6xl px-6 py-28 md:py-40">
-          <div className="max-w-xl md:ml-auto">
-            <h1 className="animate-rise delay-1 whitespace-pre-line text-5xl font-bold leading-[1.05] tracking-tight [text-shadow:0_2px_12px_rgba(11,20,30,0.45)] md:text-7xl">
+          <div className="max-w-xl md:ml-auto md:text-right">
+            <h1 className="animate-rise delay-1 mt-10 whitespace-pre-line text-5xl font-bold leading-[1.05] tracking-tight [text-shadow:0_2px_12px_rgba(11,20,30,0.45)] md:text-7xl">
               {hero.title}
             </h1>
             {hero.titleEn && (
@@ -41,10 +41,10 @@ export default function Home() {
                 {hero.titleEn}
               </p>
             )}
-            <p className="animate-rise delay-3 mt-8 whitespace-pre-line text-lg leading-relaxed text-white [text-shadow:0_1px_8px_rgba(11,20,30,0.55)] md:max-w-md">
+            <p className="animate-rise delay-3 mt-8 whitespace-pre-line text-lg leading-relaxed text-white [text-shadow:0_1px_8px_rgba(11,20,30,0.55)] md:ml-auto md:max-w-md">
               {hero.subtitle}
             </p>
-            <div className="animate-rise delay-3 mt-10 flex flex-wrap gap-4">
+            <div className="animate-rise delay-3 mt-10 flex flex-wrap gap-4 md:justify-end">
               <Link
                 to={hero.primaryCta.to}
                 className="rounded-full bg-red px-8 py-3.5 text-sm font-semibold text-white shadow-lg transition-colors hover:bg-white hover:text-navy"
@@ -69,8 +69,31 @@ export default function Home() {
         </p>
       </section>
 
+      {/* ---------------- Value chain — enlarged, above the cards ---------------- */}
+      <section className="mx-auto max-w-5xl px-6 pb-16 text-center md:pb-20">
+        <div className="flex flex-col items-center gap-3 md:flex-row md:justify-center md:gap-5">
+          {valueChain.map((v, i) => (
+            <Fragment key={v.en}>
+              <div className="px-2">
+                <span className="text-sm font-semibold tracking-widest text-red-dark">{v.en}</span>
+                <p className="mt-1 text-xl font-bold text-ink md:text-2xl">{v.cn || v.en}</p>
+              </div>
+              {i < valueChain.length - 1 && (
+                <span className="self-center text-2xl font-bold text-red md:text-3xl">
+                  <span className="md:hidden">↓</span>
+                  <span className="hidden md:inline">→</span>
+                </span>
+              )}
+            </Fragment>
+          ))}
+        </div>
+        <Link to="/value" className="mt-10 inline-block text-base font-semibold text-red-dark hover:underline">
+          {ui.valueTeaserLink}
+        </Link>
+      </section>
+
       {/* ---------------- Three portal cards ---------------- */}
-      <section className="mx-auto max-w-6xl px-6 pb-4">
+      <section className="mx-auto max-w-6xl px-6 pb-20">
         <div className="grid gap-6 md:grid-cols-3">
           {portals.map((c) => (
             <Link
@@ -93,28 +116,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ---------------- Value chain — centered, borderless teaser (shape only) ---------------- */}
-      <section className="mx-auto max-w-5xl px-6 py-20 text-center md:py-28">
-        <div className="flex flex-col items-center gap-2 md:flex-row md:justify-center">
-          {valueChain.map((v, i) => (
-            <Fragment key={v.en}>
-              <div className="px-4 py-2">
-                <span className="text-xs font-semibold tracking-widest text-red-dark">{v.en}</span>
-                <p className="mt-0.5 text-sm font-medium text-ink">{v.cn || v.en}</p>
-              </div>
-              {i < valueChain.length - 1 && (
-                <span className="self-center text-lg font-bold text-red">
-                  <span className="md:hidden">↓</span>
-                  <span className="hidden md:inline">→</span>
-                </span>
-              )}
-            </Fragment>
-          ))}
-        </div>
-        <Link to="/value" className="mt-8 inline-block text-sm font-semibold text-red-dark hover:underline">
-          {ui.valueTeaserLink}
-        </Link>
-      </section>
     </>
   )
 }
