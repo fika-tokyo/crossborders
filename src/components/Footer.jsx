@@ -5,60 +5,64 @@ import footerBg from '../assets/cta-ocean.jpg'
 
 export default function Footer() {
   const { t } = useLang()
-  const { site, nav, ui } = t
+  const { site, ui } = t
 
   return (
     <footer className="relative overflow-hidden text-white">
-      {/* Ocean background (same motif as the hero / CTA) with a dark overlay
-          so the many footer links stay readable. */}
+      {/* Single ocean background for the whole bottom block (CTA + footer),
+          so it reads as one continuous image. */}
       <img
         src={footerBg}
         alt=""
         aria-hidden="true"
         className="absolute inset-0 h-full w-full object-cover"
       />
-      <div className="absolute inset-0 bg-gradient-to-b from-navy/80 to-navy/95" />
+      <div className="absolute inset-0 bg-gradient-to-b from-navy/70 via-navy/85 to-navy/95" />
 
-      <div className="relative mx-auto grid max-w-6xl gap-10 px-6 py-14 md:grid-cols-3">
-        <div>
-          <div className="flex items-center gap-3">
-            <span className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-white">
-              <LogoEmblem className="h-9 w-10" />
-            </span>
-            <Wordmark className="text-base" onDark />
-          </div>
-          <p className="mt-4 max-w-xs text-sm text-white/60">
-            {site.tagline}{site.taglineEn ? ` · ${site.taglineEn}` : ''}
+      <div className="relative">
+        {/* CTA banner */}
+        <div className="mx-auto max-w-3xl px-6 pt-20 pb-16 text-center">
+          <h2 className="text-3xl font-bold tracking-tight [text-shadow:0_2px_12px_rgba(11,20,30,0.5)] md:text-4xl">
+            {ui.homeCtaTitle}
+          </h2>
+          <p className="mx-auto mt-4 max-w-lg text-white/85 [text-shadow:0_1px_8px_rgba(11,20,30,0.5)]">
+            {ui.homeCtaSubtitle}
           </p>
+          <Link
+            to="/contact"
+            className="mt-8 inline-block rounded-full bg-red px-8 py-3.5 text-sm font-semibold text-white shadow-lg transition-colors hover:bg-white hover:text-navy"
+          >
+            {ui.homeCtaButton}
+          </Link>
         </div>
 
-        <div>
-          <h4 className="text-sm font-semibold uppercase tracking-wider text-white/50">{ui.footerNav}</h4>
-          <ul className="mt-4 space-y-2">
-            {nav.map((item) => (
-              <li key={item.to}>
-                <Link to={item.to} className="text-sm text-white/80 transition hover:text-red">
-                  {item.label}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </div>
+        {/* Slim info row: brand (left) + contact (right) */}
+        <div className="mx-auto flex max-w-6xl flex-col gap-8 border-t border-white/15 px-6 py-10 md:flex-row md:items-center md:justify-between">
+          <div>
+            <div className="flex items-center gap-3">
+              <span className="inline-flex h-11 w-11 items-center justify-center rounded-full bg-white">
+                <LogoEmblem className="h-8 w-9" />
+              </span>
+              <Wordmark className="text-base" onDark />
+            </div>
+            <p className="mt-3 max-w-xs text-sm text-white/60">
+              {site.tagline}{site.taglineEn ? ` · ${site.taglineEn}` : ''}
+            </p>
+          </div>
 
-        <div>
-          <h4 className="text-sm font-semibold uppercase tracking-wider text-white/50">{ui.footerContact}</h4>
-          <ul className="mt-4 space-y-2 text-sm text-white/80">
+          <ul className="space-y-1.5 text-sm text-white/80 md:text-right">
             <li><a href={`mailto:${site.email}`} className="transition hover:text-red">{site.email}</a></li>
             <li>{site.phone}</li>
             <li>{site.address}</li>
           </ul>
         </div>
-      </div>
 
-      <div className="relative border-t border-white/10">
-        <div className="mx-auto flex max-w-6xl flex-col gap-2 px-6 py-6 text-xs text-white/50 md:flex-row md:items-center md:justify-between">
-          <span>© {new Date().getFullYear()} {site.brandFull} {ui.footerRights}</span>
-          <span>{site.tagline}{site.taglineEn ? ` · ${site.taglineEn}` : ''}</span>
+        {/* Bottom bar */}
+        <div className="border-t border-white/10">
+          <div className="mx-auto flex max-w-6xl flex-col gap-2 px-6 py-5 text-xs text-white/50 md:flex-row md:items-center md:justify-between">
+            <span>© {new Date().getFullYear()} {site.brandFull} {ui.footerRights}</span>
+            <span>{site.tagline}{site.taglineEn ? ` · ${site.taglineEn}` : ''}</span>
+          </div>
         </div>
       </div>
     </footer>
