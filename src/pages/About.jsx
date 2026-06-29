@@ -1,4 +1,13 @@
+import { Languages, Globe, Layers, Clock, Building2 } from 'lucide-react'
 import { useLang } from '../i18n.jsx'
+
+const borderIcons = {
+  language: Languages,
+  nation: Globe,
+  expertise: Layers,
+  time: Clock,
+  industry: Building2,
+}
 
 export default function About() {
   const { t } = useLang()
@@ -8,7 +17,7 @@ export default function About() {
     <>
       {/* Brand philosophy */}
       <section className="bg-mist py-20">
-        <div className="mx-auto max-w-3xl px-6">
+        <div className="mx-auto max-w-5xl px-6">
           <p className="text-sm font-semibold uppercase tracking-[0.2em] text-red-dark">{ui.aboutEyebrow1}</p>
           <h1 className="mt-4 text-4xl font-bold tracking-tight text-ink md:text-5xl">
             {ui.aboutTitle1}
@@ -20,15 +29,18 @@ export default function About() {
       {/* Five borders */}
       <section className="mx-auto max-w-5xl px-6 py-20">
         <div className="space-y-px overflow-hidden rounded-2xl border border-line">
-          {borders.map((b, i) => (
-            <div key={b.key} className="flex gap-6 bg-white p-7 transition hover:bg-mist">
-              <span className="text-3xl font-bold text-red/40">0{i + 1}</span>
-              <div>
-                <h3 className="text-lg font-semibold text-ink">{b.title}</h3>
-                <p className="mt-1.5 text-sm leading-relaxed text-ink-soft">{b.body}</p>
+          {borders.map((b) => {
+            const Icon = borderIcons[b.key]
+            return (
+              <div key={b.key} className="flex gap-6 bg-white p-7 transition hover:bg-mist">
+                {Icon && <Icon className="h-7 w-7 shrink-0 text-red" strokeWidth={1.75} />}
+                <div>
+                  <h3 className="text-lg font-semibold text-ink">{b.title}</h3>
+                  <p className="mt-1.5 text-sm leading-relaxed text-ink-soft">{b.body}</p>
+                </div>
               </div>
-            </div>
-          ))}
+            )
+          })}
         </div>
       </section>
 

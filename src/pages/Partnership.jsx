@@ -8,20 +8,20 @@ export default function Partnership() {
   return (
     <>
       {/* Philosophy */}
-      <section className="bg-navy py-24">
-        <div className="mx-auto max-w-3xl px-6 text-center">
-          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-red">{ui.partnershipEyebrow}</p>
-          <h1 className="mt-6 text-4xl font-bold tracking-tight text-white md:text-5xl">
+      <section className="bg-mist py-20">
+        <div className="mx-auto max-w-5xl px-6">
+          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-red-dark">{ui.partnershipEyebrow}</p>
+          <h1 className="mt-6 text-4xl font-bold tracking-tight text-ink md:text-5xl">
             {partnership.philosophy.title}
           </h1>
-          <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-white/70">
+          <p className="mt-6 max-w-2xl text-lg leading-relaxed text-ink-soft">
             {partnership.philosophy.body}
           </p>
         </div>
       </section>
 
       {/* Three partnership types */}
-      <section className="mx-auto max-w-6xl px-6 py-20">
+      <section className="mx-auto max-w-5xl px-6 py-20">
         <h2 className="text-3xl font-bold tracking-tight text-ink md:text-4xl">{ui.partnershipTitle}</h2>
         <p className="mt-3 text-ink-soft">{ui.partnershipSubtitle}</p>
 

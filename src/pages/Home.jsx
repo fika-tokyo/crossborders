@@ -11,9 +11,9 @@ export default function Home() {
   const { hero, valueChain, ui } = t
 
   const portals = [
-    { to: '/about', title: ui.portalAbout, img: imgAbout },
-    { to: '/value', title: ui.portalValue, img: imgValue },
-    { to: '/partnership', title: ui.portalPartner, img: imgPartner },
+    { to: '/about', title: ui.portalAbout, img: imgAbout, cta: ui.portalAboutCta },
+    { to: '/value', title: ui.portalValue, img: imgValue, cta: ui.portalValueCta },
+    { to: '/partnership', title: ui.portalPartner, img: imgPartner, cta: ui.portalPartnerCta },
   ]
 
   return (
@@ -88,7 +88,7 @@ export default function Home() {
               <div className="flex flex-1 flex-col p-6">
                 <h3 className="text-lg font-semibold leading-snug text-ink">{c.title}</h3>
                 <span className="mt-4 inline-block text-sm font-semibold text-red-dark group-hover:underline">
-                  {ui.learnMore}
+                  {c.cta}
                 </span>
               </div>
             </Link>
@@ -96,20 +96,12 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ---------------- Value chain arrow teaser (shape only) ---------------- */}
-      <section className="mx-auto max-w-6xl px-6 py-20 md:py-28">
-        <div className="flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
-          <h2 className="text-2xl font-bold tracking-tight text-ink md:text-3xl">
-            {ui.valueTeaserTitle}
-          </h2>
-          <Link to="/value" className="text-sm font-semibold text-red-dark hover:underline">
-            {ui.valueTeaserLink}
-          </Link>
-        </div>
-        <div className="mt-8 flex flex-col gap-2 md:flex-row md:items-center">
+      {/* ---------------- Value chain — centered, borderless teaser (shape only) ---------------- */}
+      <section className="mx-auto max-w-5xl px-6 py-20 text-center md:py-28">
+        <div className="flex flex-col items-center gap-2 md:flex-row md:justify-center">
           {valueChain.map((v, i) => (
             <Fragment key={v.en}>
-              <div className="rounded-xl border border-navy/25 bg-white px-4 py-3 text-center md:flex-1">
+              <div className="px-4 py-2">
                 <span className="text-xs font-semibold tracking-widest text-red-dark">{v.en}</span>
                 <p className="mt-0.5 text-sm font-medium text-ink">{v.cn || v.en}</p>
               </div>
@@ -122,6 +114,9 @@ export default function Home() {
             </Fragment>
           ))}
         </div>
+        <Link to="/value" className="mt-8 inline-block text-sm font-semibold text-red-dark hover:underline">
+          {ui.valueTeaserLink}
+        </Link>
       </section>
     </>
   )

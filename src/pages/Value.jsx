@@ -9,7 +9,7 @@ export default function Value() {
   return (
     <>
       <section className="bg-mist py-20">
-        <div className="mx-auto max-w-3xl px-6">
+        <div className="mx-auto max-w-5xl px-6">
           <p className="text-sm font-semibold uppercase tracking-[0.2em] text-red-dark">{ui.valueEyebrow}</p>
           <h1 className="mt-4 text-4xl font-bold tracking-tight text-ink md:text-5xl">
             {ui.valueTitle}
@@ -19,13 +19,12 @@ export default function Value() {
       </section>
 
       {/* Value chain — vertical flow with arrows */}
-      <section className="mx-auto max-w-3xl px-6 py-20">
+      <section className="mx-auto max-w-5xl px-6 py-20">
         <div className="flex flex-col">
           {valueChain.map((v, i) => (
             <Fragment key={v.en}>
               <div className="flex flex-col gap-4 rounded-2xl border border-line bg-white p-7 transition hover:border-red hover:shadow-lg sm:flex-row sm:items-center">
                 <div className="flex items-center gap-4 sm:w-52 sm:shrink-0">
-                  <span className="text-4xl font-bold text-red/40">{v.n}</span>
                   <div>
                     <p className="text-sm font-bold tracking-widest text-red-dark">{v.en}</p>
                     {v.cn && <p className="text-xs text-ink-soft">{v.cn}</p>}
@@ -95,7 +94,7 @@ export default function Value() {
       </section>
 
       {/* Four core strengths */}
-      <section className="mx-auto max-w-6xl px-6 py-20">
+      <section className="mx-auto max-w-5xl px-6 py-20">
         <h2 className="text-3xl font-bold tracking-tight text-ink md:text-4xl">{ui.strengthsTitle}</h2>
         <div className="mt-10 grid gap-6 md:grid-cols-2">
           {strengths.map((s) => (
