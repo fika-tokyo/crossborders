@@ -1,43 +1,54 @@
-# CROSSBORDERS — 公司官网
+# CROSSBORDERS コーポレートサイト
 
-「跨越边界，创造价值 / Cross the Borders, Create the Value.」
-基于 `CrossBorders_Content_Planning_CN.docx` 内容，参考 Daylight 风格设计。
-技术栈：**React + Vite + Tailwind CSS v4 + React Router**。
+> 境界を越え、価値を創る — Cross the Borders, Create the Value.
 
-## 运行
+CROSSBORDERS（FIKA グループ）の公式コーポレートサイトです。
+技術スタック: **React + Vite + Tailwind CSS v4 + React Router**。
+
+**公開サイト:** https://fika-tokyo.github.io/crossborders/
+
+---
+
+## 対応言語
+
+日本語 / 中文 / English の3言語に対応（**初期表示は日本語**）。
+ヘッダー右上の **日 / 中 / EN** で切り替えでき、選択は次回以降も保持されます。
+
+## ローカルでの実行
 
 ```bash
 npm install
-npm run dev      # 开发服务器，默认 http://localhost:5173
-npm run build    # 生产构建，输出到 dist/
-npm run preview  # 本地预览生产构建
+npm run dev      # 開発サーバー（既定 http://localhost:5173）
+npm run build    # 本番ビルド（出力先 dist/）
+npm run preview  # 本番ビルドのローカル確認
 ```
 
-## 如何修改
+## 編集方法
 
-- **所有文字**集中在 [`src/content.js`](src/content.js) —— 品牌哲学、五道边界、集团介绍、价值链、差别化矩阵、核心强项、合作类型等全部文案都在这里。
-- **配色 / 字体**集中在 [`src/index.css`](src/index.css) 顶部的 `@theme` 区块（navy `#0b1f33` / teal `#19c2b3` / 中性灰）。
-- **页面**在 `src/pages/`，**导航与页脚**在 `src/components/`。
+- **すべての文言**は [`src/i18n.jsx`](src/i18n.jsx) に集約。言語ごとに同じ構造のデータがあり、ここを編集すれば各言語に反映されます。
+- **配色・フォント**は [`src/index.css`](src/index.css) 冒頭の `@theme` ブロック（ブランドカラー: 青 `#385988` / コーラルレッド `#E94F5B` / チャコール `#3E3A39`）。
+- **ロゴ**は [`src/components/Logo.jsx`](src/components/Logo.jsx) に SVG で実装（エンブレム + ワードマーク）。
+- **ページ**は `src/pages/`、**ヘッダー / フッター**は `src/components/`。
 
-## 页面结构
+## ページ構成
 
-| 路径 | 页面 | 内容 |
+| パス | ページ | 内容 |
 | --- | --- | --- |
-| `/` | 首页 | Hero · 存在意义 · 五道边界 · 价值链概览 · CTA |
-| `/about` | 关于我们 | 品牌哲学 · 五道边界 · FIKA / UNPLAN 底蕴 · 集团定位 |
-| `/value` | 价值创造 | 五阶段价值链 · 差别化矩阵 · 四大核心强项 |
-| `/partnership` | 合作 | 合作哲学 · 三种合作可能 |
-| `/contact` | 联系咨询 | 带校验的询问表单 |
-| `/thank-you` | 提交成功页 | 表单提交后自动跳转 |
+| `/` | ホーム | ヒーロー・存在意義・五つの境界・バリューチェーン概要・CTA |
+| `/about` | 私たちについて | ブランド哲学・五つの境界・FIKA / UNPLAN の礎・グループ内の位置づけ |
+| `/value` | 価値創造 | 5段階のバリューチェーン・差別化マトリクス・四つの強み |
+| `/partnership` | パートナーシップ | 協働の哲学・三つの協働のかたち |
+| `/contact` | お問い合わせ | 入力検証つきフォーム |
+| `/thank-you` | 送信完了 | フォーム送信後に自動遷移 |
 
-## 询问表单 → 下一页
+## 公開・自動デプロイ
 
-`/contact` 的表单经前端校验后，通过 React Router 跳转到 `/thank-you`，并把姓名带过去。
-目前未接后端 —— 在 [`src/pages/Contact.jsx`](src/pages/Contact.jsx) 的 `handleSubmit` 中
-标有 `TODO` 处接入你的邮件服务 / 后端 API 即可。
+`main` ブランチに push すると、GitHub Actions（[`.github/workflows/deploy.yml`](.github/workflows/deploy.yml)）が自動でビルドし、GitHub Pages に公開します。手動アップロードは不要です。
 
-## 待补充（TODO）
+- ビルド時に `VITE_BASE=/crossborders/` を設定し、`index.html` を `404.html` に複製（SPA ルーティングのフォールバック）。
+- `vite.config.js` は `base: process.env.VITE_BASE || '/'`、`main.jsx` は `import.meta.env.BASE_URL` から Router の `basename` を設定。
 
-- `src/content.js` 中 `site.email` / `site.phone` 为占位，请替换为真实联系方式。
-- 文档里建议准备 UNPLAN 实景照片、团队照、项目 before/after 等真实图片，
-  替换当前的色块/图标占位（参见文档「视觉素材建议」）。
+## TODO（要差し替え）
+
+- [`src/i18n.jsx`](src/i18n.jsx) の連絡先（`contact@crossborders.jp` / `+81 3-0000-0000`）はプレースホルダーです。実際のメール・電話に差し替えてください。
+- UNPLAN の実写真・チーム写真・施工前後の写真などを用意すると、より説得力が増します。
