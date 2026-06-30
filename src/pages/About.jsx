@@ -89,7 +89,7 @@ export default function About() {
 
       {/* Positioning */}
       <section className="bg-white py-20">
-        <div className="mx-auto max-w-5xl px-6">
+        <div className="mx-auto max-w-3xl px-6 text-center">
           <p className="text-sm font-semibold uppercase tracking-[0.2em] text-red-dark">{ui.positioningEyebrow}</p>
           <p className="mt-6 text-2xl font-medium leading-relaxed text-ink md:text-3xl">
             {group.positioning.line}
