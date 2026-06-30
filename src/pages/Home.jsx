@@ -29,7 +29,7 @@ export default function Home() {
         />
         {/* Light overlay — heavier on the right (where the text sits) so the
             Tokyo Tower on the left stays clearly visible. */}
-        <div className="absolute inset-0 bg-gradient-to-r from-navy/10 via-navy/25 to-navy/75" />
+        <div className="absolute inset-0 bg-gradient-to-r from-navy/15 via-navy/30 to-navy/65" />
 
         <div className="relative mx-auto flex max-w-6xl px-6 py-28 md:py-40">
           <div className="max-w-2xl md:ml-auto md:text-right">
@@ -99,11 +99,11 @@ export default function Home() {
             <Link
               key={c.to}
               to={c.to}
-              className="group flex flex-col overflow-hidden rounded-2xl border border-line bg-white transition hover:-translate-y-1 hover:shadow-xl"
+              className="group flex flex-col overflow-hidden rounded-2xl border border-line bg-white transition hover:-translate-y-1 hover:shadow-md"
             >
               <div className="relative aspect-[4/3] overflow-hidden">
                 <img src={c.img} alt="" className="absolute inset-0 h-full w-full object-cover transition duration-500 group-hover:scale-105" />
-                <div className="absolute inset-0 bg-navy/35" />
+                <div className="absolute inset-0 bg-navy/0 transition duration-500 group-hover:bg-navy/10" />
               </div>
               <div className="flex flex-1 flex-col p-6">
                 <h3 className="text-lg font-semibold leading-snug text-ink">{c.title}</h3>
