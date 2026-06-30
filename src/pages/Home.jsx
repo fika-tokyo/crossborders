@@ -63,7 +63,7 @@ export default function Home() {
       </section>
 
       {/* ---------------- One-line positioning ---------------- */}
-      <section className="mx-auto max-w-5xl px-6 py-20 text-center md:py-28">
+      <section className="mx-auto max-w-5xl px-6 py-20 md:py-28">
         <p className="whitespace-pre-line text-2xl font-medium leading-relaxed text-ink md:text-3xl">
           {ui.homePositioning}
         </p>
