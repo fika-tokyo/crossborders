@@ -164,7 +164,7 @@ const zh = {
     eyebrow: 'CROSSBORDERS CO., LTD.',
     title: `跨越边界，\n创造价值。`,
     titleEn: `Cross the Borders, Create the Value.`,
-    subtitle: `我们不是「再多一家不动产公司」，\n而是为「跨越边界、需要全流程价值创造的客户」而存在的公司。`,
+    subtitle: `我们不是「再多一家不动产公司」，而是为「跨越边界、需要全流程价值创造的客户」而存在的公司。`,
     primaryCta: { label: `开始咨询`, to: '/contact' },
     secondaryCta: { label: `了解我们的哲学`, to: '/about' },
   },
