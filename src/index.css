@@ -19,10 +19,6 @@
 
   --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI",
     "Helvetica Neue", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
-
-  /* Display / heading font — editorial serif (Latin: Fraunces; CJK: system Mincho/Song serif). */
-  --font-display: "Fraunces", "Noto Serif JP", "Noto Serif SC", "Yu Mincho",
-    "Hiragino Mincho ProN", "Songti SC", "SimSun", serif;
 }
 
 html {
@@ -35,14 +31,6 @@ body {
   background: #ffffff;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
-}
-
-/* Headings use the editorial serif. Unlayered, so it overrides Tailwind
-   utilities; letter-spacing reset keeps CJK headings from looking cramped. */
-h1,
-h2 {
-  font-family: var(--font-display);
-  letter-spacing: normal;
 }
 
 /* Subtle entrance animation utility */
