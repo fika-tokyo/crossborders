@@ -1,5 +1,10 @@
 import { Languages, Globe, Layers, Clock, Building2 } from 'lucide-react'
 import { useLang } from '../i18n.jsx'
+import history1 from '../assets/history-1.png'
+import history2 from '../assets/history-2.png'
+import history3 from '../assets/history-3.png'
+
+const historyPhotos = [history1, history2, history3]
 
 const borderIcons = {
   language: Languages,
@@ -11,7 +16,7 @@ const borderIcons = {
 
 export default function About() {
   const { t } = useLang()
-  const { borders, group, ui } = t
+  const { borders, journey, metrics, ui } = t
 
   return (
     <>
@@ -44,57 +49,51 @@ export default function About() {
         </div>
       </section>
 
-      {/* Group foundation */}
+      {/* Journey: history timeline + metrics + photo strip */}
       <section className="bg-mist py-20">
         <div className="mx-auto max-w-5xl px-6">
           <p className="text-sm font-semibold uppercase tracking-[0.2em] text-red-dark">{ui.aboutEyebrow2}</p>
           <h2 className="mt-4 text-3xl font-bold tracking-tight text-ink md:text-4xl">
             {ui.aboutTitle2}
           </h2>
-          <p className="mt-4 max-w-2xl text-ink-soft">{group.intro}</p>
+          <p className="mt-4 max-w-2xl text-ink-soft">{journey.intro}</p>
 
-          <div className="mt-12 grid gap-6 md:grid-cols-2">
-            {/* FIKA */}
-            <div className="rounded-2xl bg-white p-8 shadow-sm">
-              <div className="flex items-baseline gap-3">
-                <h3 className="text-2xl font-bold text-ink">{group.fika.name}</h3>
-                <span className="text-sm text-red-dark">{group.fika.role}</span>
+          {/* Timeline */}
+          <ol className="mt-10 space-y-5 border-l border-line pl-6">
+            {journey.milestones.map((m) => (
+              <li key={m.year} className="relative">
+                <span className="absolute -left-[27px] top-1.5 h-2.5 w-2.5 rounded-full bg-red ring-4 ring-mist" />
+                <div className="flex flex-col gap-0.5 sm:flex-row sm:items-baseline sm:gap-4">
+                  <span className="shrink-0 text-lg font-bold text-red-dark">{m.year}</span>
+                  <span className="text-ink-soft">{m.title}</span>
+                </div>
+              </li>
+            ))}
+          </ol>
+
+          {/* Metrics */}
+          <div className="mt-12 grid grid-cols-2 gap-px overflow-hidden rounded-2xl border border-line md:grid-cols-4">
+            {metrics.items.map((s) => (
+              <div key={s.label} className="bg-white p-6">
+                <p className="text-2xl font-bold tracking-tight text-ink">{s.value}</p>
+                <p className="mt-1.5 text-xs leading-relaxed text-ink-soft">{s.label}</p>
               </div>
-              <p className="mt-4 text-sm leading-relaxed text-ink-soft">{group.fika.body}</p>
-              <ul className="mt-5 space-y-2">
-                {group.fika.scope.map((s) => (
-                  <li key={s} className="flex gap-2 text-sm text-ink-soft">
-                    <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-red" />
-                    {s}
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            {/* Group capabilities */}
-            <div className="rounded-2xl bg-white p-8 shadow-sm">
-              <h3 className="text-lg font-semibold text-ink">{group.capabilities.title}</h3>
-              <ul className="mt-5 space-y-2">
-                {group.capabilities.items.map((a) => (
-                  <li key={a} className="flex gap-2 text-sm text-ink-soft">
-                    <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-red" />
-                    {a}
-                  </li>
-                ))}
-              </ul>
-            </div>
+            ))}
           </div>
-        </div>
-      </section>
+          <p className="mt-3 text-xs text-ink-soft">{metrics.note}</p>
 
-      {/* Positioning */}
-      <section className="bg-white py-20">
-        <div className="mx-auto max-w-3xl px-6 text-center">
-          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-red-dark">{ui.positioningEyebrow}</p>
-          <p className="mt-6 text-2xl font-medium leading-relaxed text-ink md:text-3xl">
-            {group.positioning.line}
-          </p>
-          <p className="mt-6 text-ink-soft">{group.positioning.body}</p>
+          {/* Photo strip */}
+          <div className="mt-10 grid grid-cols-3 gap-3">
+            {historyPhotos.map((src, i) => (
+              <img
+                key={i}
+                src={src}
+                alt=""
+                loading="lazy"
+                className="aspect-[4/3] w-full rounded-xl object-cover"
+              />
+            ))}
+          </div>
         </div>
       </section>
     </>
