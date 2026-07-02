@@ -98,7 +98,7 @@ const ja = {
     { n: '01', title: `多言語対応力`, en: 'Multilingual Service', body: `日・英・中の三言語対応。単に「話せる」だけでなく、「三つの文化の視点でお客様を理解できる」ことが強みです。` },
     { n: '02', title: `宿泊運営の実践経験`, en: 'Hospitality Expertise', body: `これまでの豊富な運営経験により、「体験空間としての建物」の価値が見えます。「面積 × 単価」だけでは測れない独自の視点を持っています。` },
     { n: '03', title: `ブランドと空間の構築力`, en: 'Brand & Space Design', body: `これまでの豊富な実績が示すように、普通の建物を物語とファンを持ち、プレミアムを生むブランド空間へと変貌させます。` },
-    { n: '04', title: `国際的な顧客ネットワーク`, en: 'Global Customer Network', body: `世界中の旅人・学生・投資家にサービスを提供してきました。私たちは生まれながらに国際的なチームです。さらに国内の建築士や司法書士、行政書士、税理士、弁護士等といった各分野の専門家とも強固なネットワークを構築。物件の空間設計からクロスボーダーの権利登記、税務、法務まで、国境を越えた複雑な手続きをワンストップでサポートします。` },
+    { n: '04', title: `国際的な顧客ネットワーク`, en: 'Global Network & Expert Alliance', body: `世界中の旅人・学生・投資家にサービスを提供してきました。私たちは生まれながらに国際的なチームです。さらに国内の建築士や司法書士、行政書士、税理士、弁護士等といった各分野の専門家とも強固なネットワークを構築。物件の空間設計からクロスボーダーの権利登記、税務、法務まで、国境を越えた複雑な手続きをワンストップでサポートします。` },
   ],
   partnership: {
     philosophy: {
@@ -117,7 +117,7 @@ const ja = {
     bordersTitle: `私たちが越える五つの境界`, bordersSubtitle: `日本の不動産業界は、いまも五つの見えない「境界」に隔てられています。`,
     valueTeaserTitle: `資産ライフサイクル全体の価値マネジメント`, valueTeaserSubtitle: `Discover から Exit まで、お客様の歩む一歩一歩に寄り添う——それが事業における「Cross the Borders」の本当の意味です。`, valueTeaserLink: `バリューチェーン全体を見る →`,
     homeCtaTitle: `ともに、新たな境界へ`, homeCtaSubtitle: `土地オーナー様、投資家様、そしてパートナーシップをご検討中の方まで、まずはお気軽にご相談ください。`, homeCtaButton: `お問い合わせ`,
-    aboutEyebrow1: `01 · ブランド哲学`, aboutTitle1: `CROSSBORDERS の意味`, aboutIntro1: `"Cross the Borders" ——境界を越え、新たな価値を。私たちの社名は単なる名称ではなく、一つの確固たる思想です。現在の日本の不動産業界は、いまなお五つの見えない「境界」によって隔てられていると、私たちは捉えています。`,
+    aboutEyebrow1: `01 · ブランド哲学`, aboutTitle1: `CROSSBORDERS の意味`, aboutIntro1: `"Cross the Borders" ——境界を越え、新たな価値を。\n私たちの社名は単なる名称ではなく、一つの確固たる思想です。現在の日本の不動産業界は、いまなお五つの見えない「境界」によって隔てられていると、私たちは捉えています。`,
     aboutEyebrow2: `02 · 私たちの歩み`, aboutTitle2: `CROSSBORDERS のこれまで`,
     valueEyebrow: `03 · 私たちの価値創造`, valueTitle: `資産ライフサイクル全体の価値マネジメント`, valueIntro: `従来の不動産会社が行うのは「売買仲介」だけ。私たちはすべてのサービスを、バラバラのメニューではなく一本のバリューチェーンに統合します。`,
     matrixTitle: `私たちの差別化`, matrixSubtitle: `不動産会社、運営会社、コンサルティング会社は数あれど、この三つを兼ね備える会社はごくわずかです。`, matrixCapHeader: `能力`,
@@ -221,7 +221,7 @@ const zh = {
     { n: '01', title: `多语言服务能力`, en: 'Multilingual Service', body: `日英中三语服务。不仅「能说」，更「能用三种文化的视角理解客户」。` },
     { n: '02', title: `住宿运营的实战经验`, en: 'Hospitality Expertise', body: `依托我们自身的住宿运营经验，我们能看到「房子作为体验空间」的价值，而不只是「面积 × 单价」。` },
     { n: '03', title: `品牌与空间的打造力`, en: 'Brand & Space Design', body: `集团的实际业绩证明：我们能把一栋普通建筑，变成有故事、有粉丝、能产生溢价的品牌空间。` },
-    { n: '04', title: `国际化的客户网络`, en: 'Global Customer Network', body: `我们服务过来自全球的旅行者、学生与投资人，天生具备国际化基因。` },
+    { n: '04', title: `国际化的客户网络`, en: 'Global Network & Expert Alliance', body: `我们服务过来自全球的旅行者、学生与投资人，天生具备国际化基因。` },
   ],
   partnership: {
     philosophy: {
@@ -344,7 +344,7 @@ const en = {
     { n: '01', title: `Multilingual capability`, en: 'Multilingual Service', body: `Trilingual in JP, EN and CN. Not just "able to speak," but "able to understand clients through three cultural lenses."` },
     { n: '02', title: `Hands-on hospitality experience`, en: 'Hospitality Expertise', body: `With our own hands-on operating experience, we see a building's value "as an experiential space" — not merely "area × unit price."` },
     { n: '03', title: `Brand & space creation`, en: 'Brand & Space Design', body: `As the group has proven, we can turn an ordinary building into a branded space with a story, fans and a premium.` },
-    { n: '04', title: `Global customer network`, en: 'Global Customer Network', body: `We have served travelers, students and investors from around the world. We are international by nature.` },
+    { n: '04', title: `Global customer network`, en: 'Global Network & Expert Alliance', body: `We have served travelers, students and investors from around the world. We are international by nature.` },
   ],
   partnership: {
     philosophy: {

@@ -27,7 +27,7 @@ export default function About() {
           <h1 className="mt-4 text-4xl font-bold tracking-tight text-ink md:text-5xl">
             {ui.aboutTitle1}
           </h1>
-          <p className="mt-6 text-lg leading-relaxed text-ink-soft">{ui.aboutIntro1}</p>
+          <p className="mt-6 whitespace-pre-line text-lg leading-relaxed text-ink-soft">{ui.aboutIntro1}</p>
         </div>
       </section>
 
