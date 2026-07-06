@@ -78,7 +78,7 @@ export default function About() {
           <p className="mt-3 text-xs text-ink-soft">{metrics.note}</p>
 
           {/* Closing statement */}
-          <p className="mx-auto mt-14 max-w-3xl text-center text-lg font-medium leading-relaxed text-ink md:text-xl">
+          <p className="mx-auto mt-14 max-w-3xl whitespace-pre-line text-center text-lg font-medium leading-relaxed text-ink md:text-xl">
             {journey.closing}
           </p>
         </div>
