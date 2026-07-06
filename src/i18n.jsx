@@ -20,7 +20,7 @@ const ja = {
   site: {
     brand: CB,
     brandFull: 'CROSSBORDERS CO., LTD.',
-    tagline: `境界を越え、新たな価値を創る`,
+    tagline: `境界を越え、価値を創る`,
     taglineEn: `Cross the Borders, Create the Value.`,
     email: 'contact@crossborders.jp',
     phone: '050-1722-7286',
@@ -35,11 +35,11 @@ const ja = {
   ],
   hero: {
     eyebrow: 'CROSSBORDERS CO., LTD.',
-    title: `境界を越え、\n新たな価値を創る。`,
+    title: `境界を越え、\n価値を創る。`,
     titleEn: `Cross the Borders, Create the Value.`,
     subtitle: `私たちは「ただの不動産会社」ではありません。\nすべての工程において新たな価値創造を求めるお客様のために存在する、パートナーです。`,
     primaryCta: { label: `お問い合わせ`, to: '/contact' },
-    secondaryCta: { label: `私たちの哲学を見る`, to: '/about' },
+    secondaryCta: { label: `会社の理念`, to: '/about' },
   },
   purpose: {
     quote: `従来の不動産会社が担うのは「売買仲介」という一つの工程だけ。しかしお客様が本当に求めているのは「家を一軒買うこと」ではなく、境界を越えた全工程での価値創造です。`,
@@ -162,7 +162,7 @@ const zh = {
     titleEn: `Cross the Borders, Create the Value.`,
     subtitle: `我们不是「再多一家不动产公司」，而是为「跨越边界、需要全流程价值创造的客户」而存在的公司。`,
     primaryCta: { label: `开始咨询`, to: '/contact' },
-    secondaryCta: { label: `了解我们的哲学`, to: '/about' },
+    secondaryCta: { label: `公司理念`, to: '/about' },
   },
   purpose: {
     quote: `传统不动产公司只承担「买卖中介」一个环节。但客户的真正需求，从来不是「买一栋房子」——而是跨越边界的全流程价值创造。`,
@@ -285,7 +285,7 @@ const en = {
     titleEn: ``,
     subtitle: `We are not "just another real estate company." We exist for clients who need to cross borders and create value across the entire journey.`,
     primaryCta: { label: `Get in touch`, to: '/contact' },
-    secondaryCta: { label: `Our philosophy`, to: '/about' },
+    secondaryCta: { label: `Company philosophy`, to: '/about' },
   },
   purpose: {
     quote: `A traditional real estate company handles only one link — brokerage. But what clients truly need is never "to buy a building"; it is value creation across every border of the journey.`,

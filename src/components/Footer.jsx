@@ -55,9 +55,11 @@ export default function Footer() {
           </ul>
         </div>
 
-        {/* Bottom legal bar */}
-        <div className="mx-auto max-w-6xl px-6 pb-8 text-xs text-white/50">
-          © {new Date().getFullYear()} {site.brandFull} {ui.footerRights}
+        {/* Bottom legal bar — licenses + copyright, centered for balance */}
+        <div className="mx-auto max-w-6xl border-t border-white/10 px-6 py-6 text-center text-xs leading-relaxed text-white/50">
+          <p>宅地建物取引業登録　東京都知事（1）第11770号</p>
+          <p>住宅宿泊管理業者登録　国土交通大臣（01）第04198号</p>
+          <p className="mt-3">© {new Date().getFullYear()} {site.brandFull} {ui.footerRights}</p>
         </div>
       </div>
     </footer>
