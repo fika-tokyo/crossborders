@@ -42,6 +42,11 @@ html:lang(zh) body {
     "Microsoft JhengHei", sans-serif;
 }
 
+/* Chinese-only: widen a couple of blocks so the (shorter) Chinese copy fits on
+   one line. Scoped to :lang(zh) so Japanese / English layout is untouched. */
+html:lang(zh) .cta-sub { max-width: 42rem; }
+html:lang(zh) .journey-closing { max-width: 54rem; }
+
 /* Subtle entrance animation utility */
 @keyframes rise {
   from { opacity: 0; transform: translateY(16px); }

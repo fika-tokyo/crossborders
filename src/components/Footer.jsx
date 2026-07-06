@@ -27,7 +27,7 @@ export default function Footer() {
             <h2 className="text-3xl font-bold tracking-tight [text-shadow:0_2px_12px_rgba(11,20,30,0.5)] md:text-4xl">
               {ui.homeCtaTitle}
             </h2>
-            <p className="mx-auto mt-4 max-w-lg text-white/85 [text-shadow:0_1px_8px_rgba(11,20,30,0.5)]">
+            <p className="cta-sub mx-auto mt-4 max-w-lg text-white/85 [text-shadow:0_1px_8px_rgba(11,20,30,0.5)]">
               {ui.homeCtaSubtitle}
             </p>
             <Link
