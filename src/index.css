@@ -17,10 +17,10 @@
   --color-line: #e3e7ec;       /* hairline borders */
   --color-blush: #fdeae3;      /* soft coral tint (from the brand cover) */
 
-  /* Latin from Inter, then one consistent CJK face (default ja-leaning).
-     A per-language override below keeps zh in a single Chinese face. */
-  --font-sans: "Inter", "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Yu Gothic",
-    "Yu Gothic UI", "Meiryo", "PingFang SC", "Microsoft YaHei", sans-serif;
+  /* Default (ja / en) — restored to the original stack the client preferred.
+     Chinese uses its own consistent stack via the html:lang(zh) override below. */
+  --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI",
+    "Helvetica Neue", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
 }
 
 html {
