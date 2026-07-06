@@ -1,10 +1,5 @@
 import { Languages, Globe, Layers, Clock, Building2 } from 'lucide-react'
 import { useLang } from '../i18n.jsx'
-import history1 from '../assets/history-1.png'
-import history2 from '../assets/history-2.png'
-import history3 from '../assets/history-3.png'
-
-const historyPhotos = [history1, history2, history3]
 
 const borderIcons = {
   language: Languages,
@@ -56,7 +51,7 @@ export default function About() {
           <h2 className="mt-4 text-3xl font-bold tracking-tight text-ink md:text-4xl">
             {ui.aboutTitle2}
           </h2>
-          <p className="mt-4 max-w-2xl text-ink-soft">{journey.intro}</p>
+          <p className="mt-4 text-ink-soft">{journey.intro}</p>
 
           {/* Timeline */}
           <ol className="mt-10 space-y-5 border-l border-line pl-6">
@@ -82,18 +77,10 @@ export default function About() {
           </div>
           <p className="mt-3 text-xs text-ink-soft">{metrics.note}</p>
 
-          {/* Photo strip */}
-          <div className="mt-10 grid grid-cols-3 gap-3">
-            {historyPhotos.map((src, i) => (
-              <img
-                key={i}
-                src={src}
-                alt=""
-                loading="lazy"
-                className="aspect-[4/3] w-full rounded-xl object-cover"
-              />
-            ))}
-          </div>
+          {/* Closing statement */}
+          <p className="mx-auto mt-14 max-w-3xl text-center text-lg font-medium leading-relaxed text-ink md:text-xl">
+            {journey.closing}
+          </p>
         </div>
       </section>
     </>

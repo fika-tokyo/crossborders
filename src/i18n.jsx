@@ -62,8 +62,10 @@ const ja = {
       { year: '2014', title: `民泊運営事業を開始` },
       { year: '2016', title: `株式会社クロスボーダーズ設立。麻布十番の一棟物件の運営を開始` },
       { year: '2018', title: `貸しスペース（会議・イベント）事業を開始` },
+      { year: '2025', title: `宅地建物取引業の登録を取得` },
       { year: '2026', title: `ブランドを刷新し、越境不動産の資産価値創造に注力` },
     ],
+    closing: `長年にわたる民泊運営の経験が私たちに教えてくれたのは、どれほど条件の異なる物件であっても、その価値を最大限に引き出せるということです。`,
   },
   metrics: {
     note: `※ 2018年時点の実績`,
@@ -185,8 +187,10 @@ const zh = {
       { year: '2014', title: `民泊（住宿）运营事业起步` },
       { year: '2016', title: `株式会社 CROSSBORDERS 成立；麻布十番一栋物件运营开始` },
       { year: '2018', title: `拓展贷し空间（会议·活动空间）事业` },
+      { year: '2025', title: `取得日本「宅地建物取引业」登录（不动产交易牌照）` },
       { year: '2026', title: `品牌焕新，聚焦跨境不动产资产价值创造` },
     ],
+    closing: `多年的民宿运营经验让我们懂得：无论是多么不同的物件，我们都能把它的价值最大化。`,
   },
   metrics: {
     note: `※ 数据为 2018 年时点`,
@@ -308,8 +312,10 @@ const en = {
       { year: '2014', title: `Vacation-rental operations begin` },
       { year: '2016', title: `CROSSBORDERS CO., LTD. founded; begins operating a whole-building property in Azabu-Juban` },
       { year: '2018', title: `Expands into rental meeting & event spaces` },
+      { year: '2025', title: `Obtains a Japanese real-estate brokerage license` },
       { year: '2026', title: `Rebrands to focus on cross-border real-estate value creation` },
     ],
+    closing: `Years of vacation-rental operations taught us one thing: however different a property may be, we can maximize its value.`,
   },
   metrics: {
     note: `* Figures as of 2018`,
