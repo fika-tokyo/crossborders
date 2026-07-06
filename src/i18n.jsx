@@ -315,13 +315,13 @@ const en = {
       { year: '2025', title: `Obtains a Japanese real-estate brokerage license` },
       { year: '2026', title: `Rebrands to focus on cross-border real-estate value creation` },
     ],
-    closing: `Years of vacation-rental operations taught us one thing: however different a property may be, we can maximize its value.`,
+    closing: `Years of vacation-rental operations taught us one thing:\nhowever different a property may be, we can maximize its value.`,
   },
   metrics: {
     note: `* Figures as of 2018`,
     items: [
       { value: `4+ yrs`, label: `Operating track record` },
-      { value: `Tokyo 15 · Kyoto 19`, label: `Properties & rooms operated` },
+      { value: `Tokyo 15 ·\nKyoto 19`, label: `Properties & rooms operated` },
       { value: `Thousands`, label: `Guest groups hosted` },
       { value: `Multiple`, label: `Airbnb Superhost awards` },
     ],

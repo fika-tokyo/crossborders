@@ -70,7 +70,7 @@ export default function About() {
           <div className="mt-12 grid grid-cols-2 gap-px overflow-hidden rounded-2xl border border-line md:grid-cols-4">
             {metrics.items.map((s) => (
               <div key={s.label} className="bg-white p-6">
-                <p className="text-2xl font-bold tracking-tight text-ink">{s.value}</p>
+                <p className="whitespace-pre-line text-2xl font-bold tracking-tight text-ink">{s.value}</p>
                 <p className="mt-1.5 text-xs leading-relaxed text-ink-soft">{s.label}</p>
               </div>
             ))}
