@@ -47,6 +47,11 @@ html:lang(zh) body {
 html:lang(zh) .cta-sub { max-width: 42rem; }
 html:lang(zh) .journey-closing { max-width: 54rem; }
 
+/* English-only: widen the hero block a touch so the subtitle sentence fits one
+   line, and cap the positioning statement so both sentences fit one line each. */
+html:lang(en) .hero-block { max-width: 46rem; }
+html:lang(en) .positioning { font-size: 1.375rem; line-height: 1.55; }
+
 /* Subtle entrance animation utility */
 @keyframes rise {
   from { opacity: 0; transform: translateY(16px); }

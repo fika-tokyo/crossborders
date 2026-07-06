@@ -35,7 +35,7 @@ export default function About() {
               <div key={b.key} className="flex gap-6 bg-white p-7 transition hover:bg-mist">
                 {Icon && <Icon className="h-7 w-7 shrink-0 text-red" strokeWidth={1.75} />}
                 <div>
-                  <h3 className="text-lg font-semibold text-ink">{b.title}</h3>
+                  <h3 className="text-lg font-semibold uppercase text-ink">{b.title}</h3>
                   <p className="mt-1.5 text-sm leading-relaxed text-ink-soft">{b.body}</p>
                 </div>
               </div>

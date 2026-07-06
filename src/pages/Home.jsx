@@ -32,7 +32,7 @@ export default function Home() {
         <div className="absolute inset-0 bg-gradient-to-r from-navy/15 via-navy/30 to-navy/65" />
 
         <div className="relative mx-auto flex max-w-6xl px-6 py-28 md:py-40">
-          <div className="max-w-2xl md:ml-auto md:text-right">
+          <div className="hero-block max-w-2xl md:ml-auto md:text-right">
             <h1 className="animate-rise delay-1 mt-10 whitespace-pre-line text-5xl font-bold leading-[1.05] tracking-tight [text-shadow:0_2px_12px_rgba(11,20,30,0.45)] md:text-7xl">
               {hero.title}
             </h1>
@@ -64,7 +64,7 @@ export default function Home() {
 
       {/* ---------------- One-line positioning ---------------- */}
       <section className="mx-auto max-w-5xl px-6 py-20 text-center md:py-28">
-        <p className="whitespace-pre-line text-2xl font-medium leading-relaxed text-ink md:text-3xl">
+        <p className="positioning whitespace-pre-line text-2xl font-medium leading-relaxed text-ink md:text-3xl">
           {ui.homePositioning}
         </p>
       </section>

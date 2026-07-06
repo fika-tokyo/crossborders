@@ -230,7 +230,7 @@ const zh = {
   partnership: {
     philosophy: {
       title: `长期同行，而非一次交易`,
-      body: `我们不追求「一次性的交易」，而追求「跨越资产生命周期的长期同行」。客户的资产，需要在 10 年、20 年的周期中持续创造价值。我们要成为客户长期的「资产伙伴」，而不仅仅是「中介」。`,
+      body: `我们不追求「一次性的交易」，而追求「跨越资产生命周期的长期同行」。\n客户的资产，需要在 10 年、20 年的周期中持续创造价值。\n我们要成为客户长期的「资产伙伴」，而不仅仅是「中介」。`,
     },
     types: [
       { title: `房源合作`, en: 'Property Partnership', target: `合作企业、土地建物业主`, service: `为持有房产的伙伴提供：海外投资人网络、退出战略、运营建议与价值提升方案，将贵司的房产送达全球的投资人与客户。`, value: `为您的房产找到「不只是买家，而是真正能让它发挥最大价值的客户」。` },
@@ -369,7 +369,7 @@ const en = {
     bordersTitle: `The five borders we cross`, bordersSubtitle: `Japan's real-estate industry is still divided by five invisible "borders."`,
     valueTeaserTitle: `Value management across the asset lifecycle`, valueTeaserSubtitle: `From Discover to Exit, we accompany clients every step — this is what "Cross the Borders" truly means in business.`, valueTeaserLink: `See the full value chain →`,
     homeCtaTitle: `Together, toward new borders`, homeCtaSubtitle: `Whether you're a landowner, an investor, or considering a partnership, feel free to reach out anytime.`, homeCtaButton: `Get in touch`,
-    aboutEyebrow1: `01 · Brand philosophy`, aboutTitle1: `What CROSSBORDERS means`, aboutIntro1: `"Cross the Borders" — cross boundaries, create new value.\nOur name is not merely a name but a firm philosophy. We believe Japan's real-estate industry is, even now, divided by five invisible "borders."`,
+    aboutEyebrow1: `01 · Brand philosophy`, aboutTitle1: `What CROSSBORDERS means`, aboutIntro1: `"Cross the Borders" — cross boundaries, create new value.\nOur name is not merely a name but a firm philosophy.\nWe believe Japan's real-estate industry is, even now, divided by five invisible "borders."`,
     aboutEyebrow2: `02 · Our journey`, aboutTitle2: `The CROSSBORDERS story`,
     valueEyebrow: `03 · How we create value`, valueTitle: `Value management across the asset lifecycle`, valueIntro: `A traditional agency only does "brokerage." We integrate every service into one value chain, not scattered offerings.`,
     matrixTitle: `How we differ`, matrixSubtitle: `There are plenty of agencies, operators and consultancies — but very few combine all three.`, matrixCapHeader: `Capability`,
