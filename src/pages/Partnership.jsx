@@ -14,7 +14,7 @@ export default function Partnership() {
           <h1 className="mt-6 text-4xl font-bold tracking-tight text-ink md:text-5xl">
             {partnership.philosophy.title}
           </h1>
-          <p className="mt-6 max-w-2xl text-lg leading-relaxed text-ink-soft">
+          <p className="mt-6 whitespace-pre-line text-lg leading-relaxed text-ink-soft">
             {partnership.philosophy.body}
           </p>
         </div>
