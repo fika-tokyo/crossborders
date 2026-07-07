@@ -21,7 +21,7 @@ const ja = {
     brand: CB,
     brandFull: 'CROSSBORDERS CO., LTD.',
     tagline: `境界を越え、価値を創る`,
-    taglineEn: `Cross the Borders, Create the Value.`,
+    taglineEn: `Cross Borders, Create Value.`,
     email: 'contact@crossborders.jp',
     phone: '050-1722-7286',
     address: `東京都 目黒区`,
@@ -36,7 +36,7 @@ const ja = {
   hero: {
     eyebrow: 'CROSSBORDERS CO., LTD.',
     title: `境界を越え、\n価値を創る。`,
-    titleEn: `Cross the Borders, Create the Value.`,
+    titleEn: `Cross Borders, Create Value.`,
     subtitle: `私たちは「ただの不動産会社」ではありません。\nすべての工程において新たな価値創造を求めるお客様のために存在する、パートナーです。`,
     primaryCta: { label: `お問い合わせ`, to: '/contact' },
     secondaryCta: { label: `会社の理念`, to: '/about' },
@@ -146,7 +146,7 @@ const zh = {
     brand: CB,
     brandFull: 'CROSSBORDERS CO., LTD.',
     tagline: `跨越边界，创造价值`,
-    taglineEn: `Cross the Borders, Create the Value.`,
+    taglineEn: `Cross Borders, Create Value.`,
     email: 'contact@crossborders.jp',
     phone: '050-1722-7286',
     address: '东京都 目黑区',
@@ -161,7 +161,7 @@ const zh = {
   hero: {
     eyebrow: 'CROSSBORDERS CO., LTD.',
     title: `跨越边界\n创造价值`,
-    titleEn: `Cross the Borders, Create the Value.`,
+    titleEn: `Cross Borders, Create Value.`,
     subtitle: `我们不是「一家普通的不动产公司」，\n而是为在每一个环节都追求价值创造的客户而存在的伙伴`,
     primaryCta: { label: `开始咨询`, to: '/contact' },
     secondaryCta: { label: `公司理念`, to: '/about' },
@@ -270,7 +270,7 @@ const en = {
   site: {
     brand: CB,
     brandFull: 'CROSSBORDERS CO., LTD.',
-    tagline: `Cross the Borders, Create the Value.`,
+    tagline: `Cross Borders, Create Value.`,
     taglineEn: ``,
     email: 'contact@crossborders.jp',
     phone: '050-1722-7286',
@@ -285,7 +285,7 @@ const en = {
   ],
   hero: {
     eyebrow: 'CROSSBORDERS CO., LTD.',
-    title: `Cross the Borders,\nCreate the Value.`,
+    title: `Cross Borders,\nCreate Value.`,
     titleEn: ``,
     subtitle: `We are not "just another real estate company."\nWe are the partner for clients determined to create value at every stage.`,
     primaryCta: { label: `Get in touch`, to: '/contact' },
