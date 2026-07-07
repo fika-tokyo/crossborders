@@ -35,7 +35,7 @@ const ja = {
   ],
   hero: {
     eyebrow: 'CROSSBORDERS CO., LTD.',
-    title: `境界を越え、\n価値を創る。`,
+    title: `境界を越え\n価値を創る`,
     titleEn: `Cross Borders, Create Value.`,
     subtitle: `私たちは「ただの不動産会社」ではありません。\nすべての工程において新たな価値創造を求めるお客様のために存在する、パートナーです。`,
     primaryCta: { label: `お問い合わせ`, to: '/contact' },
@@ -162,7 +162,7 @@ const zh = {
     eyebrow: 'CROSSBORDERS CO., LTD.',
     title: `跨越边界\n创造价值`,
     titleEn: `Cross Borders, Create Value.`,
-    subtitle: `我们不是「一家普通的不动产公司」，\n而是为在每一个环节都追求价值创造的客户而存在的伙伴`,
+    subtitle: `我们不是「一家普通的不动产公司」，\n而是为在每一个环节都追求价值创造的客户而存在的伙伴。`,
     primaryCta: { label: `开始咨询`, to: '/contact' },
     secondaryCta: { label: `公司理念`, to: '/about' },
   },
@@ -285,7 +285,7 @@ const en = {
   ],
   hero: {
     eyebrow: 'CROSSBORDERS CO., LTD.',
-    title: `Cross Borders,\nCreate Value.`,
+    title: `Cross Borders\nCreate Value`,
     titleEn: ``,
     subtitle: `We are not "just another real estate company."\nWe are the partner for clients determined to create value at every stage.`,
     primaryCta: { label: `Get in touch`, to: '/contact' },
