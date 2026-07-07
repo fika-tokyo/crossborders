@@ -33,8 +33,8 @@ export default function Navbar() {
     <header className="sticky top-0 z-50 border-b border-line bg-white/85 backdrop-blur">
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-6">
         <Link to="/" className="flex items-center gap-2.5" onClick={() => setOpen(false)}>
-          <LogoEmblem className="h-10 w-12 shrink-0" />
-          <Wordmark className="text-base" />
+          <LogoEmblem className="h-11 w-auto shrink-0" />
+          <Wordmark className="h-[15px] w-auto" />
         </Link>
 
         {/* Desktop nav — omit the Contact text link (the button below covers it) */}
