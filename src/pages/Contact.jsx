@@ -2,6 +2,11 @@ import { useState } from 'react'
 import { useNavigate, useLocation } from 'react-router-dom'
 import { useLang } from '../i18n.jsx'
 
+// Web3Forms access key. Get one (free) at https://web3forms.com using the email
+// that should receive inquiries, then paste it here. Safe to keep in the repo —
+// the key only allows sending to that pre-registered address.
+const WEB3FORMS_ACCESS_KEY = 'YOUR_ACCESS_KEY_HERE'
+
 export default function Contact() {
   const navigate = useNavigate()
   const { state } = useLocation()
@@ -12,6 +17,7 @@ export default function Contact() {
   const initialTopic = contactTopics.includes(state?.topic) ? state.topic : contactTopics[0]
   const [form, setForm] = useState({ name: '', email: '', company: '', topic: initialTopic, message: '' })
   const [errors, setErrors] = useState({})
+  const [submitting, setSubmitting] = useState(false)
 
   function update(field, value) {
     setForm((f) => ({ ...f, [field]: value }))
@@ -26,15 +32,48 @@ export default function Contact() {
     return next
   }
 
-  function handleSubmit(e) {
+  async function handleSubmit(e) {
     e.preventDefault()
     const next = validate()
     if (Object.keys(next).length) {
       setErrors(next)
       return
     }
-    // TODO: connect to a real backend / email service here.
-    navigate('/thank-you', { state: { name: form.name } })
+
+    // Not configured yet — keep the old behavior so the live form never errors.
+    if (WEB3FORMS_ACCESS_KEY === 'YOUR_ACCESS_KEY_HERE') {
+      navigate('/thank-you', { state: { name: form.name } })
+      return
+    }
+
+    setSubmitting(true)
+    try {
+      const res = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify({
+          access_key: WEB3FORMS_ACCESS_KEY,
+          subject: `New inquiry from ${form.name} — CROSSBORDERS`,
+          from_name: 'CROSSBORDERS Website',
+          replyto: form.email,
+          name: form.name,
+          email: form.email,
+          company: form.company,
+          topic: form.topic,
+          message: form.message,
+        }),
+      })
+      const data = await res.json()
+      if (data.success) {
+        navigate('/thank-you', { state: { name: form.name } })
+      } else {
+        setErrors({ submit: ui.formError })
+      }
+    } catch {
+      setErrors({ submit: ui.formError })
+    } finally {
+      setSubmitting(false)
+    }
   }
 
   const fieldClass = (field) =>
@@ -122,11 +161,14 @@ export default function Contact() {
               {errors.message && <p className="mt-1 text-xs text-red-500">{errors.message}</p>}
             </div>
 
+            {errors.submit && <p className="text-sm text-red-500">{errors.submit}</p>}
+
             <button
               type="submit"
-              className="w-full rounded-full bg-navy py-3 text-sm font-semibold text-white transition-colors hover:bg-red-dark"
+              disabled={submitting}
+              className="w-full rounded-full bg-navy py-3 text-sm font-semibold text-white transition-colors hover:bg-red-dark disabled:cursor-not-allowed disabled:opacity-60"
             >
-              {ui.formSubmit}
+              {submitting ? ui.formSending : ui.formSubmit}
             </button>
           </div>
         </form>
