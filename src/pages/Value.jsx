@@ -11,7 +11,7 @@ export default function Value() {
       <section className="bg-mist py-20">
         <div className="mx-auto max-w-5xl px-6">
           <p className="text-sm font-semibold uppercase tracking-[0.2em] text-red-dark">{ui.valueEyebrow}</p>
-          <h1 className="mt-4 text-4xl font-bold tracking-tight text-ink md:text-5xl">
+          <h1 className="value-title mt-4 text-4xl font-bold tracking-tight text-ink md:text-5xl">
             {ui.valueTitle}
           </h1>
           <p className="mt-6 text-lg leading-relaxed text-ink-soft">{ui.valueIntro}</p>

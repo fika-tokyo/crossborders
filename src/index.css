@@ -51,6 +51,8 @@ html:lang(zh) .journey-closing { max-width: 54rem; }
    line, and cap the positioning statement so both sentences fit one line each. */
 html:lang(en) .hero-block { max-width: 46rem; }
 html:lang(en) .positioning { font-size: 1.375rem; line-height: 1.55; }
+/* Keep the (longer) English Value-page title on a single line. */
+@media (min-width: 768px) { html:lang(en) .value-title { font-size: 2.5rem; } }
 
 /* Subtle entrance animation utility */
 @keyframes rise {
