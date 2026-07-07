@@ -397,12 +397,10 @@ const LangContext = createContext(null)
 export function LangProvider({ children }) {
   const [lang, setLang] = useState(() => {
     try {
+      // Remember a visitor's explicit choice, but always default to Japanese on
+      // a first visit (no auto-detect by browser language).
       const saved = localStorage.getItem('cb-lang')
       if (saved && dict[saved]) return saved
-      // First visit: default by the visitor's browser language.
-      const nav = (navigator.language || '').slice(0, 2).toLowerCase()
-      if (nav === 'zh') return 'zh'
-      if (nav === 'en') return 'en'
     } catch (e) { /* ignore */ }
     return 'ja'
   })
