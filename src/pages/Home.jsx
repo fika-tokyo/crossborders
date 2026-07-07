@@ -1,6 +1,7 @@
 import { Fragment } from 'react'
 import { Link } from 'react-router-dom'
 import { useLang } from '../i18n.jsx'
+import { StepIcon } from '../components/StepIcons.jsx'
 import heroBg from '../assets/hero-tokyo.jpg'
 import imgAbout from '../assets/cross-partner.jpg'
 import imgValue from '../assets/cross-value.jpg'
@@ -69,27 +70,37 @@ export default function Home() {
         </p>
       </section>
 
-      {/* ---------------- Value chain — enlarged, above the cards ---------------- */}
-      <section className="mx-auto max-w-5xl px-6 pb-16 text-center md:pb-20">
-        <div className="flex flex-col items-center gap-3 md:flex-row md:justify-center md:gap-5">
+      {/* ---------------- Value chain — illustrated process ---------------- */}
+      <section className="mx-auto max-w-6xl px-6 py-20">
+        <div className="flex flex-col items-center gap-10 lg:flex-row lg:items-start lg:justify-center lg:gap-2">
           {valueChain.map((v, i) => (
             <Fragment key={v.en}>
-              <div className="px-2">
-                <span className="text-sm font-semibold tracking-widest text-red-dark">{v.en}</span>
-                <p className="mt-1 text-xl font-bold text-ink md:text-2xl">{v.cn || v.en}</p>
+              <div className="flex max-w-[220px] flex-col items-center px-3 text-center">
+                <StepIcon name={v.en} className="h-20 w-20 text-ink" />
+                <p className="mt-5 text-[11px] font-semibold uppercase tracking-[0.18em] text-red-dark">
+                  {v.en}
+                </p>
+                <h3 className="mt-1 text-lg font-bold text-ink">{v.cn || v.title}</h3>
+                {v.cn && <p className="mt-2 text-sm leading-relaxed text-ink-soft">{v.title}</p>}
               </div>
               {i < valueChain.length - 1 && (
-                <span className="self-center text-2xl font-bold text-red md:text-3xl">
-                  <span className="md:hidden">↓</span>
-                  <span className="hidden md:inline">→</span>
-                </span>
+                <svg
+                  className="hidden shrink-0 text-ink-soft/45 lg:mt-10 lg:block"
+                  width="30" height="16" viewBox="0 0 30 16" fill="none"
+                  stroke="currentColor" strokeWidth="1.4" strokeLinecap="round"
+                  strokeLinejoin="round" aria-hidden="true"
+                >
+                  <path d="M1 8h27M23 3l5 5-5 5" />
+                </svg>
               )}
             </Fragment>
           ))}
         </div>
-        <Link to="/value" className="mt-10 inline-block text-base font-semibold text-red-dark hover:underline">
-          {ui.valueTeaserLink}
-        </Link>
+        <div className="mt-14 text-center">
+          <Link to="/value" className="inline-block text-base font-semibold text-red-dark hover:underline">
+            {ui.valueTeaserLink}
+          </Link>
+        </div>
       </section>
 
       {/* ---------------- Three portal cards ---------------- */}
