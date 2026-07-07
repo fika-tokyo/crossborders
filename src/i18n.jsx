@@ -270,7 +270,7 @@ const en = {
   site: {
     brand: CB,
     brandFull: 'CROSSBORDERS CO., LTD.',
-    tagline: `Cross Borders, Create Value.`,
+    tagline: `Cross Borders,\nCreate Value.`,
     taglineEn: ``,
     email: 'contact@crossborders.jp',
     phone: '050-1722-7286',

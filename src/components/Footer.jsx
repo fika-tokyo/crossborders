@@ -42,7 +42,7 @@ export default function Footer() {
         {/* Tagline (left) + contact (right) */}
         <div className={`mx-auto flex max-w-6xl flex-col gap-8 px-6 pb-10 md:flex-row md:items-center md:justify-between ${hideCta ? 'pt-16' : ''}`}>
           <div>
-            <p className="text-lg font-semibold text-white">{site.tagline}</p>
+            <p className="whitespace-pre-line text-lg font-semibold leading-snug text-white">{site.tagline}</p>
             {site.taglineEn && (
               <p className="mt-1 text-sm text-white/70">{site.taglineEn}</p>
             )}
