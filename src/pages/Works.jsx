@@ -1,5 +1,6 @@
 import { useLang } from '../i18n.jsx'
-import { JAPAN_PATH, TOKYO23_PATH } from '../assets/cases/japanPath.js'
+import { JAPAN_PATH } from '../assets/cases/japanPath.js'
+import { TOKYO_VB, TOKYO_WARDS } from '../assets/cases/tokyoWards.js'
 
 import saleChuo from '../assets/cases/sale-chuo.jpg'
 import saleShibuya from '../assets/cases/sale-shibuya.jpg'
@@ -51,15 +52,15 @@ const MAP_POINTS_WEST = [
   { key: 'osaka', x: 121, y: 236, count: 1, labelX: 50, labelY: 272, ja: '大阪市', en: 'Osaka' },
 ]
 
-/* 東京拡大図の区ポイント(TOKYO23_PATH と同じ投影) */
-const TOKYO_POINTS = [
-  { key: 'nakano',    x: 85,  y: 127, count: 1, labelY: 90,  ja: '中野区',  en: 'Nakano' },
-  { key: 'shinjuku',  x: 115, y: 139, count: 2, labelY: 125, ja: '新宿区',  en: 'Shinjuku' },
-  { key: 'chuo',      x: 166, y: 160, count: 1, labelY: 160, ja: '中央区',  en: 'Chuo' },
-  { key: 'shibuya',   x: 111, y: 172, count: 1, labelY: 195, ja: '渋谷区',  en: 'Shibuya' },
-  { key: 'meguro',    x: 111, y: 187, count: 1, labelY: 230, ja: '目黒区',  en: 'Meguro' },
-  { key: 'shinagawa', x: 135, y: 217, count: 1, labelY: 265, ja: '品川区',  en: 'Shinagawa' },
-]
+/* 案例のある区(コード → 件数)。中心座標は TOKYO_WARDS の実境界から取得。 */
+const TOKYO_CASE = {
+  '13114': 1, // 中野区
+  '13104': 2, // 新宿区
+  '13102': 1, // 中央区
+  '13113': 1, // 渋谷区
+  '13110': 1, // 目黒区
+  '13109': 1, // 品川区
+}
 
 function JapanMap({ lang, w }) {
   const name = (p) => (lang === 'en' ? p.en : p.ja)
@@ -84,7 +85,13 @@ function JapanMap({ lang, w }) {
         <g key={p.key}>
           <line x1={p.x} y1={p.y} x2={266} y2={p.labelY - 3} stroke="#96959A" strokeWidth="0.7" />
           {p.tokyo ? (
-            <circle cx={p.x} cy={p.y} r="4.6" fill="#385988" stroke="#fff" strokeWidth="1.2" />
+            <>
+              <circle className="cb-ping" cx={p.x} cy={p.y} r="4.6" fill="none" stroke="#385988" strokeWidth="1.2">
+                <animate attributeName="r" values="4.6;12" dur="2.2s" repeatCount="indefinite" />
+                <animate attributeName="opacity" values="0.5;0" dur="2.2s" repeatCount="indefinite" />
+              </circle>
+              <circle cx={p.x} cy={p.y} r="4.6" fill="#385988" stroke="#fff" strokeWidth="1.2" />
+            </>
           ) : (
             <circle cx={p.x} cy={p.y} r="3" fill="#E94F5B" stroke="#fff" strokeWidth="1" />
           )}
@@ -102,27 +109,47 @@ function JapanMap({ lang, w }) {
 }
 
 function TokyoInset({ lang, w }) {
-  const name = (p) => (lang === 'en' ? p.en : p.ja)
-  const unit = w.countUnit
+  const name = (wd) => (lang === 'en' ? wd.en : wd.name)
+  const cases = TOKYO_WARDS.filter((wd) => TOKYO_CASE[wd.code])
   return (
-    <svg viewBox="0 0 390 300" className="w-full" role="img" aria-label={w.tokyoTitle}>
-      {/* 東京23区の実形 */}
-      <path d={TOKYO23_PATH} fill="#E4E9F0" stroke="#CBD5E1" strokeWidth="1" strokeLinejoin="round" />
-      <text x="18" y="288" fontSize="9" fill="#96959A" letterSpacing="2">TOKYO 23 WARDS</text>
-      {TOKYO_POINTS.map((p) => (
-        <g key={p.key}>
-          <line x1={p.x} y1={p.y} x2={288} y2={p.labelY - 3} stroke="#96959A" strokeWidth="0.7" />
-          <circle cx={p.x} cy={p.y} r={p.count > 1 ? 5 : 3.6} fill="#E94F5B" stroke="#fff" strokeWidth="1.2" />
-          {p.count > 1 && (
-            <text x={p.x} y={p.y + 2.6} fontSize="7" fontWeight="800" fill="#fff" textAnchor="middle">{p.count}</text>
-          )}
-          <text x={294} y={p.labelY} fontSize="10" fontWeight="700" fill="#3E3A39">
-            {name(p)}
-            <tspan fill="#D83F4B"> {p.count}{unit}</tspan>
-          </text>
-        </g>
-      ))}
-    </svg>
+    <div>
+      <svg viewBox={`0 0 ${TOKYO_VB.w} ${TOKYO_VB.h}`} className="w-full" role="img" aria-label={w.tokyoTitle}>
+        {/* 23区の実境界 */}
+        {TOKYO_WARDS.map((wd, i) => (
+          <path
+            key={wd.code}
+            d={wd.d}
+            className={`cb-map-el cb-ward ${TOKYO_CASE[wd.code] ? 'cb-ward-on' : ''}`}
+            style={{ animationDelay: `${i * 22}ms` }}
+          >
+            <title>{name(wd)}</title>
+          </path>
+        ))}
+        {/* 案例のある区に脈打つピン */}
+        {cases.map((wd, i) => (
+          <g key={wd.code} className="cb-map-el" style={{ animationDelay: `${360 + i * 80}ms` }}>
+            <circle className="cb-ping" cx={wd.cx} cy={wd.cy} r="4" fill="none" stroke="#E94F5B" strokeWidth="1.3">
+              <animate attributeName="r" values="4;12" dur="2s" repeatCount="indefinite" />
+              <animate attributeName="opacity" values="0.5;0" dur="2s" repeatCount="indefinite" />
+            </circle>
+            <circle cx={wd.cx} cy={wd.cy} r={TOKYO_CASE[wd.code] > 1 ? 5 : 3.8} fill="#E94F5B" stroke="#fff" strokeWidth="1.2" />
+            {TOKYO_CASE[wd.code] > 1 && (
+              <text x={wd.cx} y={wd.cy + 2.4} fontSize="6.5" fontWeight="800" fill="#fff" textAnchor="middle">
+                {TOKYO_CASE[wd.code]}
+              </text>
+            )}
+          </g>
+        ))}
+      </svg>
+      <div className="mt-4 flex flex-wrap gap-2">
+        {cases.map((wd) => (
+          <span key={wd.code} className="inline-flex items-center gap-1.5 rounded-full bg-mist px-3 py-1 text-xs font-semibold text-ink">
+            {name(wd)}
+            <span className="text-red-dark">{TOKYO_CASE[wd.code]}{w.countUnit}</span>
+          </span>
+        ))}
+      </div>
+    </div>
   )
 }
 
