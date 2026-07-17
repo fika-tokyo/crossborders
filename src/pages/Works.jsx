@@ -185,25 +185,6 @@ export default function Works() {
             <JapanRegions lang={lang} w={w} go={go} />
           </div>
         </div>
-
-        {/* 地域カード(クリックで詳細ページへ) */}
-        <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          {REGIONS.map((r) => (
-            <button
-              key={r.key}
-              onClick={() => go(r.key)}
-              className="group rounded-2xl border border-line bg-white p-5 text-left transition hover:-translate-y-0.5 hover:border-red hover:shadow-md"
-            >
-              <p className="text-lg font-bold text-ink">{regionName(r, lang)}</p>
-              <p className="mt-1 text-sm text-ink-soft">
-                {countByRegion[r.key]}{w.countUnit}
-              </p>
-              <span className="mt-3 inline-block text-sm font-semibold text-red-dark group-hover:underline">
-                {tr(UI.details, lang)}
-              </span>
-            </button>
-          ))}
-        </div>
       </section>
     </>
   )
