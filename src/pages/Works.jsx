@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useLang } from '../i18n.jsx'
 import { JAPAN_PATH } from '../assets/cases/japanPath.js'
@@ -49,8 +50,13 @@ export const REGIONS = [
 export const countByRegion = CASES.reduce((m, c) => ((m[c.region] = (m[c.region] || 0) + 1), m), {})
 
 export const UI = {
-  details: { ja: '詳細を見る →', zh: '查看详情 →', tw: '查看詳情 →', en: 'View details →' },
-  back:    { ja: '← 実績マップへ戻る', zh: '← 返回实绩地图', tw: '← 返回實績地圖', en: '← Back to map' },
+  details:   { ja: '詳細を見る →', zh: '查看详情 →', tw: '查看詳情 →', en: 'View details →' },
+  back:      { ja: '← 実績マップへ戻る', zh: '← 返回实绩地图', tw: '← 返回實績地圖', en: '← Back to map' },
+  tabEstate: { ja: '不動産成約事例', zh: '不动产成约事例', tw: '不動產成交案例', en: 'Real-estate deals' },
+  tabHotel:  { ja: 'ホテル運営実績', zh: '酒店运营实绩', tw: '酒店運營實績', en: 'Hotels operated' },
+  hotelTitle:{ ja: '運営中のホテル', zh: '运营中的酒店', tw: '營運中的酒店', en: 'Hotels in operation' },
+  hotelSub:  { ja: '東京・文京区／江東区で運営中', zh: '东京・文京区／江东区运营中', tw: '東京・文京區／江東區營運中', en: 'Operating in Bunkyo & Koto, Tokyo' },
+  photoTBD:  { ja: '写真準備中', zh: '照片准备中', tw: '照片準備中', en: 'Photo coming' },
 }
 export const tr = (obj, lang) => obj[lang] || obj.ja
 export const regionName = (r, lang) => tr({ ja: r.ja, zh: r.zh, tw: r.tw, en: r.en }, lang)
@@ -65,8 +71,14 @@ const TOKYO_WARD_CASES = {
   '13109': { img: saleShinagawa, count: 1 },
 }
 
+/* 運営中のホテル(コード → 写真)。写真は届き次第 img に差し込む。 */
+const HOTEL_WARDS = {
+  '13105': { img: null }, // 文京区
+  '13108': { img: null }, // 江東区
+}
+
 /* 東京23区:中心から写真へ発散する図(東京の詳細ページで使用) */
-export function TokyoRadial({ lang, w }) {
+export function TokyoRadial({ lang, w, wardCases = TOKYO_WARD_CASES }) {
   const name = (wd) => (lang === 'en' ? wd.en : wd.name)
   const VB_W = 760
   const VB_H = 380
@@ -74,7 +86,7 @@ export function TokyoRadial({ lang, w }) {
   const offY = (VB_H - TOKYO_VB.h) / 2
   const TW = 146
   const TH = 98
-  const cases = TOKYO_WARDS.filter((wd) => TOKYO_WARD_CASES[wd.code])
+  const cases = TOKYO_WARDS.filter((wd) => wardCases[wd.code])
   const sorted = [...cases].sort((a, b) => a.cx - b.cx)
   const half = Math.ceil(sorted.length / 2)
   const left = sorted.slice(0, half).sort((a, b) => a.cy - b.cy)
@@ -88,7 +100,7 @@ export function TokyoRadial({ lang, w }) {
     <svg viewBox={`0 0 ${VB_W} ${VB_H}`} className="w-full" role="img" aria-label={w.tokyoTitle}>
       {TOKYO_WARDS.map((wd, i) => (
         <path key={wd.code} d={wd.d} transform={`translate(${offX} ${offY})`}
-          className={`cb-map-el cb-ward ${TOKYO_WARD_CASES[wd.code] ? 'cb-ward-on' : ''}`}
+          className={`cb-map-el cb-ward ${wardCases[wd.code] ? 'cb-ward-on' : ''}`}
           style={{ animationDelay: `${i * 16}ms` }}>
           <title>{name(wd)}</title>
         </path>
@@ -100,7 +112,7 @@ export function TokyoRadial({ lang, w }) {
         const ay = it.ty + TH / 2
         const len = Math.hypot(cx - ax, cy - ay)
         const delay = 260 + i * 90
-        const c = TOKYO_WARD_CASES[it.wd.code]
+        const c = wardCases[it.wd.code]
         return (
           <g key={it.wd.code}>
             <line x1={ax} y1={ay} x2={cx} y2={cy} stroke="#B9C2CE" strokeWidth="1"
@@ -108,11 +120,18 @@ export function TokyoRadial({ lang, w }) {
             <circle cx={cx} cy={cy} r="4" fill="#E94F5B" stroke="#fff" strokeWidth="1.4" />
             <clipPath id={`cthumb-${it.wd.code}`}><rect x={it.tx} y={it.ty} width={TW} height={TH} rx="10" /></clipPath>
             <g className="cb-map-el" style={{ animationDelay: `${delay + 120}ms` }}>
-              <image href={c.img} x={it.tx} y={it.ty} width={TW} height={TH} preserveAspectRatio="xMidYMid slice" clipPath={`url(#cthumb-${it.wd.code})`} />
+              {c.img ? (
+                <image href={c.img} x={it.tx} y={it.ty} width={TW} height={TH} preserveAspectRatio="xMidYMid slice" clipPath={`url(#cthumb-${it.wd.code})`} />
+              ) : (
+                <>
+                  <rect x={it.tx} y={it.ty} width={TW} height={TH} rx="10" fill="#EDEFF3" />
+                  <text x={it.tx + TW / 2} y={it.ty + TH / 2 + 4} textAnchor="middle" fontSize="11" fill="#96959A">{tr(UI.photoTBD, lang)}</text>
+                </>
+              )}
               <rect x={it.tx} y={it.ty + TH - 24} width={TW} height="24" fill="#0009" clipPath={`url(#cthumb-${it.wd.code})`} />
               <rect x={it.tx} y={it.ty} width={TW} height={TH} rx="10" fill="none" stroke="#E3E7EC" strokeWidth="1.5" />
               <text x={it.tx + 8} y={it.ty + TH - 8} fontSize="11" fontWeight="700" fill="#fff">
-                {name(it.wd)}<tspan fill="#FFC9C2"> {c.count}{w.countUnit}</tspan>
+                {name(it.wd)}{c.count != null && <tspan fill="#FFC9C2"> {c.count}{w.countUnit}</tspan>}
               </text>
             </g>
           </g>
@@ -166,6 +185,10 @@ export default function Works() {
   const w = t.works
   const navigate = useNavigate()
   const go = (key) => navigate(`/works/${key}`)
+  const [cat, setCat] = useState('estate')
+
+  const tabCls = (on) =>
+    `rounded-full px-4 py-1.5 text-sm font-semibold transition ${on ? 'bg-white text-ink shadow-sm' : 'text-ink-soft hover:text-ink'}`
 
   return (
     <>
@@ -178,12 +201,30 @@ export default function Works() {
       </section>
 
       <section className="mx-auto max-w-5xl px-6 py-16">
+        {/* カテゴリ切替:不動産 / ホテル */}
+        <div className="mb-6 inline-flex rounded-full bg-mist p-1">
+          <button className={tabCls(cat === 'estate')} onClick={() => setCat('estate')}>{tr(UI.tabEstate, lang)}</button>
+          <button className={tabCls(cat === 'hotel')} onClick={() => setCat('hotel')}>{tr(UI.tabHotel, lang)}</button>
+        </div>
+
         <div className="rounded-2xl border border-line bg-white p-6">
-          <h2 className="text-lg font-bold text-ink">{w.mapTitle}</h2>
-          <p className="mt-1 text-xs text-ink-soft">{w.mapSub}</p>
-          <div className="mt-4">
-            <JapanRegions lang={lang} w={w} go={go} />
-          </div>
+          {cat === 'estate' ? (
+            <>
+              <h2 className="text-lg font-bold text-ink">{w.mapTitle}</h2>
+              <p className="mt-1 text-xs text-ink-soft">{w.mapSub}</p>
+              <div className="mt-4">
+                <JapanRegions lang={lang} w={w} go={go} />
+              </div>
+            </>
+          ) : (
+            <>
+              <h2 className="text-lg font-bold text-ink">{tr(UI.hotelTitle, lang)}</h2>
+              <p className="mt-1 text-xs text-ink-soft">{tr(UI.hotelSub, lang)}</p>
+              <div className="mt-4">
+                <TokyoRadial lang={lang} w={w} wardCases={HOTEL_WARDS} />
+              </div>
+            </>
+          )}
         </div>
       </section>
     </>
