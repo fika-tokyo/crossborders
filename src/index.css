@@ -69,9 +69,13 @@ html:lang(en) .positioning { font-size: 1.375rem; line-height: 1.55; }
 .cb-ward-on:hover { fill: var(--color-navy-dark); }
 @keyframes cbMapFade { from { opacity: 0; } to { opacity: 1; } }
 .cb-map-el { animation: cbMapFade 0.6s ease both; }
+@keyframes cbDraw { to { stroke-dashoffset: 0; } }
+.cb-clickable { cursor: pointer; }
+.cb-clickable:focus-visible { outline: 2px solid var(--color-navy); outline-offset: 2px; border-radius: 4px; }
 @media (prefers-reduced-motion: reduce) {
   .cb-map-el { animation: none; }
   .cb-ping { display: none; }
+  [style*="cbDraw"] { animation: none !important; stroke-dashoffset: 0 !important; }
 }
 
 /* Subtle entrance animation utility */
