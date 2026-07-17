@@ -69,57 +69,83 @@ const UI = {
 }
 const tr = (obj, lang) => obj[lang] || obj.ja
 
-/* ------------------------------- 全国マップ ------------------------------- */
-function JapanMap({ lang, w, onTokyo }) {
+/* ---------------------- 全国マップ:各地の写真を発散表示 --------------------- */
+const NAT_LEFT = [ // 関西(西)
+  { key: 'kyoto', x: 126, y: 230, img: saleKyoto, ja: '京都市', en: 'Kyoto' },
+  { key: 'osaka', x: 121, y: 236, img: saleOsaka, ja: '大阪市', en: 'Osaka' },
+]
+const NAT_RIGHT = [ // 首都圏(東)
+  { key: 'kamagaya',  x: 194, y: 214, img: saleKamagaya,  ja: '千葉・鎌ケ谷',   en: 'Kamagaya' },
+  { key: 'yachimata', x: 199, y: 217, img: rentYachimata, ja: '千葉・八街',     en: 'Yachimata' },
+  { key: 'kawasaki',  x: 189, y: 219, img: rentKawasaki,  ja: '神奈川・川崎',   en: 'Kawasaki' },
+  { key: 'yokohama',  x: 188, y: 221, img: saleYokohama,  ja: '神奈川・横浜',   en: 'Yokohama' },
+  { key: 'chigasaki', x: 185, y: 223, img: rentChigasaki, ja: '神奈川・茅ヶ崎', en: 'Chigasaki' },
+]
+
+function JapanRadial({ lang, w, onTokyo }) {
   const name = (p) => (lang === 'en' ? p.en : p.ja)
-  const unit = w.countUnit
+  const VB_W = 940
+  const VB_H = 560
+  const S = 1.42
+  const mapOffX = (VB_W - 380 * S) / 2
+  const mapOffY = (VB_H - 320 * S) / 2
+  const P = (x, y) => [mapOffX + x * S, mapOffY + y * S]
+  const TW = 152
+  const TH = 94
+  const slotY = (n, i) => (n <= 1 ? (VB_H - TH) / 2 : 12 + i * ((VB_H - 24 - TH) / (n - 1)))
+  const [tkx, tky] = P(190, 216)
+  const items = [
+    ...NAT_LEFT.map((p, i) => ({ p, tx: 10, ty: slotY(NAT_LEFT.length, i), side: 'L' })),
+    ...NAT_RIGHT.map((p, i) => ({ p, tx: VB_W - 10 - TW, ty: slotY(NAT_RIGHT.length, i), side: 'R' })),
+  ]
   return (
-    <svg viewBox="0 0 380 320" className="w-full" role="img" aria-label={w.mapTitle}>
-      <path d={JAPAN_PATH} fill="#E4E9F0" stroke="#CBD5E1" strokeWidth="0.6" strokeLinejoin="round" />
-
-      {MAP_POINTS_WEST.map((p) => (
-        <g key={p.key}>
-          <line x1={p.x} y1={p.y} x2={p.labelX + 34} y2={p.labelY - 3} stroke="#96959A" strokeWidth="0.7" />
-          <circle cx={p.x} cy={p.y} r="3.4" fill="#E94F5B" stroke="#fff" strokeWidth="1.1" />
-          <text x={p.labelX} y={p.labelY - 6} fontSize="9.5" fontWeight="700" fill="#3E3A39">{name(p)}</text>
-          <text x={p.labelX} y={p.labelY + 4} fontSize="8" fill="#D83F4B" fontWeight="700">{p.count}{unit}</text>
-        </g>
-      ))}
-
-      {MAP_POINTS.map((p) => {
-        if (p.tokyo) {
-          return (
-            <g
-              key={p.key}
-              className="cb-clickable"
-              role="button"
-              tabIndex={0}
-              onClick={onTokyo}
-              onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); onTokyo() } }}
-            >
-              <line x1={p.x} y1={p.y} x2={266} y2={p.labelY - 3} stroke="#96959A" strokeWidth="0.7" />
-              <circle className="cb-ping" cx={p.x} cy={p.y} r="4.6" fill="none" stroke="#385988" strokeWidth="1.2">
-                <animate attributeName="r" values="4.6;13" dur="2.2s" repeatCount="indefinite" />
-                <animate attributeName="opacity" values="0.55;0" dur="2.2s" repeatCount="indefinite" />
-              </circle>
-              <circle cx={p.x} cy={p.y} r="4.6" fill="#385988" stroke="#fff" strokeWidth="1.4" />
-              <text x={272} y={p.labelY} fontSize="10" fontWeight="800" fill="#385988">
-                {name(p)}<tspan fill="#D83F4B" fontWeight="700"> {p.count}{unit}</tspan>
-              </text>
-              <text x={272} y={p.labelY + 11} fontSize="7.5" fill="#D83F4B" fontWeight="700">{tr(UI.expand, lang)}</text>
-            </g>
-          )
-        }
+    <svg viewBox={`0 0 ${VB_W} ${VB_H}`} className="w-full" role="img" aria-label={w.mapTitle}>
+      <path
+        d={JAPAN_PATH}
+        transform={`translate(${mapOffX} ${mapOffY}) scale(${S})`}
+        fill="#E4E9F0" stroke="#CBD5E1" strokeWidth="0.6" strokeLinejoin="round"
+        className="cb-map-el"
+      />
+      {items.map((it, i) => {
+        const [px, py] = P(it.p.x, it.p.y)
+        const ax = it.side === 'L' ? it.tx + TW : it.tx
+        const ay = it.ty + TH / 2
+        const len = Math.hypot(px - ax, py - ay)
+        const delay = 200 + i * 80
         return (
-          <g key={p.key}>
-            <line x1={p.x} y1={p.y} x2={266} y2={p.labelY - 3} stroke="#96959A" strokeWidth="0.7" />
-            <circle cx={p.x} cy={p.y} r="3" fill="#E94F5B" stroke="#fff" strokeWidth="1" />
-            <text x={272} y={p.labelY} fontSize="9.5" fontWeight="700" fill="#3E3A39">
-              {name(p)}<tspan fill="#D83F4B" fontWeight="700"> {p.count}{unit}</tspan>
-            </text>
+          <g key={it.p.key}>
+            <line
+              x1={ax} y1={ay} x2={px} y2={py} stroke="#B9C2CE" strokeWidth="1"
+              style={{ strokeDasharray: len, strokeDashoffset: len, animation: `cbDraw .8s ease ${delay}ms forwards` }}
+            />
+            <circle cx={px} cy={py} r="4" fill="#E94F5B" stroke="#fff" strokeWidth="1.4" />
+            <clipPath id={`nthumb-${it.p.key}`}>
+              <rect x={it.tx} y={it.ty} width={TW} height={TH} rx="10" />
+            </clipPath>
+            <g className="cb-map-el" style={{ animationDelay: `${delay + 120}ms` }}>
+              <image href={it.p.img} x={it.tx} y={it.ty} width={TW} height={TH} preserveAspectRatio="xMidYMid slice" clipPath={`url(#nthumb-${it.p.key})`} />
+              <rect x={it.tx} y={it.ty + TH - 22} width={TW} height="22" fill="#0009" clipPath={`url(#nthumb-${it.p.key})`} />
+              <rect x={it.tx} y={it.ty} width={TW} height={TH} rx="10" fill="none" stroke="#E3E7EC" strokeWidth="1.5" />
+              <text x={it.tx + 8} y={it.ty + TH - 7} fontSize="11" fontWeight="700" fill="#fff">{name(it.p)}</text>
+            </g>
           </g>
         )
       })}
+      {/* 東京:クリックで23区へ */}
+      <g
+        className="cb-clickable"
+        role="button" tabIndex={0} onClick={onTokyo}
+        onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); onTokyo() } }}
+      >
+        <circle className="cb-ping" cx={tkx} cy={tky} r="7" fill="none" stroke="#385988" strokeWidth="1.6">
+          <animate attributeName="r" values="7;20" dur="2.2s" repeatCount="indefinite" />
+          <animate attributeName="opacity" values="0.55;0" dur="2.2s" repeatCount="indefinite" />
+        </circle>
+        <circle cx={tkx} cy={tky} r="8" fill="#385988" stroke="#fff" strokeWidth="2" />
+        <text x={tkx} y={tky + 3} fontSize="9" fontWeight="800" fill="#fff" textAnchor="middle">7</text>
+        <text x={tkx + 14} y={tky - 3} fontSize="14" fontWeight="800" fill="#385988">{lang === 'en' ? 'Tokyo' : '東京都'}</text>
+        <text x={tkx + 14} y={tky + 12} fontSize="10" fontWeight="700" fill="#D83F4B">{tr(UI.expand, lang)}</text>
+      </g>
     </svg>
   )
 }
@@ -239,36 +265,10 @@ export default function Works() {
           </div>
           <div className="mt-4">
             {view === 'japan' ? (
-              <div className="mx-auto max-w-md">
-                <JapanMap lang={lang} w={w} onTokyo={() => setView('tokyo')} />
-              </div>
+              <JapanRadial lang={lang} w={w} onTokyo={() => setView('tokyo')} />
             ) : (
               <TokyoRadial lang={lang} w={w} />
             )}
-          </div>
-        </div>
-      </section>
-
-      {/* 事例カード */}
-      <section className="bg-mist py-16">
-        <div className="mx-auto max-w-5xl px-6">
-          <h2 className="text-2xl font-bold tracking-tight text-ink md:text-3xl">{w.casesTitle}</h2>
-          <p className="mt-2 text-ink-soft">{w.casesSub}</p>
-          <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-            {CASES.map((c) => (
-              <div key={c.id} className="overflow-hidden rounded-2xl border border-line bg-white transition hover:border-red hover:shadow-lg">
-                <div className="aspect-[4/3] overflow-hidden bg-cloud">
-                  <img src={c.img} alt={lang === 'en' ? c.en : c.ja} loading="lazy" className="h-full w-full object-cover" />
-                </div>
-                <div className="p-4">
-                  <span className={`inline-block rounded-full px-2.5 py-0.5 text-[11px] font-bold ${badge(c.type)}`}>
-                    {c.type === 'sale' ? w.saleBadge : w.rentBadge}
-                  </span>
-                  <h3 className="mt-2 font-semibold text-ink">{lang === 'en' ? c.en : c.ja}</h3>
-                  <p className="mt-0.5 text-sm text-ink-soft">{c.note[lang] || c.note.ja}</p>
-                </div>
-              </div>
-            ))}
           </div>
         </div>
       </section>
