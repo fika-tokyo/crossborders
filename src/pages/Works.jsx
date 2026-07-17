@@ -18,6 +18,8 @@ import rentNakano from '../assets/cases/rent-nakano.jpg'
 import rentKawasaki from '../assets/cases/rent-kawasaki.jpg'
 import rentChigasaki from '../assets/cases/rent-chigasaki.jpg'
 import rentYachimata from '../assets/cases/rent-yachimata.jpg'
+import landmarkBunkyo from '../assets/cases/landmark-bunkyo.jpg'
+import landmarkKoto from '../assets/cases/landmark-koto.jpg'
 
 /* ---------------------------------------------------------------------------
    成約事例。region: tokyo / kanagawa / chiba / kansai
@@ -73,8 +75,8 @@ const TOKYO_WARD_CASES = {
 
 /* 運営中のホテル(コード → 写真)。写真は届き次第 img に差し込む。 */
 const HOTEL_WARDS = {
-  '13105': { img: null }, // 文京区
-  '13108': { img: null }, // 江東区
+  '13105': { img: landmarkBunkyo }, // 文京区
+  '13108': { img: landmarkKoto },   // 江東区
 }
 
 /* 東京23区:中心から写真へ発散する図(東京の詳細ページで使用) */
