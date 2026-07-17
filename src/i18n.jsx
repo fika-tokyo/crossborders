@@ -8,7 +8,8 @@ import { createContext, useContext, useEffect, useState } from 'react'
 
 export const LANGS = [
   { code: 'ja', label: '日本語', short: '日' },
-  { code: 'zh', label: '中文', short: '中' },
+  { code: 'tw', label: '繁體中文', short: '繁' },
+  { code: 'zh', label: '简体中文', short: '简' },
   { code: 'en', label: 'English', short: 'EN' },
 ]
 
@@ -30,9 +31,25 @@ const ja = {
     { label: `ホーム`, to: '/' },
     { label: `私たちについて`, to: '/about' },
     { label: `価値創造`, to: '/value' },
+    { label: `実績`, to: '/works' },
     { label: `パートナーシップ`, to: '/partnership' },
     { label: `お問い合わせ`, to: '/contact' },
   ],
+  works: {
+    eyebrow: 'TRACK RECORD',
+    title: `実績・成約事例`,
+    intro: `売買仲介・賃貸仲介の主な成約事例をご紹介します。東京を中心に、首都圏から関西まで幅広く対応しています。`,
+    mapTitle: `成約拠点マップ`,
+    mapSub: `全国の主な成約エリア`,
+    tokyoTitle: `東京都内(拡大図)`,
+    tokyoSub: `都内は7件と最も多いため拡大表示`,
+    tokyoHint: `詳細は右の拡大図へ`,
+    casesTitle: `成約事例一覧`,
+    casesSub: `写真をクリックすると詳細をご覧いただけます(準備中)`,
+    saleBadge: `売買仲介`,
+    rentBadge: `賃貸仲介`,
+    countUnit: `件`,
+  },
   hero: {
     eyebrow: 'CROSSBORDERS CO., LTD.',
     title: `境界を越え\n価値を創る`,
@@ -141,6 +158,146 @@ const ja = {
 }
 
 /* ---------------------------------- 中文 ---------------------------------- */
+const tw = {
+  site: {
+    brand: CB,
+    brandFull: 'CROSSBORDERS CO., LTD.',
+    tagline: `跨越邊界，創造價值`,
+    taglineEn: `Cross Borders, Create Value.`,
+    email: 'contact@crossborders.jp',
+    phone: '050-1722-7286',
+    address: '東京都 目黑區',
+  },
+  nav: [
+    { label: `首頁`, to: '/' },
+    { label: `關於我們`, to: '/about' },
+    { label: `價值創造`, to: '/value' },
+    { label: `實績`, to: '/works' },
+    { label: `合作`, to: '/partnership' },
+    { label: `聯絡諮詢`, to: '/contact' },
+  ],
+  works: {
+    eyebrow: 'TRACK RECORD',
+    title: `實績·成交案例`,
+    intro: `介紹買賣中介與租賃中介的主要成交案例。以東京為中心,覆蓋首都圈至關西地區。`,
+    mapTitle: `成交據點地圖`,
+    mapSub: `全國主要成交區域`,
+    tokyoTitle: `東京都內(放大圖)`,
+    tokyoSub: `都內7件最為集中,故放大展示`,
+    tokyoHint: `詳見右側放大圖`,
+    casesTitle: `成交案例一覽`,
+    casesSub: `點選照片可檢視詳情(籌備中)`,
+    saleBadge: `買賣中介`,
+    rentBadge: `租賃中介`,
+    countUnit: `件`,
+  },
+  hero: {
+    eyebrow: 'CROSSBORDERS CO., LTD.',
+    title: `跨越邊界\n創造價值`,
+    titleEn: `Cross Borders, Create Value.`,
+    subtitle: `我們不是「一家普通的不動產公司」，\n而是為在每一個環節都追求價值創造的客戶而存在的夥伴。`,
+    primaryCta: { label: `開始諮詢`, to: '/contact' },
+    secondaryCta: { label: `公司理念`, to: '/about' },
+  },
+  purpose: {
+    quote: `傳統不動產公司只承擔「買賣中介」一個環節。但客戶的真正需求，從來不是「買一棟房子」——而是跨越邊界的全流程價值創造。`,
+    needs: [
+      { who: `業主`, want: `讓閒置資產升值，並帶來穩定的現金流` },
+      { who: `投資人`, want: `從選房、改造、運營到退出，拿到完整的投資回報` },
+      { who: `外籍客戶`, want: `從來日前到入住後，語言、生活、置業一站式支援` },
+    ],
+  },
+  borders: [
+    { key: 'language', title: `語言的邊界`, body: `對應日語・英語・中文，消除語言與國境的障礙。` },
+    { key: 'nation', title: `國家的邊界`, body: `無縫連線海外投資人與日本不動產市場，成為可靠的橋樑。` },
+    { key: 'expertise', title: `專業的邊界`, body: `從選房、住宿運營、資產增值、管理到退出，一站式整合。` },
+    { key: 'time', title: `時間的邊界`, body: `從來日前到房產取得、之後的運營與投資階段，全程陪伴每一步。` },
+    { key: 'industry', title: `行業的邊界`, body: `以徹底透明、乾淨的交易，打破日本不動產行業舊有的「不透明」印象。` },
+  ],
+  journey: {
+    intro: `CROSSBORDERS 從民泊運營起步。以現場積累的運營實績為根基，如今專注於跨境不動產的資產價值創造。`,
+    milestones: [
+      { year: '2014', title: `民泊（住宿）運營事業起步` },
+      { year: '2016', title: `株式會社 CROSSBORDERS 成立；麻布十番一棟物件運營開始` },
+      { year: '2018', title: `拓展貸し空間（會議·活動空間）事業` },
+      { year: '2025', title: `取得日本「宅地建物取引業」登入（不動產交易牌照）` },
+      { year: '2026', title: `品牌煥新，聚焦跨境不動產資產價值創造` },
+    ],
+    closing: `多年的民宿運營經驗讓我們懂得：無論是多麼不同的物件，我們都能把它的價值最大化。`,
+  },
+  metrics: {
+    note: `※ 資料為 2018 年時點`,
+    items: [
+      { value: `4年+`, label: `住宿運營經驗` },
+      { value: `東京15·京都19`, label: `運營中的物件·客房` },
+      { value: `數千組`, label: `累計接待旅客` },
+      { value: `多次`, label: `Airbnb 超讚房東獲獎` },
+    ],
+  },
+  valueChain: [
+    { n: '01', en: 'DISCOVER', cn: `發掘`, title: `發掘有潛力的房源`, body: `透過合作機構的網路獲取非公開房源資訊，以「住宿運營 × 投資」雙重視角，找出被低估的房源。` },
+    { n: '02', en: 'ACQUIRE', cn: `取得`, title: `協助購入決策`, body: `分析包含酒店、青旅、民宿、合租等運營場景的「真實收益率」，而不只是表面的租金收益率，並以多語言支援海外投資人的購入決策。` },
+    { n: '03', en: 'ELEVATE', cn: `價值提升`, title: `提升資產價值`, body: `以我們積累的卓越設計與品牌實力，將普通房產昇華為有價值的「體驗空間」，從改造策劃、室內設計到品牌設計一手包辦。` },
+    { n: '04', en: 'OPERATE', cn: `運營`, title: `穩定運營、實現收益`, body: `由我們自營代管，透過 Airbnb、Booking.com 等平臺獲客，提供多語言客服，並持續跟蹤收益表現。` },
+    { n: '05', en: 'EXIT', cn: `退出`, title: `策略性退出或再投資`, body: `憑藉運營資料和提升後的實際業績，實現高於市場水平的售出價格；或轉入下一輪資產配置。` },
+  ],
+  matrix: {
+    columns: [`傳統不動產公司`, `住宿運營公司`, `海外投資諮詢`, CB],
+    rows: [
+      { cap: `買賣中介`, vals: ['○', '×', '△', '◎'] },
+      { cap: `真實收益率評估`, vals: ['△', '○', '△', '◎'] },
+      { cap: `價值提升 / 改造`, vals: ['×', '△', '×', '◎'] },
+      { cap: `運營代管`, vals: ['×', '◎', '×', '◎'] },
+      { cap: `多語言服務`, vals: ['×', '△', '○', '◎'] },
+      { cap: `海外投資人網路`, vals: ['×', '△', '○', '◎'] },
+      { cap: `品牌打造力`, vals: ['×', '△', '×', '◎'] },
+    ],
+    legend: `◎ = 核心能力　○ = 標準能力　△ = 有限能力　× = 不具備`,
+  },
+  strengths: [
+    { n: '01', title: `多語言服務能力`, en: 'Multilingual Service', body: `日英中三語服務。不僅「能說」，更「能用三種文化的視角理解客戶」。` },
+    { n: '02', title: `住宿運營的實戰經驗`, en: 'Hospitality Expertise', body: `憑藉豐富的運營經驗，我們能看到「作為體驗空間的建築」的價值，擁有「面積 × 單價」無法衡量的獨到視角。` },
+    { n: '03', title: `品牌與空間的打造力`, en: 'Brand & Space Design', body: `豐富的實績證明，我們能把普通建築變成有故事、有粉絲、能帶來溢價的品牌空間。` },
+    { n: '04', title: `國際化的客戶網路`, en: 'Global Network & Expert Alliance', body: `我們服務過來自世界各地的旅行者、學生與投資人；並與國內的建築師、司法書士、行政書士、稅理士、律師等各領域專家建立了穩固的網路。` },
+  ],
+  partnership: {
+    philosophy: {
+      title: `長期同行，而非一次交易`,
+      body: `我們不追求「一次性的交易」，而追求「跨越資產生命週期的長期同行」。\n客戶的資產，需要在 10 年、20 年的週期中持續創造價值。\n我們要成為客戶長期的「資產夥伴」，而不僅僅是「中介」。`,
+    },
+    types: [
+      { title: `房源合作`, en: 'Property Partnership', target: `合作企業、土地建物業主`, service: `為持有房產的夥伴提供：海外投資人網路、退出戰略、運營建議與價值提升方案，將貴司的房產送達全球的投資人與客戶。`, value: `為您的房產找到「不只是買家，而是真正能讓它發揮最大價值的客戶」。` },
+      { title: `客戶引薦`, en: 'Customer Referral', target: `語言學校、大學、專業服務機構、金融機構`, service: `為您的客戶提供：多語言不動產服務、外籍人士入住支援、海外投資人接待，並建立長期的相互引薦網路。`, value: `解決客戶在不動產上的「煩惱」，轉化為「客戶對貴司更深的信任」。` },
+      { title: `運營合作`, en: 'Operation Partnership', target: `住宿運營商、投資人、地方政府`, service: `提供基於豐富實績的運營代管、OTA 獲客、空間策劃與地方振興協作。`, value: `把您持有的空間，透過我們的運營品牌，變成「有故事、有粉絲」的資產。` },
+    ],
+  },
+  contactTopics: [`房源合作`, `客戶引薦`, `運營合作`, `投資諮詢`, `其他`],
+  ui: {
+    navCta: `開始諮詢`, menu: `選單`, needSuffix: `想要`,
+    bordersTitle: `我們要跨越的五道邊界`, bordersSubtitle: `日本的不動產行業，仍被五道無形的「邊界」所阻隔。`,
+    valueTeaserTitle: `資產生命週期的全程價值管理`, valueTeaserSubtitle: `從 Discover 到 Exit，我們陪伴客戶走完每一步——這就是「Cross the Borders」在業務層面的真正含義。`, valueTeaserLink: `檢視完整價值鏈 →`,
+    homeCtaTitle: `跟我們一起，跨越邊界，邁向未來`, homeCtaSubtitle: `無論您是土地業主、投資人，還是正在考慮合作的夥伴，歡迎隨時與我們聯絡。`, homeCtaButton: `聯絡我們`,
+    aboutEyebrow1: `01 · 品牌哲學`, aboutTitle1: `CROSSBORDERS 的含義`, aboutIntro1: `"Cross the Borders" ——跨越邊界，創造新的價值。\n我們的公司名不僅是名稱，更是一種堅定的理念。我們認為，如今的日本不動產行業，依然被五道無形的「邊界」所阻隔。`,
+    aboutEyebrow2: `02 · 我們的歷程`, aboutTitle2: `CROSSBORDERS 一路走來`,
+    valueEyebrow: `03 · 我們如何創造價值`, valueTitle: `資產生命週期的全程價值管理`, valueIntro: `傳統不動產公司只做「買賣中介」。我們把所有服務整合成一條完整的價值鏈，而不是零散的服務專案。`,
+    matrixTitle: `我們的差別化`, matrixSubtitle: `市場上不乏各類公司，但能把不動產、運營、諮詢三者結合的，極少。`, matrixCapHeader: `能力`,
+    strengthsTitle: `四大核心強項`, valueCtaButton: `洽談合作`,
+    partnershipEyebrow: `04 · 合作哲學`, partnershipTitle: `三種合作可能`, partnershipSubtitle: `我們與不同領域的夥伴，可以創造不同形式的價值。`,
+    targetLabel: `物件：`, serviceLabel: `服務內容`, valueLabel: `對您的價值`, partnershipCtaButton: `探討合作`,
+    discussThis: `諮詢此合作 →`,
+    homePartnerTitle: `致合作伙伴`, homePartnerSubtitle: `無論您是地產公司、業主、語言學校 / 大學，還是住宿運營商，我們都能以多種形式共創價值。`, homePartnerLink: `瞭解合作 →`,
+    homePositioning: `傳統中介只負責「買賣」「租賃」這一面。\n我們跨越這道邊界，在從資產發掘到退出戰略的每一個階段，\n將價值最大化。`,
+    portalAbout: `跨越五個邊界的專業不動產團隊`, portalValue: `從發掘到退出，陪伴資產的每一個階段`, portalPartner: `與不動產公司、機構、運營方長期共創價值`, learnMore: `瞭解更多 →`,
+    portalAboutCta: `關於我們 →`, portalValueCta: `價值創造 →`, portalPartnerCta: `合作 →`,
+    contactTitle: `聯絡諮詢`, contactIntro: `填寫下面的表單，我們會在一個工作日內與您取得聯絡。也歡迎直接透過郵件或電話聯絡我們。`, emailLabel: `郵箱：`, phoneLabel: `電話：`, addressLabel: `地址：`,
+    formName: `稱呼 *`, formNamePh: `您的姓名`, formEmail: `郵箱 *`, formEmailPh: 'you@company.com', formCompany: `公司`, formCompanyPh: `公司名稱（選填）`, formTopic: `諮詢主題`, formMessage: `需求描述 *`, formMessagePh: `簡單介紹您面臨的挑戰或目標…`, formSubmit: `提交諮詢`, formSending: `提交中…`, formError: `提交失敗,請稍後再試,或直接郵件聯絡我們。`,
+    errName: `請填寫您的稱呼`, errEmail: `請填寫有效的郵箱`, errMessage: `請簡單描述您的需求`,
+    thankName: `謝謝您，{name}！`, thankNoName: `謝謝您！`, thankBody: `我們已收到您的諮詢，團隊會在一個工作日內與您聯絡。`, backHome: `返回首頁`,
+    notFoundTitle: `頁面未找到`, notFoundBody: `您訪問的頁面不存在或已被移動。`,
+    footerNav: `導航`, footerContact: `聯絡`, footerRights: `保留所有權利。`,
+  },
+}
+
 const zh = {
   site: {
     brand: CB,
@@ -155,9 +312,25 @@ const zh = {
     { label: `首页`, to: '/' },
     { label: `关于我们`, to: '/about' },
     { label: `价值创造`, to: '/value' },
+    { label: `实绩`, to: '/works' },
     { label: `合作`, to: '/partnership' },
     { label: `联系咨询`, to: '/contact' },
   ],
+  works: {
+    eyebrow: 'TRACK RECORD',
+    title: `实绩·成交案例`,
+    intro: `介绍买卖中介与租赁中介的主要成交案例。以东京为中心,覆盖首都圈至关西地区。`,
+    mapTitle: `成交据点地图`,
+    mapSub: `全国主要成交区域`,
+    tokyoTitle: `东京都内(放大图)`,
+    tokyoSub: `都内7件最为集中,故放大展示`,
+    tokyoHint: `详见右侧放大图`,
+    casesTitle: `成交案例一览`,
+    casesSub: `点击照片可查看详情(筹备中)`,
+    saleBadge: `买卖中介`,
+    rentBadge: `租赁中介`,
+    countUnit: `件`,
+  },
   hero: {
     eyebrow: 'CROSSBORDERS CO., LTD.',
     title: `跨越边界\n创造价值`,
@@ -280,9 +453,25 @@ const en = {
     { label: `Home`, to: '/' },
     { label: `About`, to: '/about' },
     { label: `Value`, to: '/value' },
+    { label: `Track Record`, to: '/works' },
     { label: `Partnership`, to: '/partnership' },
     { label: `Contact`, to: '/contact' },
   ],
+  works: {
+    eyebrow: 'TRACK RECORD',
+    title: `Track Record`,
+    intro: `Selected sales and leasing transactions. Centered on Tokyo, our coverage spans the Greater Tokyo Area through Kansai.`,
+    mapTitle: `Transaction Map`,
+    mapSub: `Key transaction areas across Japan`,
+    tokyoTitle: `Tokyo (Detail)`,
+    tokyoSub: `Tokyo has the largest cluster (7 cases)`,
+    tokyoHint: `See detail map`,
+    casesTitle: `Case List`,
+    casesSub: `Click a photo for details (coming soon)`,
+    saleBadge: `Sales`,
+    rentBadge: `Leasing`,
+    countUnit: ``,
+  },
   hero: {
     eyebrow: 'CROSSBORDERS CO., LTD.',
     title: `Cross Borders\nCreate Value`,
@@ -390,7 +579,7 @@ const en = {
   },
 }
 
-const dict = { ja, zh, en }
+const dict = { ja, tw, zh, en }
 
 const LangContext = createContext(null)
 

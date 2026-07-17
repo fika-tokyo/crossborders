@@ -47,6 +47,14 @@ html:lang(zh) body {
 html:lang(zh) .cta-sub { max-width: 42rem; }
 html:lang(zh) .journey-closing { max-width: 54rem; }
 
+/* Traditional Chinese (Taiwan) UI: JhengHei/PingFang TC first. */
+html:lang(tw) body {
+  font-family: "Inter", "Microsoft JhengHei", "PingFang TC", "PingFang SC",
+    "Hiragino Sans GB", sans-serif;
+}
+html:lang(tw) .cta-sub { max-width: 42rem; }
+html:lang(tw) .journey-closing { max-width: 54rem; }
+
 /* English-only: widen the hero block a touch so the subtitle sentence fits one
    line, and cap the positioning statement so both sentences fit one line each. */
 html:lang(en) .hero-block { max-width: 46rem; }
