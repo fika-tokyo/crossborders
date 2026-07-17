@@ -6,6 +6,7 @@ import Home from './pages/Home.jsx'
 import About from './pages/About.jsx'
 import Value from './pages/Value.jsx'
 import Works from './pages/Works.jsx'
+import WorkRegion from './pages/WorkRegion.jsx'
 import Partnership from './pages/Partnership.jsx'
 import Contact from './pages/Contact.jsx'
 import ThankYou from './pages/ThankYou.jsx'
@@ -30,6 +31,7 @@ export default function App() {
           <Route path="/about" element={<About />} />
           <Route path="/value" element={<Value />} />
           <Route path="/works" element={<Works />} />
+          <Route path="/works/:region" element={<WorkRegion />} />
           <Route path="/partnership" element={<Partnership />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/thank-you" element={<ThankYou />} />
