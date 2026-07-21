@@ -43,9 +43,17 @@ function FaqGroup({ group }) {
   )
 }
 
+const VALUE_TOC = [
+  { id: 'flow',      ja: '価値創造の流れ', zh: '价值创造流程', tw: '價值創造流程', en: 'How we create value' },
+  { id: 'matrix',    ja: '私たちの差別化', zh: '我们的差别化', tw: '我們的差別化', en: 'How we differ' },
+  { id: 'strengths', ja: '四つの強み',     zh: '四大强项',     tw: '四大強項',     en: 'Our strengths' },
+  { id: 'faq',       ja: 'よくあるご質問', zh: '常见问题',     tw: '常見問題',     en: 'FAQ' },
+]
+
 export default function Value() {
-  const { t } = useLang()
+  const { t, lang } = useLang()
   const { valueChain, matrix, strengths, faq, contactTopics, ui } = t
+  const scrollTo = (id) => document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'start' })
 
   return (
     <>
@@ -59,8 +67,23 @@ export default function Value() {
         </div>
       </section>
 
+      {/* Sticky table of contents */}
+      <nav className="sticky top-16 z-30 border-y border-line bg-white/90 backdrop-blur">
+        <div className="mx-auto flex max-w-5xl flex-wrap gap-2 px-6 py-3">
+          {VALUE_TOC.map((s) => (
+            <button
+              key={s.id}
+              onClick={() => scrollTo(s.id)}
+              className="rounded-full border border-line px-4 py-1.5 text-sm font-semibold text-ink-soft transition hover:border-red hover:text-red-dark"
+            >
+              {s[lang] || s.ja}
+            </button>
+          ))}
+        </div>
+      </nav>
+
       {/* Value chain — vertical flow with arrows */}
-      <section className="mx-auto max-w-5xl px-6 py-20">
+      <section id="flow" className="mx-auto max-w-5xl px-6 py-20 scroll-mt-32">
         <div className="flex flex-col">
           {valueChain.map((v, i) => (
             <Fragment key={v.en}>
@@ -87,7 +110,7 @@ export default function Value() {
       </section>
 
       {/* Differentiation matrix */}
-      <section className="bg-mist py-20">
+      <section id="matrix" className="bg-mist py-20 scroll-mt-32">
         <div className="mx-auto max-w-5xl px-6">
           <h2 className="text-3xl font-bold tracking-tight text-ink md:text-4xl">{ui.matrixTitle}</h2>
           <p className="mt-3 text-ink-soft">{ui.matrixSubtitle}</p>
@@ -135,7 +158,7 @@ export default function Value() {
       </section>
 
       {/* Four core strengths */}
-      <section className="mx-auto max-w-5xl px-6 py-20">
+      <section id="strengths" className="mx-auto max-w-5xl px-6 py-20 scroll-mt-32">
         <h2 className="text-3xl font-bold tracking-tight text-ink md:text-4xl">{ui.strengthsTitle}</h2>
         <div className="mt-10 grid gap-6 md:grid-cols-2">
           {strengths.map((s) => (
@@ -150,7 +173,7 @@ export default function Value() {
       </section>
 
       {/* FAQ — real questions from each client type, answered with our actual practice */}
-      <section className="bg-mist py-20">
+      <section id="faq" className="bg-mist py-20 scroll-mt-32">
         <div className="mx-auto max-w-5xl px-6">
           <p className="text-sm font-semibold uppercase tracking-[0.2em] text-red-dark">{faq.eyebrow}</p>
           <h2 className="mt-4 text-3xl font-bold tracking-tight text-ink md:text-4xl">{faq.title}</h2>
