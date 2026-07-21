@@ -5,7 +5,7 @@ import { useLang } from '../i18n.jsx'
 // Web3Forms access key. Get one (free) at https://web3forms.com using the email
 // that should receive inquiries, then paste it here. Safe to keep in the repo —
 // the key only allows sending to that pre-registered address.
-const WEB3FORMS_ACCESS_KEY = 'YOUR_ACCESS_KEY_HERE'
+const WEB3FORMS_ACCESS_KEY = '33a56d2e-4b44-4782-839b-f239dd9e1363'
 
 export default function Contact() {
   const navigate = useNavigate()
