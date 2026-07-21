@@ -64,14 +64,14 @@ export default function Home() {
       </section>
 
       {/* ---------------- One-line positioning ---------------- */}
-      <section className="mx-auto max-w-5xl px-6 py-20 text-center md:py-28">
+      <section className="mx-auto max-w-5xl px-6 pt-16 pb-6 text-center md:pt-20 md:pb-8">
         <p className="positioning whitespace-pre-line text-2xl font-medium leading-relaxed text-ink md:text-3xl">
           {ui.homePositioning}
         </p>
       </section>
 
       {/* ---------------- Value chain — illustrated process ---------------- */}
-      <section className="mx-auto max-w-6xl px-6 py-20">
+      <section className="mx-auto max-w-6xl px-6 pb-20 pt-2">
         <div className="flex flex-col items-center gap-10 lg:flex-row lg:items-start lg:justify-center lg:gap-2">
           {valueChain.map((v, i) => (
             <Fragment key={v.en}>

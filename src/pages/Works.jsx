@@ -73,11 +73,32 @@ const TOKYO_WARD_CASES = {
   '13109': { img: saleShinagawa, count: 1 },
 }
 
-/* 運営中のホテル(コード → 写真)。写真は届き次第 img に差し込む。 */
-const HOTEL_WARDS = {
-  '13105': { img: landmarkBunkyo }, // 文京区
-  '13108': { img: landmarkKoto },   // 江東区
-}
+/* 運営中のホテル */
+const HOTELS = [
+  {
+    code: '13105', img: landmarkBunkyo,
+    name: { ja: '文京区', zh: '文京区', tw: '文京區', en: 'Bunkyo' },
+    type: { ja: 'デザイナーズホテル', zh: '设计师酒店', tw: '設計師酒店', en: 'Designer hotel' },
+    desc: {
+      ja: '1階のレストランと連動した、4階建て・築古ビルのリノベーション。',
+      zh: '与一楼餐厅联动，四层老建筑的翻新改造。',
+      tw: '與一樓餐廳聯動，四層老建築的翻新改造。',
+      en: 'A renovated four-storey older building, linked with a restaurant on the ground floor.',
+    },
+  },
+  {
+    code: '13108', img: landmarkKoto,
+    name: { ja: '江東区', zh: '江东区', tw: '江東區', en: 'Koto' },
+    type: { ja: 'アパートメントホテル（無人運営）', zh: '公寓式酒店（无人运营）', tw: '公寓式酒店（無人營運）', en: 'Apartment hotel (self-service)' },
+    desc: {
+      ja: 'スタッフ常駐なしで運営する、一棟まるごとのアパートメント型ホテル。',
+      zh: '一整栋的公寓式酒店，无人值守、自助运营。',
+      tw: '一整棟的公寓式酒店，無人值守、自助營運。',
+      en: 'A whole-building apartment-style hotel, run fully self-service with no on-site staff.',
+    },
+  },
+]
+const HOTEL_WARDS = Object.fromEntries(HOTELS.map((h) => [h.code, { img: h.img }]))
 
 /* 東京23区:中心から写真へ発散する図(東京の詳細ページで使用) */
 export function TokyoRadial({ lang, w, wardCases = TOKYO_WARD_CASES }) {
@@ -224,6 +245,20 @@ export default function Works() {
               <p className="mt-1 text-xs text-ink-soft">{tr(UI.hotelSub, lang)}</p>
               <div className="mt-4">
                 <TokyoRadial lang={lang} w={w} wardCases={HOTEL_WARDS} />
+              </div>
+              <div className="mt-6 grid gap-5 sm:grid-cols-2">
+                {HOTELS.map((h) => (
+                  <div key={h.code} className="flex gap-4 rounded-2xl border border-line bg-mist p-4">
+                    <img src={h.img} alt="" className="h-24 w-32 shrink-0 rounded-xl object-cover" />
+                    <div>
+                      <h3 className="font-semibold text-ink">{tr(h.name, lang)}</h3>
+                      <span className="mt-1 inline-block rounded-full bg-navy/10 px-2.5 py-0.5 text-[11px] font-bold text-navy">
+                        {tr(h.type, lang)}
+                      </span>
+                      <p className="mt-2 text-sm leading-relaxed text-ink-soft">{tr(h.desc, lang)}</p>
+                    </div>
+                  </div>
+                ))}
               </div>
             </>
           )}
