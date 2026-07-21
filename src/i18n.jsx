@@ -130,6 +130,38 @@ const ja = {
       { title: `運営提携`, en: 'Operation Partnership', target: `宿泊事業者・投資家・地方自治体`, service: `これまでの豊富な実績に基づく運営受託、OTA集客、空間企画、地方創生の協働を提供。`, value: `お持ちの空間を、私たちの運営ブランドで「物語とファンを持つ」資産に変えます。` },
     ],
   },
+  faq: {
+    eyebrow: 'Q&A',
+    title: `よくあるご質問`,
+    subtitle: `お客様から実際によくいただくご質問に、私たちの実務そのままにお答えします。`,
+    groups: [
+      {
+        who: `投資家・海外バイヤーの方`,
+        items: [
+          { q: `海外に住んだまま、購入から運営まで完結できますか？`, a: `可能です。ご来日前のオンライン相談、物件資料の多言語化、内見の代行・オンライン中継から、契約時は司法書士等の専門家と連携し、購入後は当社が運営を代行します。日本に常駐いただく必要はありません。` },
+          { q: `「実質利回り」は表面利回りと何が違うのですか？`, a: `表面利回りは「満室想定の賃料 ÷ 物件価格」に過ぎません。当社は同じ立地・同じ想定客層の競合施設を選定し、OTA（Booking.com 等）の実勢価格データと季節変動から収入を推計。清掃費・OTA手数料・改装費などの運営コスト、さらに出口価格までを織り込んだ収支シミュレーションで、投資判断の根拠をご提示します。` },
+          { q: `その物件で民泊やホテルは合法的に運営できますか？`, a: `旅館業法と住宅宿泊事業法（民泊新法）のどちらを目指すかで、用途地域・消防設備・保健所の要件は大きく変わります。当社は行政書士・建築士等の専門家ネットワークと連携し、ご購入の決断の前に許認可の実現性を確認します。合法的に運営できない物件をお勧めすることはありません。` },
+          { q: `購入後の運営はお任せできますか？`, a: `OTAへの掲載（リスティング作成・写真・多言語の紹介文）、多言語でのゲスト対応、清掃品質の管理、収益のモニタリングまで一貫して代行できます。料金は物件の規模・運営形態により異なるため、収支シミュレーションと合わせてご提案します。` },
+        ],
+      },
+      {
+        who: `地主・物件オーナーの方`,
+        items: [
+          { q: `築年数の経った普通の建物でも、選ばれる宿泊空間になりますか？`, a: `はい。私たちの改装は「見た目」だけではありません。訪日客の構成データ（家族・一人旅・友人グループが大半）から逆算して間取りやベッド構成を設計し、図面の段階で「ゲストとして一度、清掃スタッフとして一度」動線を歩き直す独自のレビューを行います。狭小な物件にも、運営目線の解決策があります。` },
+          { q: `改装費用が膨らまないか心配です。`, a: `当社は設計よりも先に収支の演算を行います。改装費は投資シミュレーションに最初から組み込み、回収できる範囲でデザインと仕様を調整するため、「デザイン優先で予算が破綻する」事態を防ぎます。` },
+          { q: `遊休資産の活用には、売却以外にどんな選択肢がありますか？`, a: `宿泊施設への転用、賃貸への改装、当社への運営委託など、複数の選択肢があります。まず各案の収支を同じ条件で試算・比較し、キャッシュフローと出口まで見通したうえで、最適な方針をご提案します。` },
+        ],
+      },
+      {
+        who: `外国人のお客様`,
+        items: [
+          { q: `日本語ができなくても、賃貸や購入の手続きはできますか？`, a: `日・英・中の三言語で全工程をサポートします。契約や重要事項説明といった重要な場面は、母語での確認を挟みながら進めますので、ご安心ください。` },
+          { q: `来日前に、どこまで進められますか？`, a: `オンライン相談、ご希望条件の整理、物件のご提案と資料の翻訳、内見の代行まで、来日前に完了できます。ご到着後すぐに契約・入居へ進める状態を整えます。` },
+          { q: `入居した後のサポートはありますか？`, a: `電気・ガス・水道などライフラインの手続きや生活の立ち上げをご案内するほか、その後の住み替え・購入・投資のご相談まで、長期的な窓口としてお付き合いします。` },
+        ],
+      },
+    ],
+  },
   contactTopics: [`物件提携`, `顧客送客`, `運営提携`, `投資のご相談`, `その他`],
   ui: {
     navCta: `お問い合わせ`, menu: `メニュー`, needSuffix: `が求めるもの`,
@@ -269,6 +301,38 @@ const tw = {
       { title: `房源合作`, en: 'Property Partnership', target: `合作企業、土地建物業主`, service: `為持有房產的夥伴提供：海外投資人網路、退出戰略、運營建議與價值提升方案，將貴司的房產送達全球的投資人與客戶。`, value: `為您的房產找到「不只是買家，而是真正能讓它發揮最大價值的客戶」。` },
       { title: `客戶引薦`, en: 'Customer Referral', target: `語言學校、大學、專業服務機構、金融機構`, service: `為您的客戶提供：多語言不動產服務、外籍人士入住支援、海外投資人接待，並建立長期的相互引薦網路。`, value: `解決客戶在不動產上的「煩惱」，轉化為「客戶對貴司更深的信任」。` },
       { title: `運營合作`, en: 'Operation Partnership', target: `住宿運營商、投資人、地方政府`, service: `提供基於豐富實績的運營代管、OTA 獲客、空間策劃與地方振興協作。`, value: `把您持有的空間，透過我們的運營品牌，變成「有故事、有粉絲」的資產。` },
+    ],
+  },
+  faq: {
+    eyebrow: 'Q&A',
+    title: `常見問題`,
+    subtitle: `這些是客戶最常問我們的問題——答案裡就是我們實際的工作方式。`,
+    groups: [
+      {
+        who: `投資人・海外買家`,
+        items: [
+          { q: `人在海外，可以完成從購買到運營的全部流程嗎？`, a: `可以。來日前的線上諮詢、物件資料多語言整理、代為看房與線上連線，到簽約階段與司法書士等專家協作，購入後再由我們代管運營——全程無需常駐日本。` },
+          { q: `你們說的「實質收益率」和表面收益率差在哪裡？`, a: `表面收益率只是「滿房假設租金 ÷ 物件價格」。我們會選定同地段、同客層的競品設施，用 OTA（Booking.com 等）的實際成交價格與季節波動來推算收入；再納入清掃費、OTA 手續費、改造費等運營成本，甚至倒推出口價格，用一份完整的收支模擬作為投資判斷的依據。` },
+          { q: `這個物件能合法經營民宿或酒店嗎？`, a: `走旅館業法還是民泊新法，用途地域、消防設備、保健所的要求完全不同。我們與行政書士、建築士等專家網路協作，在您做出購買決定之前確認許可的可行性——無法合法運營的物件，我們不會建議購買。` },
+          { q: `買了之後，運營可以交給你們嗎？`, a: `可以。從 OTA 上架（Listing 製作、照片、多語言文案）、多語言客服、清掃品質管理到收益追蹤，可一站式代管。費用依物件規模與運營形態而異，會與收支模擬一併提案。` },
+        ],
+      },
+      {
+        who: `業主・物件持有者`,
+        items: [
+          { q: `屋齡較高的普通建築，也能變成有人想住的空間嗎？`, a: `可以。我們的改造不只看「好不好看」：先用訪日客群構成資料（家庭、獨旅、朋友出行佔大多數）反推房型與床位配置，再在圖紙階段做獨家的雙視角走查——以客人身份走一遍動線、再以清掃人員身份走一遍。再小的物件，也有運營視角的解法。` },
+          { q: `擔心改造預算會失控。`, a: `我們先算帳、後設計。改造費從一開始就納入投資模擬，在可回收的範圍內調整設計與規格，避免「設計優先、預算崩盤」。` },
+          { q: `閒置資產除了賣掉，還有什麼選擇？`, a: `轉為住宿設施、改造後出租、委託我們代管運營等多種方案。我們會先在同一條件下試算、比較各方案的現金流與出口，再提出最合適的方向。` },
+        ],
+      },
+      {
+        who: `外籍客戶`,
+        items: [
+          { q: `不會日語，也能完成租房或買房手續嗎？`, a: `我們以日・英・中三語支援全流程。簽約、重要事項說明等關鍵環節，都會以您的母語逐項確認後再推進，請放心。` },
+          { q: `來日本之前，可以先進行到哪一步？`, a: `線上諮詢、需求整理、物件推薦與資料翻譯、代為看房——都能在來日前完成，讓您落地後即可簽約入住。` },
+          { q: `入住之後還有支援嗎？`, a: `我們會協助水電瓦斯等生活手續與安頓事宜；之後的換屋、購房、投資諮詢，我們也是您長期的窗口。` },
+        ],
+      },
     ],
   },
   contactTopics: [`房源合作`, `客戶引薦`, `運營合作`, `投資諮詢`, `其他`],
@@ -411,6 +475,38 @@ const zh = {
       { title: `运营合作`, en: 'Operation Partnership', target: `住宿运营商、投资人、地方政府`, service: `提供基于丰富实绩的运营代管、OTA 获客、空间策划与地方振兴协作。`, value: `把您持有的空间，通过我们的运营品牌，变成「有故事、有粉丝」的资产。` },
     ],
   },
+  faq: {
+    eyebrow: 'Q&A',
+    title: `常见问题`,
+    subtitle: `这些是客户最常问我们的问题——答案里就是我们实际的工作方式。`,
+    groups: [
+      {
+        who: `投资人・海外买家`,
+        items: [
+          { q: `人在海外，可以完成从购买到运营的全部流程吗？`, a: `可以。来日前的线上咨询、物件资料多语言整理、代为看房与线上连线，到签约阶段与司法书士等专家协作，购入后再由我们代管运营——全程无需常驻日本。` },
+          { q: `你们说的「实质收益率」和表面收益率差在哪里？`, a: `表面收益率只是「满房假设租金 ÷ 物件价格」。我们会选定同地段、同客层的竞品设施，用 OTA（Booking.com 等）的实际成交价格与季节波动来推算收入；再纳入清扫费、OTA 手续费、改造费等运营成本，甚至倒推出口价格，用一份完整的收支模拟作为投资判断的依据。` },
+          { q: `这个物件能合法经营民宿或酒店吗？`, a: `走旅馆业法还是民泊新法，用途地域、消防设备、保健所的要求完全不同。我们与行政书士、建筑士等专家网络协作，在您做出购买决定之前确认许可的可行性——无法合法运营的物件，我们不会建议购买。` },
+          { q: `买了之后，运营可以交给你们吗？`, a: `可以。从 OTA 上架（Listing 制作、照片、多语言文案）、多语言客服、清扫品质管理到收益追踪，可一站式代管。费用依物件规模与运营形态而异，会与收支模拟一并提案。` },
+        ],
+      },
+      {
+        who: `业主・物件持有者`,
+        items: [
+          { q: `房龄较高的普通建筑，也能变成有人想住的空间吗？`, a: `可以。我们的改造不只看「好不好看」：先用访日客群构成数据（家庭、独旅、朋友出行占大多数）反推房型与床位配置，再在图纸阶段做独家的双视角走查——以客人身份走一遍动线、再以清扫人员身份走一遍。再小的物件，也有运营视角的解法。` },
+          { q: `担心改造预算会失控。`, a: `我们先算账、后设计。改造费从一开始就纳入投资模拟，在可回收的范围内调整设计与规格，避免「设计优先、预算崩盘」。` },
+          { q: `闲置资产除了卖掉，还有什么选择？`, a: `转为住宿设施、改造后出租、委托我们代管运营等多种方案。我们会先在同一条件下试算、比较各方案的现金流与出口，再提出最合适的方向。` },
+        ],
+      },
+      {
+        who: `外籍客户`,
+        items: [
+          { q: `不会日语，也能完成租房或买房手续吗？`, a: `我们以日・英・中三语支持全流程。签约、重要事项说明等关键环节，都会以您的母语逐项确认后再推进，请放心。` },
+          { q: `来日本之前，可以先进行到哪一步？`, a: `线上咨询、需求整理、物件推荐与资料翻译、代为看房——都能在来日前完成，让您落地后即可签约入住。` },
+          { q: `入住之后还有支持吗？`, a: `我们会协助水电燃气等生活手续与安顿事宜；之后的换房、购房、投资咨询，我们也是您长期的窗口。` },
+        ],
+      },
+    ],
+  },
   contactTopics: [`房源合作`, `客户引荐`, `运营合作`, `投资咨询`, `其他`],
   ui: {
     navCta: `开始咨询`, menu: `菜单`, needSuffix: `想要`,
@@ -550,6 +646,38 @@ const en = {
       { title: `Property Partnership`, en: ``, target: `Partner companies & property owners`, service: `For partners who own property: access to our overseas-investor network, exit strategy, operating proposals and value-enhancement plans — bringing your asset to investors and clients worldwide.`, value: `We don't just find a buyer — we find the client who can unlock your property's full value.` },
       { title: `Customer Referral`, en: ``, target: `Language schools, universities, professional & financial firms`, service: `For your clients: multilingual real-estate service, move-in support for foreign residents, and hosting for overseas investors — plus a long-term, two-way referral relationship.`, value: `We turn your clients' real-estate headaches into deeper trust in your organization.` },
       { title: `Operation Partnership`, en: ``, target: `Hospitality operators, investors, local governments`, service: `Drawing on our track record, we offer operations outsourcing, OTA marketing, space planning and regional-revitalization partnerships.`, value: `Through our operating brand, we turn the space you hold into an asset with a story and a loyal following.` },
+    ],
+  },
+  faq: {
+    eyebrow: 'Q&A',
+    title: `Frequently asked questions`,
+    subtitle: `The questions clients actually ask us — answered the way we actually work.`,
+    groups: [
+      {
+        who: `Investors & overseas buyers`,
+        items: [
+          { q: `Can I complete the whole process — purchase to operation — without living in Japan?`, a: `Yes. Before you arrive: online consultations, multilingual property materials, and viewings on your behalf (with live video). At contract: we coordinate with judicial scriveners and other specialists. After purchase: we operate the property for you. You never need to be based in Japan.` },
+          { q: `How is your "effective yield" different from the gross yield agents quote?`, a: `Gross yield is just full-occupancy rent divided by price. We select comparable properties in the same location and segment, estimate revenue from actual OTA price data (Booking.com and others) and seasonality, then factor in cleaning, OTA fees, renovation costs — and even work backwards from a target exit price. The result is a full P&L simulation you can base a decision on.` },
+          { q: `Can this property legally operate as a hotel or vacation rental?`, a: `The requirements — zoning, fire equipment, health-office approval — differ sharply between the Hotel Business Act and the Private Lodging (minpaku) Act. Working with our network of administrative scriveners and architects, we confirm licensing feasibility before you commit. We never recommend a property that can't be operated legally.` },
+          { q: `Will you run the property after I buy it?`, a: `Yes — end to end: OTA listings (copy, photos, multilingual descriptions), multilingual guest service, cleaning quality control, and ongoing revenue monitoring. Fees depend on the property's size and operating model, so we quote them together with the P&L simulation.` },
+        ],
+      },
+      {
+        who: `Landowners & property holders`,
+        items: [
+          { q: `My building is old and ordinary. Can it really become a place people choose to stay?`, a: `Yes. Our renovations go beyond looks: we design layouts and bed configurations backwards from real inbound-guest data (families, solo travelers and friend groups make up the majority), and at the drawing stage we walk every floor plan twice — once as a guest, once as cleaning staff. Even very small properties have operations-driven solutions.` },
+          { q: `I'm worried the renovation budget will spiral.`, a: `We run the numbers before the design. Renovation costs are built into the investment simulation from day one, and design and specifications are adjusted within what the returns can recover — so "design first, budget blown" doesn't happen.` },
+          { q: `Besides selling, what can I do with an idle asset?`, a: `Convert it to accommodation, renovate for leasing, or entrust operations to us — among other options. We simulate each scenario on the same assumptions, compare cash flow through to exit, and recommend the path that fits best.` },
+        ],
+      },
+      {
+        who: `International clients`,
+        items: [
+          { q: `I don't speak Japanese. Can I still rent or buy?`, a: `We support the entire process in Japanese, English and Chinese. Critical steps — the contract, the statutory disclosure — are confirmed point by point in your own language before we proceed.` },
+          { q: `How much can we do before I arrive in Japan?`, a: `Online consultation, requirements, property shortlists with translated materials, and viewings on your behalf can all be completed in advance — so you can sign and move in right after landing.` },
+          { q: `Is there support after I move in?`, a: `We help you set up utilities and settle in — and stay on as your long-term contact for future moves, purchases and investment questions.` },
+        ],
+      },
     ],
   },
   contactTopics: [`Property Partnership`, `Customer Referral`, `Operation Partnership`, `Investment inquiry`, `Other`],

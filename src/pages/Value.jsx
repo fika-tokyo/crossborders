@@ -1,10 +1,51 @@
-import { Fragment } from 'react'
+import { Fragment, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { useLang } from '../i18n.jsx'
 
+function FaqGroup({ group }) {
+  const [open, setOpen] = useState(null)
+  return (
+    <div>
+      <h3 className="text-lg font-semibold text-ink">{group.who}</h3>
+      <div className="mt-4 flex flex-col gap-3">
+        {group.items.map((item, i) => (
+          <div
+            key={i}
+            className="rounded-2xl border border-line bg-white transition hover:border-red"
+          >
+            <button
+              className="flex w-full items-start justify-between gap-4 p-5 text-left"
+              onClick={() => setOpen(open === i ? null : i)}
+              aria-expanded={open === i}
+            >
+              <span className="font-medium leading-relaxed text-ink">
+                <span className="mr-2 font-bold text-red-dark">Q.</span>
+                {item.q}
+              </span>
+              <span
+                className={`mt-0.5 shrink-0 text-lg font-bold text-red-dark transition-transform ${
+                  open === i ? 'rotate-45' : ''
+                }`}
+                aria-hidden="true"
+              >
+                ＋
+              </span>
+            </button>
+            {open === i && (
+              <p className="border-t border-line px-5 py-4 text-sm leading-relaxed text-ink-soft">
+                {item.a}
+              </p>
+            )}
+          </div>
+        ))}
+      </div>
+    </div>
+  )
+}
+
 export default function Value() {
   const { t } = useLang()
-  const { valueChain, matrix, strengths, contactTopics, ui } = t
+  const { valueChain, matrix, strengths, faq, contactTopics, ui } = t
 
   return (
     <>
@@ -106,8 +147,26 @@ export default function Value() {
             </div>
           ))}
         </div>
+      </section>
 
-        <div className="mt-14 text-center">
+      {/* FAQ — real questions from each client type, answered with our actual practice */}
+      <section className="bg-mist py-20">
+        <div className="mx-auto max-w-5xl px-6">
+          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-red-dark">{faq.eyebrow}</p>
+          <h2 className="mt-4 text-3xl font-bold tracking-tight text-ink md:text-4xl">{faq.title}</h2>
+          <p className="mt-3 text-ink-soft">{faq.subtitle}</p>
+
+          <div className="mt-10 flex flex-col gap-12">
+            {faq.groups.map((g) => (
+              <FaqGroup key={g.who} group={g} />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="mx-auto max-w-5xl px-6 py-16">
+        <div className="text-center">
           <Link
             to="/contact"
             state={{ topic: contactTopics[3] }}
