@@ -26,6 +26,7 @@ export default function Home() {
           src={heroBg}
           alt=""
           aria-hidden="true"
+          fetchPriority="high"
           className="absolute inset-0 h-full w-full object-cover"
         />
         {/* Light overlay — heavier on the right (where the text sits) so the
@@ -34,7 +35,7 @@ export default function Home() {
 
         <div className="relative mx-auto flex max-w-6xl px-6 py-28 md:py-40">
           <div className="hero-block max-w-2xl md:ml-auto md:text-right">
-            <h1 className="animate-rise delay-1 mt-10 whitespace-pre-line text-5xl font-bold leading-[1.05] tracking-tight [text-shadow:0_2px_12px_rgba(11,20,30,0.45)] md:text-7xl">
+            <h1 className="animate-rise delay-1 whitespace-pre-line text-5xl font-bold leading-[1.05] tracking-tight [text-shadow:0_2px_12px_rgba(11,20,30,0.45)] md:text-7xl">
               {hero.title}
             </h1>
             {hero.titleEn && (
@@ -113,7 +114,7 @@ export default function Home() {
               className="group flex flex-col overflow-hidden rounded-2xl border border-line bg-white transition hover:-translate-y-1 hover:shadow-md"
             >
               <div className="relative aspect-[4/3] overflow-hidden">
-                <img src={c.img} alt="" className="absolute inset-0 h-full w-full object-cover transition duration-500 group-hover:scale-105" />
+                <img src={c.img} alt="" loading="lazy" className="absolute inset-0 h-full w-full object-cover transition duration-500 group-hover:scale-105" />
                 <div className="absolute inset-0 bg-navy/0 transition duration-500 group-hover:bg-navy/10" />
               </div>
               <div className="flex flex-1 flex-col p-6">

@@ -10,7 +10,7 @@
 - **GitHub:** https://github.com/fika-tokyo/crossborders （public）
 - **ローカル / 本地:** `C:\Users\kdili\projects\crossborders-site`
   ⚠️ `AppData` 配下では Vite dev サーバーが壊れる（MSIX 仮想化）。必ず `projects` 配下で動かす。
-- **技術:** React + Vite + Tailwind CSS v4 + React Router、3言語（日/中/英、初期=日本語）。
+- **技術:** React + Vite + Tailwind CSS v4 + React Router、4言語（ja 日本語 / tw 繁體中文 / zh 简体中文 / en English、初期=ja）。
 
 ## 更新の流れ / 如何更新（自动部署）
 
@@ -26,8 +26,11 @@ git add -A && git commit -m "..." && git push
 
 ## 文言の編集 / 改文字
 
-**すべての表示テキストは [`src/i18n.jsx`](src/i18n.jsx) に集約**（`ja` / `zh` / `en`
-の3ブロック、同じ構造）。ページ側（`src/pages/*`）は触らず、ここを直す。
+**表示テキストは原則 [`src/i18n.jsx`](src/i18n.jsx) に集約**（`ja` / `tw` / `zh` / `en`
+の4ブロック、同じ構造）。ページ側（`src/pages/*`）は触らず、ここを直す。
+
+> **例外:** 実績ページの事例データと4言語文言は [`src/pages/Works.jsx`](src/pages/Works.jsx) の
+> `CASES` / `REGIONS` / `UI` で管理している（i18n 集約原則の唯一の例外）。
 
 ## ブランド / 品牌
 
@@ -43,7 +46,9 @@ git add -A && git commit -m "..." && git push
   → 3枚のポータルカード（About / Value / Partnership へ誘導）
 - **/about** 私たちについて: ブランド哲学 + 五つの境界（アイコン）+ FIKA グループ
   + グループの力 + 位置づけ（※UNPLAN ブランド名は全削除済み）
-- **/value** 価値創造: バリューチェーン（矢印）+ 差別化マトリクス + 四つの強み
+- **/value** 価値創造: 追従する目次（TOC）→ 価値創造の流れ + 差別化マトリクス + 四つの強み + FAQ
+- **/works** 実績: 日本地図（地域マーカー、クリックで各地域の詳細へ）。「不動産成約事例」/「ホテル運営実績」の2タブ切替。
+- **/works/:region** 地域詳細: 東京は23区の放射図（区ごとに代表地標の写真へ線が発散）+ 事例カード。他地域は事例カード。
 - **/partnership** 協働: 哲学 + 3つの協働
 - **/contact** お問い合わせ: 入力検証つきフォーム → /thank-you
 - フッター: CTA バナー + 連絡先（海の写真背景。/contact・/thank-you では CTA 非表示）

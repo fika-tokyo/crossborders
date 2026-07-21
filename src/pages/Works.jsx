@@ -25,20 +25,20 @@ import landmarkKoto from '../assets/cases/landmark-koto.jpg'
    成約事例。region: tokyo / kanagawa / chiba / kansai
 --------------------------------------------------------------------------- */
 export const CASES = [
-  { id: 'chuo',      region: 'tokyo',    type: 'sale', img: saleChuo,      ja: '東京都中央区',   en: 'Chuo, Tokyo',        note: { ja: '区分マンション・価格1億円台', zh: '区分公寓・价格1亿日圓級', tw: '區分公寓・價格1億日圓級', en: 'Condominium unit · ¥100M range' } },
-  { id: 'shibuya',   region: 'tokyo',    type: 'sale', img: saleShibuya,   ja: '東京都渋谷区',   en: 'Shibuya, Tokyo',     note: { ja: '価格1億円台', zh: '价格1亿日圓級', tw: '價格1億日圓級', en: '¥100M range' } },
-  { id: 'shinagawa', region: 'tokyo',    type: 'sale', img: saleShinagawa, ja: '東京都品川区',   en: 'Shinagawa, Tokyo',   note: { ja: '価格1億円台', zh: '价格1亿日圓級', tw: '價格1億日圓級', en: '¥100M range' } },
-  { id: 'meguro',    region: 'tokyo',    type: 'sale', img: saleMeguro,    ja: '東京都目黒区',   en: 'Meguro, Tokyo',      note: { ja: '価格2千万円台', zh: '价格2千万日圓級', tw: '價格2千萬日圓級', en: '¥20M range' } },
+  { id: 'chuo',      region: 'tokyo',    type: 'sale', img: saleChuo,      ja: '東京都中央区',   en: 'Chuo, Tokyo',        note: { ja: '区分マンション・価格1億円台', zh: '区分公寓・价格1亿日元级', tw: '區分公寓・價格1億日圓級', en: 'Condominium unit · ¥100M range' } },
+  { id: 'shibuya',   region: 'tokyo',    type: 'sale', img: saleShibuya,   ja: '東京都渋谷区',   en: 'Shibuya, Tokyo',     note: { ja: '価格1億円台', zh: '价格1亿日元级', tw: '價格1億日圓級', en: '¥100M range' } },
+  { id: 'shinagawa', region: 'tokyo',    type: 'sale', img: saleShinagawa, ja: '東京都品川区',   en: 'Shinagawa, Tokyo',   note: { ja: '価格1億円台', zh: '价格1亿日元级', tw: '價格1億日圓級', en: '¥100M range' } },
+  { id: 'meguro',    region: 'tokyo',    type: 'sale', img: saleMeguro,    ja: '東京都目黒区',   en: 'Meguro, Tokyo',      note: { ja: '価格2千万円台', zh: '价格2千万日元级', tw: '價格2千萬日圓級', en: '¥20M range' } },
   { id: 'shinjuku1', region: 'tokyo',    type: 'rent', img: rentShinjuku1, ja: '東京都新宿区',   en: 'Shinjuku, Tokyo',    note: { ja: '賃貸仲介', zh: '租赁中介', tw: '租賃中介', en: 'Leasing' } },
   { id: 'shinjuku2', region: 'tokyo',    type: 'rent', img: rentShinjuku2, ja: '東京都新宿区',   en: 'Shinjuku, Tokyo',    note: { ja: '賃貸仲介', zh: '租赁中介', tw: '租賃中介', en: 'Leasing' } },
   { id: 'nakano',    region: 'tokyo',    type: 'rent', img: rentNakano,    ja: '東京都中野区',   en: 'Nakano, Tokyo',      note: { ja: '賃貸仲介', zh: '租赁中介', tw: '租賃中介', en: 'Leasing' } },
-  { id: 'yokohama',  region: 'kanagawa', type: 'sale', img: saleYokohama,  ja: '神奈川県横浜市', en: 'Yokohama, Kanagawa', note: { ja: '区分マンション・価格2千万円台', zh: '区分公寓・价格2千万日圓級', tw: '區分公寓・價格2千萬日圓級', en: 'Condominium unit · ¥20M range' } },
+  { id: 'yokohama',  region: 'kanagawa', type: 'sale', img: saleYokohama,  ja: '神奈川県横浜市', en: 'Yokohama, Kanagawa', note: { ja: '区分マンション・価格2千万円台', zh: '区分公寓・价格2千万日元级', tw: '區分公寓・價格2千萬日圓級', en: 'Condominium unit · ¥20M range' } },
   { id: 'kawasaki',  region: 'kanagawa', type: 'rent', img: rentKawasaki,  ja: '神奈川県川崎市', en: 'Kawasaki, Kanagawa', note: { ja: '賃貸仲介', zh: '租赁中介', tw: '租賃中介', en: 'Leasing' } },
   { id: 'chigasaki', region: 'kanagawa', type: 'rent', img: rentChigasaki, ja: '神奈川県茅ヶ崎市', en: 'Chigasaki, Kanagawa', note: { ja: '賃貸仲介', zh: '租赁中介', tw: '租賃中介', en: 'Leasing' } },
-  { id: 'kamagaya',  region: 'chiba',    type: 'sale', img: saleKamagaya,  ja: '千葉県鎌ケ谷市', en: 'Kamagaya, Chiba',    note: { ja: '価格2千万円台', zh: '价格2千万日圓級', tw: '價格2千萬日圓級', en: '¥20M range' } },
+  { id: 'kamagaya',  region: 'chiba',    type: 'sale', img: saleKamagaya,  ja: '千葉県鎌ケ谷市', en: 'Kamagaya, Chiba',    note: { ja: '価格2千万円台', zh: '价格2千万日元级', tw: '價格2千萬日圓級', en: '¥20M range' } },
   { id: 'yachimata', region: 'chiba',    type: 'rent', img: rentYachimata, ja: '千葉県八街市',   en: 'Yachimata, Chiba',   note: { ja: '古家付土地', zh: '附旧屋土地', tw: '附舊屋土地', en: 'Land with house' } },
-  { id: 'kyoto',     region: 'kansai',   type: 'sale', img: saleKyoto,     ja: '京都府京都市',   en: 'Kyoto City',         note: { ja: '価格1千万円台', zh: '价格1千万日圓級', tw: '價格1千萬日圓級', en: '¥10M range' } },
-  { id: 'osaka',     region: 'kansai',   type: 'sale', img: saleOsaka,     ja: '大阪府大阪市',   en: 'Osaka City',         note: { ja: '価格4千万円台', zh: '价格4千万日圓級', tw: '價格4千萬日圓級', en: '¥40M range' } },
+  { id: 'kyoto',     region: 'kansai',   type: 'sale', img: saleKyoto,     ja: '京都府京都市',   en: 'Kyoto City',         note: { ja: '価格1千万円台', zh: '价格1千万日元级', tw: '價格1千萬日圓級', en: '¥10M range' } },
+  { id: 'osaka',     region: 'kansai',   type: 'sale', img: saleOsaka,     ja: '大阪府大阪市',   en: 'Osaka City',         note: { ja: '価格4千万円台', zh: '价格4千万日元级', tw: '價格4千萬日圓級', en: '¥40M range' } },
 ]
 
 /* 地域(マップのマーカー座標 + 各言語名)。x,y は japanPath.js と同じ投影。 */

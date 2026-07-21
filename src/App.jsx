@@ -1,5 +1,6 @@
 import { Routes, Route, useLocation } from 'react-router-dom'
 import { useEffect } from 'react'
+import { useLang } from './i18n.jsx'
 import Navbar from './components/Navbar.jsx'
 import Footer from './components/Footer.jsx'
 import Home from './pages/Home.jsx'
@@ -20,10 +21,26 @@ function ScrollToTop() {
   return null
 }
 
+function PageTitle() {
+  const { pathname } = useLocation()
+  const { t } = useLang()
+  useEffect(() => {
+    const base = 'CROSSBORDERS'
+    if (pathname === '/') {
+      document.title = 'CROSSBORDERS — Cross Borders, Create Value.'
+      return
+    }
+    const item = t.nav.find((n) => n.to !== '/' && pathname.startsWith(n.to))
+    document.title = item ? `${item.label} | ${base}` : base
+  }, [pathname, t])
+  return null
+}
+
 export default function App() {
   return (
     <div className="flex min-h-screen flex-col">
       <ScrollToTop />
+      <PageTitle />
       <Navbar />
       <main className="flex-1">
         <Routes>

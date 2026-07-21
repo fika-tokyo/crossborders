@@ -16,6 +16,7 @@ export default function Footer() {
         src={footerBg}
         alt=""
         aria-hidden="true"
+        loading="lazy"
         className="absolute inset-0 h-full w-full object-cover"
       />
       <div className="absolute inset-0 bg-gradient-to-b from-navy/70 via-navy/85 to-navy/95" />
