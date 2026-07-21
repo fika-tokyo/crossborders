@@ -69,12 +69,12 @@ export default function Value() {
 
       {/* Sticky table of contents */}
       <nav className="sticky top-16 z-30 border-y border-line bg-white/90 backdrop-blur">
-        <div className="mx-auto flex max-w-5xl flex-wrap gap-2 px-6 py-3">
+        <div className="mx-auto flex max-w-5xl flex-wrap items-center justify-center gap-x-8 gap-y-2 px-6 py-3.5">
           {VALUE_TOC.map((s) => (
             <button
               key={s.id}
               onClick={() => scrollTo(s.id)}
-              className="rounded-full border border-line px-4 py-1.5 text-sm font-semibold text-ink-soft transition hover:border-red hover:text-red-dark"
+              className="text-sm font-semibold text-ink-soft transition hover:text-red-dark"
             >
               {s[lang] || s.ja}
             </button>
