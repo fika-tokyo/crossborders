@@ -6,7 +6,7 @@
 
 ## 一目で / 概览
 
-- **正式サイト / 正式网址:** https://fika-tokyo.github.io/crossborders/
+- **正式サイト / 正式网址:** https://crossborders.tokyo/
 - **GitHub:** https://github.com/fika-tokyo/crossborders （public）
 - **ローカル / 本地:** `C:\Users\kdili\projects\crossborders-site`
   ⚠️ `AppData` 配下では Vite dev サーバーが壊れる（MSIX 仮想化）。必ず `projects` 配下で動かす。
@@ -55,8 +55,8 @@ git add -A && git commit -m "..." && git push
 
 ## まだ未対応（要・実データ。捏造禁止）/ 待补充（真实素材，禁止编造）
 
-- 連絡先 **メール** はダミー（`contact@crossborders.jp`）。
-  電話 `050-1722-7286` と住所 `東京都 目黒区` は実データ。
+- 連絡先は実データ: メール `contact@crossborders.tokyo` / 電話 `050-1722-7286` / 住所 `東京都 目黒区`。
+  お問い合わせフォームは Web3Forms 接続済み（送信先 = 上記メール）。
 - **写真**: About「私たちの礎」に実写真なし。各所に実写真＋トーン方向。
 - **数字**: 運用資産規模・物件数・経営年数・顧客数。
 - **チーム**: 氏名・肩書き・写真。

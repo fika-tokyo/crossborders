@@ -5,7 +5,7 @@
 CROSSBORDERS（FIKA グループ）の公式コーポレートサイトです。
 技術スタック: **React + Vite + Tailwind CSS v4 + React Router**。
 
-**公開サイト:** https://fika-tokyo.github.io/crossborders/
+**公開サイト:** https://crossborders.tokyo/
 
 ---
 
