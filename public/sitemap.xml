@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://crossborders.tokyo/</loc><priority>1.0</priority></url>
+  <url><loc>https://crossborders.tokyo/about</loc><priority>0.8</priority></url>
+  <url><loc>https://crossborders.tokyo/value</loc><priority>0.8</priority></url>
+  <url><loc>https://crossborders.tokyo/works</loc><priority>0.8</priority></url>
+  <url><loc>https://crossborders.tokyo/works/tokyo</loc><priority>0.6</priority></url>
+  <url><loc>https://crossborders.tokyo/works/kanagawa</loc><priority>0.6</priority></url>
+  <url><loc>https://crossborders.tokyo/works/chiba</loc><priority>0.6</priority></url>
+  <url><loc>https://crossborders.tokyo/works/kansai</loc><priority>0.6</priority></url>
+  <url><loc>https://crossborders.tokyo/partnership</loc><priority>0.8</priority></url>
+  <url><loc>https://crossborders.tokyo/contact</loc><priority>0.7</priority></url>
+</urlset>
