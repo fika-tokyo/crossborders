@@ -41,6 +41,12 @@ export default function App() {
     <div className="flex min-h-screen flex-col">
       <ScrollToTop />
       <PageTitle />
+      {/* Staging badge — rendered only when the build sets VITE_STAGING (preview repo). */}
+      {import.meta.env.VITE_STAGING && (
+        <div className="fixed bottom-4 left-4 z-[60] rounded-full bg-red px-4 py-1.5 text-xs font-bold text-white shadow-lg">
+          プレビュー版(未公開)
+        </div>
+      )}
       <Navbar />
       <main className="flex-1">
         <Routes>
