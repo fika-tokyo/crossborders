@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://crossborders.tokyo/sitemap.xml
